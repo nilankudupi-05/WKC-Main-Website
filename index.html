@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>WizKidsCarnival — India's Biggest Stage for Young Talent</title>
+<meta name="description" content="WizKidsCarnival — India's premier platform for kids aged 3–18. KPL, LCL & Showcases. 500,000+ kids · 500+ cities · 10 countries. Register free today." />
+<meta name="keywords" content="kids talent competition India, children performing arts, KPL Kids Premier League, WizKidsCarnival, kids contest online India, children stage performance, talent show kids Mumbai Pune" />
+<link rel="canonical" href="https://www.wizkidscarnival.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.wizkidscarnival.com/" />
+<meta property="og:title" content="WizKidsCarnival — India's Biggest Stage for Young Talent" />
+<meta property="og:description" content="A global platform for kids aged 3–18 to perform, compete and grow. KPL · LCL · Showcases. 500K+ kids across India and 10 countries." />
+<meta property="og:image" content="https://www.wizkidscarnival.com/og-home.jpg" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:site_name" content="WizKidsCarnival" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="WizKidsCarnival — India's Biggest Stage for Young Talent" />
+<meta name="twitter:description" content="KPL · LCL · Showcases. A global platform for 500K+ kids aged 3–18." />
+<meta name="twitter:image" content="https://www.wizkidscarnival.com/og-home.jpg" />
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "name":"WizKidsCarnival",
+      "url":"https://www.wizkidscarnival.com",
+      "logo":"https://www.wizkidscarnival.com/logo.svg",
+      "description":"India's premier stage for young talent aged 3–18. KPL, LCL and Showcases across 500+ cities and 10 countries.",
+      "sameAs":["https://facebook.com/wizkidscarnival","https://instagram.com/wizkidscarnival","https://youtube.com/@wizkidscarnival"],
+      "founder":[
+        {"@type":"Person","name":"Mansi"},
+        {"@type":"Person","name":"Abhishek"},
+        {"@type":"Person","name":"Vinayak"}
+      ]
+    },
+    {
+      "@type":"WebSite",
+      "name":"WizKidsCarnival",
+      "url":"https://www.wizkidscarnival.com",
+      "potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.wizkidscarnival.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}
+    }
+  ]
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf6ef;--bg-2:#f5ebe0;--bg-3:#ede0d0;
+  --ink:#231a17;--ink-soft:#6b5d54;--ink-light:#9e8f86;
+  --coral:#e8503f;--coral-l:#ff6b5e;--coral-ll:#ff8a7e;
+  --teal:#0f9b8e;--teal-d:#0a766b;
+  --gold:#c8962a;--gold-l:#e0aa3a;
+  --card:#ffffff;
+  --line:rgba(35,26,23,0.08);--line-2:rgba(35,26,23,0.14);
+  --shadow:0 6px 24px rgba(35,26,23,0.08);
+  --shadow-lg:0 16px 48px rgba(35,26,23,0.13);
+  --ticker-h:34px;--nav-h:64px;
+  --r:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* Blobs */
+.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.35;z-index:0;pointer-events:none}
+.blob-1{width:500px;height:500px;background:radial-gradient(circle,#ffd6cf,transparent 70%);top:-160px;right:-140px}
+.blob-2{width:420px;height:420px;background:radial-gradient(circle,#c5eeea,transparent 70%);top:45%;left:-160px}
+.blob-3{width:350px;height:350px;background:radial-gradient(circle,#fde8c0,transparent 70%);bottom:10%;right:-80px}
+
+/* Ticker */
+.ticker{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--ink);height:var(--ticker-h);overflow:hidden;display:flex;align-items:center}
+.ttrack{display:flex;width:max-content;animation:roll 36s linear infinite}
+.ti{padding:0 22px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.75);white-space:nowrap}
+.ti .dot{color:var(--coral-ll);margin:0 4px}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* Nav */
+.nav{position:fixed;top:var(--ticker-h);left:0;right:0;z-index:50;height:var(--nav-h);display:flex;align-items:center;padding:0 22px;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(253,246,239,0.92);backdrop-filter:blur(16px);border-color:var(--line);box-shadow:0 4px 20px rgba(35,26,23,0.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1160px;margin:0 auto}
+.nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px}
+.nav-logo .dot{width:11px;height:11px;border-radius:50%;background:var(--coral-l);box-shadow:0 0 0 4px rgba(255,107,94,0.15);flex-shrink:0}
+.nav-desk{display:none;align-items:center;gap:28px}
+.nav-desk a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-desk a:hover{color:var(--coral)}
+.nav-desk a.nav-cta{background:var(--ink);color:#fff;padding:10px 22px;border-radius:100px;font-weight:700;transition:background .2s}
+.nav-desk a.nav-cta:hover{background:var(--coral)}
+.nav-ham{background:none;border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.nav-ham span{width:18px;height:2px;background:var(--ink);display:block;border-radius:2px}
+
+/* Nav overlay */
+.nav-overlay{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.nav-overlay.open{opacity:1;pointer-events:all}
+.nav-close{position:absolute;top:18px;right:20px;background:none;border:1px solid var(--line-2);border-radius:10px;padding:10px 16px;font-size:14px;color:var(--ink);cursor:pointer;font-family:inherit;font-weight:700}
+.nav-links{display:flex;flex-direction:column;align-items:center;gap:26px}
+.nav-links a{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-apply{margin-top:8px;background:var(--coral) !important;color:#fff !important;padding:14px 40px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif !important;font-size:16px !important;font-weight:800 !important}
+
+/* Hero */
+.hero{position:relative;z-index:1;padding:calc(var(--ticker-h) + var(--nav-h) + 48px) 22px 60px;background:linear-gradient(165deg,rgba(90,15,5,0.06) 0%,transparent 55%)}
+.hero-grid{display:flex;flex-direction:column;gap:40px;width:100%;max-width:1160px;margin:0 auto;align-items:center}
+.hero-copy{text-align:center;max-width:620px}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line-2);border-radius:100px;padding:7px 16px;font-size:12px;font-weight:700;color:var(--teal-d);margin-bottom:22px;box-shadow:var(--shadow)}
+.pill .live{width:7px;height:7px;border-radius:50%;background:var(--coral-l);box-shadow:0 0 0 3px rgba(255,107,94,0.22);animation:blink 1.6s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+h1.h-headline{font-family:'Fraunces',serif;font-size:clamp(36px,8vw,64px);font-weight:600;line-height:1.04;letter-spacing:-1.5px;color:var(--ink);margin-bottom:18px}
+h1.h-headline em{font-style:italic;color:var(--coral)}
+.h-sub{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:480px;margin:0 auto 26px;font-weight:500}
+.h-trustline{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:center}
+.h-chip{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink-soft)}
+.h-chip b{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--ink)}
+.h-chip .ic{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0}
+
+/* Lead form */
+.lead-card{width:100%;max-width:440px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px 26px;box-shadow:var(--shadow-lg);position:relative}
+.lc-flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--coral);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:6px 18px;border-radius:100px;white-space:nowrap;box-shadow:0 6px 18px rgba(232,80,63,0.38)}
+.lc-ttl{font-family:'Fraunces',serif;font-size:24px;font-weight:600;letter-spacing:-.5px;text-align:center;margin-top:12px;margin-bottom:4px;line-height:1.15}
+.lc-seats{font-size:13px;color:var(--ink-soft);text-align:center;margin-bottom:22px;font-weight:500}
+.lc-seats b{color:var(--coral)}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:.2px}
+.field input,.field select{width:100%;background:var(--bg);border:1.5px solid var(--line-2);border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;font-weight:500;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
+.field input:focus,.field select:focus{border-color:var(--coral);background:#fff}
+.field input::placeholder{color:#c4b5ac}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23231a17' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--coral);color:#fff;font-size:16px;font-weight:800;padding:15px 24px;border-radius:14px;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(232,80,63,0.34);margin-top:6px;transition:transform .1s,background .2s;font-family:inherit}
+.btn-submit:hover{background:var(--coral-l)}
+.btn-submit:active{transform:scale(.98)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed}
+.form-msg{text-align:center;font-size:13px;margin-top:13px;line-height:1.5;display:none;font-weight:600;padding:10px 14px;border-radius:10px}
+.form-msg.show{display:block}
+.form-msg.ok{color:#0a766b;background:rgba(15,155,142,0.08)}
+.form-msg.err{color:var(--coral);background:rgba(232,80,63,0.07)}
+.lc-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:12px;opacity:.65}
+
+/* Section base */
+.section{position:relative;z-index:1;padding:72px 22px;max-width:1160px;margin:0 auto}
+.sec-lbl{text-align:center;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--coral);opacity:.8;margin-bottom:10px}
+.sec-ttl{text-align:center;font-family:'Fraunces',serif;font-size:clamp(28px,5.5vw,44px);font-weight:600;letter-spacing:-1px;color:var(--ink);line-height:1.1;margin-bottom:12px}
+.sec-sub{text-align:center;font-size:16px;color:var(--ink-soft);margin:0 auto 42px;line-height:1.65;max-width:520px;font-weight:500}
+.divider{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 0;position:relative;z-index:1}
+.divider .dl{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider .dl.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.divider .dg{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.6}
+
+/* Trusted By */
+.trust-band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:1}
+.trust-lbl{font-family:'Cinzel',serif;text-align:center;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);opacity:.6;margin-bottom:20px}
+.trust-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}
+.trust-chip{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--ink);opacity:.5;padding:8px 20px;background:var(--card);border:1px solid var(--line);border-radius:100px}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 18px;text-align:center;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.stat-num{font-family:'Fraunces',serif;font-size:clamp(30px,7vw,42px);font-weight:700;color:var(--coral);line-height:1;letter-spacing:-1px}
+.stat:nth-child(2n) .stat-num{color:var(--teal)}
+.stat:nth-child(3n) .stat-num{color:var(--gold)}
+.stat-lbl{font-size:13px;font-weight:600;color:var(--ink-soft);margin-top:9px}
+
+/* Programs */
+.prog-list{display:flex;flex-direction:column;gap:20px}
+.prog{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.prog:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.prog-bar{height:4px;border-radius:100px;width:52px;margin-bottom:22px}
+.prog:nth-child(1) .prog-bar{background:var(--coral)}
+.prog:nth-child(2) .prog-bar{background:var(--gold)}
+.prog:nth-child(3) .prog-bar{background:var(--teal)}
+.prog-head{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.prog-tag{font-family:'Fraunces',serif;font-size:30px;font-weight:700;letter-spacing:-1px;color:var(--ink);line-height:1}
+.prog-badge{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-left:auto}
+.prog:nth-child(1) .prog-badge{background:rgba(15,155,142,0.1);color:var(--teal-d)}
+.prog:nth-child(2) .prog-badge{background:rgba(200,150,42,0.14);color:#8a6010}
+.prog:nth-child(3) .prog-badge{background:rgba(232,80,63,0.1);color:var(--coral)}
+.prog-full{font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:2px;color:var(--ink-soft);margin-bottom:14px;text-transform:uppercase}
+.prog-desc{font-size:15px;line-height:1.65;color:var(--ink-soft);margin-bottom:18px;font-weight:500}
+.prog-feats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.prog-feats span{font-size:12px;font-weight:700;color:var(--ink);background:var(--bg-2);border-radius:100px;padding:6px 14px}
+.prog-cta{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--coral);cursor:pointer;background:none;border:none;font-family:inherit;padding:0;transition:gap .18s}
+.prog:nth-child(2) .prog-cta{color:var(--gold)}
+.prog:nth-child(3) .prog-cta{color:var(--teal)}
+.prog-cta:hover{gap:14px}
+.prog-ext{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--teal);text-decoration:none;transition:gap .18s}
+.prog-ext:hover{gap:14px}
+
+/* Testimonials */
+.tlist{display:flex;flex-direction:column;gap:18px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow);position:relative}
+.tquote{font-family:'Fraunces',serif;font-size:64px;line-height:.8;color:var(--coral);opacity:.14;position:absolute;top:16px;right:24px;font-style:italic}
+.tstars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:13px}
+.ttext{font-size:16px;line-height:1.65;color:var(--ink);margin-bottom:16px;font-weight:500}
+.tname{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--ink)}
+.trole{font-size:13px;color:var(--ink-soft);margin-top:3px;font-weight:500}
+
+/* Final CTA */
+.fcta-wrap{position:relative;z-index:1;padding:0 22px 80px}
+.fcta{max-width:1160px;margin:0 auto;border-radius:32px;background:linear-gradient(135deg,#5a0a02,#8b1a06 40%,var(--coral) 100%);padding:64px 30px;text-align:center;overflow:hidden;position:relative}
+.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,200,120,0.15),transparent 70%)}
+.fcta h2{font-family:'Fraunces',serif;font-size:clamp(26px,6vw,46px);font-weight:600;color:#fff;line-height:1.1;letter-spacing:-1px;max-width:600px;margin:0 auto 12px;position:relative}
+.fcta h2 em{font-style:italic;color:var(--gold-l)}
+.fcta p{font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:32px;font-weight:600;position:relative}
+.btn-fcta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#fff;color:var(--coral);font-size:16px;font-weight:800;padding:16px 40px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;box-shadow:0 10px 32px rgba(0,0,0,0.22);transition:transform .1s;position:relative}
+.btn-fcta:active{transform:scale(.97)}
+
+/* Footer */
+.footer{position:relative;z-index:1;background:var(--ink);padding:52px 24px 36px;text-align:center}
+.ftag{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:rgba(255,255,255,0.75);margin-bottom:22px}
+.fsoc{display:flex;justify-content:center;gap:12px;margin-bottom:22px}
+.fsoc a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;color:rgba(255,255,255,0.5);transition:color .2s,border-color .2s}
+.fsoc a:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
+.flinks{font-size:13px;color:rgba(255,255,255,0.38);line-height:2.3;font-weight:600}
+.flinks a{color:rgba(255,255,255,0.38);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,0.7)}
+.fwkc{margin-top:18px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+
+/* Sticky */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(253,246,239,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--line-2);padding:10px 16px 14px}
+.sticky-in{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:480px;margin:0 auto}
+.st-ev{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--ink)}
+.st-dt{font-size:12px;color:var(--ink-soft);margin-top:2px;font-weight:600}
+.st-btn{background:var(--coral);color:#fff;font-size:14px;font-weight:800;padding:12px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;cursor:pointer;border:none;font-family:inherit;box-shadow:0 6px 18px rgba(232,80,63,0.3)}
+.spacer{height:78px}
+
+/* Responsive */
+@media(min-width:880px){
+  .nav-desk{display:flex}
+  .nav-ham{display:none}
+  .hero-grid{flex-direction:row;justify-content:space-between;align-items:center;gap:60px}
+  .hero-copy{text-align:left;flex:1}
+  .hero-copy .h-sub{margin-left:0}
+  .hero-copy .h-trustline{justify-content:flex-start}
+  .lead-card{flex-shrink:0}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .prog-list{flex-direction:row;align-items:stretch}
+  .prog{flex:1}
+  .tlist{flex-direction:row;align-items:stretch}
+  .tcard{flex:1}
+  .sticky{display:none}
+  .spacer{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Blobs -->
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+<div class="blob blob-3" aria-hidden="true"></div>
+
+<!-- Nav Overlay -->
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="nav-close" id="navClose">&#x2715; Close</button>
+  <nav class="nav-links">
+    <a href="kpl/" class="ol">KPL</a>
+    <a href="lcl/" class="ol">LCL</a>
+    <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
+    <a href="about/" class="ol">About</a>
+    <a href="#" class="ol">Blog</a>
+    <a href="#" class="ol nav-apply">Login / Register</a>
+  </nav>
+</div>
+
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ttrack" id="ttrack">
+    <span class="ti">KPL Registration Open<span class="dot">&#x2726;</span></span>
+    <span class="ti">Ages 3–18<span class="dot">&#x00B7;</span></span>
+    <span class="ti">500K+ Kids<span class="dot">&#x2726;</span></span>
+    <span class="ti">500+ Cities<span class="dot">&#x00B7;</span></span>
+    <span class="ti">10 Countries<span class="dot">&#x2726;</span></span>
+    <span class="ti">LCL · Little Champions League<span class="dot">&#x00B7;</span></span>
+    <span class="ti">Showcases · Solo Stage<span class="dot">&#x2726;</span></span>
+    <span class="ti">India's Biggest Stage for Young Talent<span class="dot">&#x00B7;</span></span>
+  </div>
+</div>
+
+<!-- Navbar -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="dot" aria-hidden="true"></span>WizKidsCarnival</a>
+    <nav class="nav-desk" aria-label="Primary navigation">
+      <a href="kpl/">KPL</a>
+      <a href="lcl/">LCL</a>
+      <a href="https://showcases.wizkidscarnival.com/">Showcases</a>
+      <a href="about/">About</a>
+      <a href="#">Blog</a>
+      <a href="#register" class="nav-cta">Login / Register</a>
+    </nav>
+    <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="pill" role="status"><span class="live" aria-hidden="true"></span> KPL Registration Open &nbsp;&#x00B7;&nbsp; Limited Seats</div>
+      <h1 class="h-headline">Let your child shine on India's <em>biggest stage.</em></h1>
+      <p class="h-sub">A global platform for kids aged 3–18 to perform, compete and grow — trusted by leading brands and India's best schools.</p>
+      <div class="h-trustline" aria-label="Key stats">
+        <span class="h-chip"><span class="ic" aria-hidden="true"></span><b>500K+</b>&nbsp;Kids</span>
+        <span class="h-chip"><span class="ic" aria-hidden="true"></span><b>500+</b>&nbsp;Cities</span>
+        <span class="h-chip"><span class="ic" aria-hidden="true"></span><b>10</b>&nbsp;Countries</span>
+        <span class="h-chip"><span class="ic" aria-hidden="true"></span><b>150+</b>&nbsp;Judges</span>
+      </div>
+    </div>
+
+    <div class="lead-card" id="register">
+      <div class="lc-flag">&#x2605; FREE TO REGISTER</div>
+      <div class="lc-ttl">Reserve Your Child's Spot</div>
+      <div class="lc-seats">Only a <b>few seats</b> left this season</div>
+      <form id="leadForm" autocomplete="on" novalidate>
+        <div class="field">
+          <label for="f-name">Parent's / Child's Name</label>
+          <input type="text" id="f-name" name="name" placeholder="Full name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-email">Email Address</label>
+          <input type="email" id="f-email" name="email" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="f-mobile">Mobile</label>
+            <input type="tel" id="f-mobile" name="mobile" placeholder="10-digit no." pattern="[0-9+ ]{8,15}" required autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="f-age">Child's Age</label>
+            <select id="f-age" name="age" required>
+              <option value="" disabled selected>Age</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-interest">Interested In</label>
+          <select id="f-interest" name="interest" required>
+            <option value="" disabled selected>Select a program</option>
+            <option value="KPL">KPL — Kids Premier League</option>
+            <option value="LCL">LCL — Little Champions League</option>
+            <option value="Showcases">Showcases — Solo Stage</option>
+            <option value="Not sure">Not sure yet</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">Register Free &#x2192;</button>
+        <div class="form-msg" id="formMsg" role="alert" aria-live="polite"></div>
+        <p class="lc-note">We'll never share your details. No spam, ever.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Trusted By -->
+<div class="trust-band">
+  <div class="section" style="padding-top:42px;padding-bottom:42px">
+    <div class="trust-lbl">Trusted by leading brands &amp; schools</div>
+    <div class="trust-row" aria-label="Partner brands">
+      <span class="trust-chip">Sony</span>
+      <span class="trust-chip">McDonald's</span>
+      <span class="trust-chip">Swiggy Instamart</span>
+      <span class="trust-chip">Lexicon Group</span>
+      <span class="trust-chip">HDFC School</span>
+      <span class="trust-chip">Scholastic</span>
+      <span class="trust-chip">Luma World</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Stats -->
+<section class="section" id="about" aria-labelledby="stats-ttl">
+  <div class="sec-lbl">WKC at a Glance</div>
+  <h2 class="sec-ttl" id="stats-ttl">A movement, not just a contest</h2>
+  <p class="sec-sub">We give every child a stage to showcase their talents — and the confidence that comes from doing what they love.</p>
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-num">500K+</div><div class="stat-lbl">Kids Community</div></div>
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-lbl">Cities</div></div>
+    <div class="stat"><div class="stat-num">10</div><div class="stat-lbl">Countries</div></div>
+    <div class="stat"><div class="stat-num">250+</div><div class="stat-lbl">Contests</div></div>
+    <div class="stat"><div class="stat-num">150+</div><div class="stat-lbl">Expert Judges</div></div>
+    <div class="stat"><div class="stat-num">80K+</div><div class="stat-lbl">Proud Parents</div></div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Programs -->
+<section class="section" aria-labelledby="prog-ttl">
+  <div class="sec-lbl">Our Programs</div>
+  <h2 class="sec-ttl" id="prog-ttl">Three stages to shine</h2>
+  <p class="sec-sub">Whatever your child loves — there's a stage built for them.</p>
+  <div class="prog-list">
+
+    <article class="prog" id="kpl-card">
+      <div class="prog-bar" aria-hidden="true"></div>
+      <div class="prog-head">
+        <span class="prog-tag">KPL</span>
+        <span class="prog-badge">Open Now</span>
+      </div>
+      <div class="prog-full">Kids Premier League</div>
+      <p class="prog-desc">India's flagship all-India talent league. Kids compete across rounds and categories for national recognition, prizes worth ₹2 Lakhs, and a place among the country's brightest young stars.</p>
+      <div class="prog-feats">
+        <span>All-India</span><span>Multi-Round</span><span>Ages 6–15</span><span>7 Categories</span>
+      </div>
+      <button class="prog-cta" data-interest="KPL">Register for KPL &#x2192;</button>
+    </article>
+
+    <article class="prog" id="lcl-card">
+      <div class="prog-bar" aria-hidden="true"></div>
+      <div class="prog-head">
+        <span class="prog-tag">LCL</span>
+        <span class="prog-badge">Filling Fast</span>
+      </div>
+      <div class="prog-full">Little Champions League</div>
+      <p class="prog-desc">A nurturing, confidence-first league built for the youngest creators aged 3–5. Gentle competitions, expert encouragement, and a certificate every child earns — not just winners.</p>
+      <div class="prog-feats">
+        <span>Ages 3–5</span><span>Confidence-First</span><span>Participation Certs</span>
+      </div>
+      <button class="prog-cta" data-interest="LCL">Register for LCL &#x2192;</button>
+    </article>
+
+    <article class="prog" id="showcases-card">
+      <div class="prog-bar" aria-hidden="true"></div>
+      <div class="prog-head">
+        <span class="prog-tag">Showcases</span>
+        <span class="prog-badge">Seasonal</span>
+      </div>
+      <div class="prog-full">Solo Stage Experience</div>
+      <p class="prog-desc">A premium, non-competitive stage experience for ages 6–18. Two weekends of expert prep, a solo performance in a grand auditorium, a trophy, certificate and reel to keep forever.</p>
+      <div class="prog-feats">
+        <span>Non-Competitive</span><span>Live Auditorium</span><span>Ages 6–18</span>
+      </div>
+      <a href="https://showcases.wizkidscarnival.com/" class="prog-ext">Learn more &#x2192;</a>
+    </article>
+
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Testimonials -->
+<section class="section" aria-labelledby="test-ttl">
+  <div class="sec-lbl">Parent Voices</div>
+  <h2 class="sec-ttl" id="test-ttl">Loved by families across India</h2>
+  <p class="sec-sub">Don't take our word for it — hear from parents who've watched their children grow.</p>
+  <div class="tlist">
+
+    <article class="tcard">
+      <div class="tquote" aria-hidden="true">&#x201C;</div>
+      <div class="tstars" aria-label="5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+      <p class="ttext">A personal note specific to each child's drawing is very touching. It shows the seriousness and care of the judges. Congratulations to your entire team for standing apart!</p>
+      <div class="tname">Geetanjali</div><div class="trole">Mother of Medini</div>
+    </article>
+
+    <article class="tcard">
+      <div class="tquote" aria-hidden="true">&#x201C;</div>
+      <div class="tstars" aria-label="5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+      <p class="ttext">Stories getting published, certificates, vouchers… you've given the best experience and a lifetime memory to all the kids. Your love for children is so evident. Kudos to the team.</p>
+      <div class="tname">Shimpy</div><div class="trole">Mother of Dhruvika</div>
+    </article>
+
+    <article class="tcard">
+      <div class="tquote" aria-hidden="true">&#x201C;</div>
+      <div class="tstars" aria-label="5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+      <p class="ttext">It's wonderful to see so many talented children, and you're helping them express it. I loved how you created individual themes for each child's webpage — it's truly beautiful.</p>
+      <div class="tname">Shabana</div><div class="trole">Mother of Anis</div>
+    </article>
+
+  </div>
+</section>
+
+<!-- Final CTA -->
+<div class="fcta-wrap">
+  <section class="fcta" aria-labelledby="fcta-ttl">
+    <h2 id="fcta-ttl">Your child's moment to truly <em>shine</em> is waiting.</h2>
+    <p>Free to register &nbsp;&#x00B7;&nbsp; Limited seats this season</p>
+    <button class="btn-fcta" id="ctaScroll">Register Your Child &#x2192;</button>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p class="ftag">&#x201C;Where young stars shine.&#x201D;</p>
+  <div class="fsoc" aria-label="Social media">
+    <a href="https://facebook.com/wizkidscarnival" aria-label="Facebook" rel="noopener noreferrer">&#x1F426;</a>
+    <a href="https://instagram.com/wizkidscarnival" aria-label="Instagram" rel="noopener noreferrer">&#x1F4F7;</a>
+    <a href="https://youtube.com/@wizkidscarnival" aria-label="YouTube" rel="noopener noreferrer">&#x25B6;</a>
+    <a href="https://twitter.com/wizkidscarnival" aria-label="Twitter / X" rel="noopener noreferrer">&#x1D54F;</a>
+    <a href="https://linkedin.com/company/wizkidscarnival" aria-label="LinkedIn" rel="noopener noreferrer">in</a>
+  </div>
+  <nav class="flinks" aria-label="Footer navigation">
+    <a href="kpl/">KPL</a> &nbsp;&#x00B7;&nbsp; <a href="lcl/">LCL</a> &nbsp;&#x00B7;&nbsp; <a href="https://showcases.wizkidscarnival.com/">Showcases</a> &nbsp;&#x00B7;&nbsp; <a href="about/">About</a> &nbsp;&#x00B7;&nbsp; <a href="#">Judges</a><br>
+    <a href="#">Magazines</a> &nbsp;&#x00B7;&nbsp; <a href="#">Ebooks</a> &nbsp;&#x00B7;&nbsp; <a href="#">Blog</a> &nbsp;&#x00B7;&nbsp; <a href="#">Results</a> &nbsp;&#x00B7;&nbsp; <a href="#">Contact</a><br>
+    <a href="#">Privacy</a> &nbsp;&#x00B7;&nbsp; <a href="#">Refunds</a> &nbsp;&#x00B7;&nbsp; <a href="#">Terms</a>
+  </nav>
+  <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky" role="complementary" aria-label="Register CTA">
+  <div class="sticky-in">
+    <div>
+      <div class="st-ev">Register Free</div>
+      <div class="st-dt">KPL &nbsp;&#x00B7;&nbsp; LCL &nbsp;&#x00B7;&nbsp; Showcases</div>
+    </div>
+    <button class="st-btn" id="stickyBtn">Register &#x2192;</button>
+  </div>
+</div>
+<div class="spacer" aria-hidden="true"></div>
+
+<script>
+/* ============================================================
+   CONFIG — paste your Google Apps Script Web App URL below
+   ============================================================ */
+const SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+/* ============================================================ */
+
+// Ticker duplicate
+const tt=document.getElementById('ttrack');tt.innerHTML+=tt.innerHTML;
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+
+// Mobile menu
+const ham=document.getElementById('navHam'),overlay=document.getElementById('navOverlay'),closeBtn=document.getElementById('navClose');
+function openMenu(){overlay.classList.add('open');ham.setAttribute('aria-expanded','true');}
+function closeMenu(){overlay.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+ham.addEventListener('click',openMenu);
+closeBtn.addEventListener('click',closeMenu);
+document.querySelectorAll('.nav-overlay .ol').forEach(a=>a.addEventListener('click',closeMenu));
+
+// Smooth scroll anchors
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
+
+// Age dropdown 3–18
+const ageSel=document.getElementById('f-age');
+for(let a=3;a<=18;a++){const o=document.createElement('option');o.value=a;o.textContent=a;ageSel.appendChild(o);}
+
+// Scroll-to-form
+function scrollToForm(){document.getElementById('register').scrollIntoView({behavior:'smooth',block:'center'});}
+document.getElementById('ctaScroll').addEventListener('click',scrollToForm);
+document.getElementById('stickyBtn').addEventListener('click',scrollToForm);
+document.querySelectorAll('.prog-cta').forEach(btn=>{
+  btn.addEventListener('click',()=>{document.getElementById('f-interest').value=btn.dataset.interest;scrollToForm();});
+});
+
+// Form submit
+const form=document.getElementById('leadForm');
+const msg=document.getElementById('formMsg');
+const submitBtn=document.getElementById('submitBtn');
+form.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  msg.className='form-msg';msg.textContent='';
+  const data={
+    name:form.name.value.trim(),email:form.email.value.trim(),
+    mobile:form.mobile.value.trim(),age:form.age.value,
+    interest:form.interest.value,
+    timestamp:new Date().toISOString(),source:'home-hero',page:'index'
+  };
+  if(SHEET_ENDPOINT.startsWith("PASTE_")){
+    msg.classList.add('show','err');
+    msg.textContent="Form not connected yet. Set SHEET_ENDPOINT in the code.";
+    return;
+  }
+  submitBtn.disabled=true;submitBtn.textContent='Submitting…';
+  try{
+    await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
+    form.reset();
+    msg.classList.add('show','ok');
+    msg.textContent="🎉 Your spot is reserved — we'll be in touch very soon!";
+  }catch(err){
+    msg.classList.add('show','err');
+    msg.textContent="Something went wrong. Please try again or message us on WhatsApp.";
+  }finally{
+    submitBtn.disabled=false;submitBtn.textContent='Register Free →';
+  }
+});
+</script>
+</body>
+</html>

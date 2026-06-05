@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>KPL — Kids Premier League | WizKidsCarnival</title>
+<meta name="description" content="KPL — India's all-India talent league for kids aged 6–15. 7 categories, 100+ expert judges, ₹2 Lakh prize pool. Singing, Dance, Art, Storytelling, Public Speaking & more." />
+<meta name="keywords" content="Kids Premier League KPL, kids talent competition India, children singing competition, dance competition kids India, WizKidsCarnival KPL, all India kids contest" />
+<link rel="canonical" href="https://www.wizkidscarnival.com/kpl/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.wizkidscarnival.com/kpl/" />
+<meta property="og:title" content="KPL — Kids Premier League | WizKidsCarnival" />
+<meta property="og:description" content="India's flagship all-India talent league for kids aged 6–15. 7 categories · 100+ judges · ₹2 Lakh prizes." />
+<meta property="og:image" content="https://www.wizkidscarnival.com/og-kpl.jpg" />
+<meta property="og:site_name" content="WizKidsCarnival" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="KPL — Kids Premier League | WizKidsCarnival" />
+<meta name="twitter:description" content="India's flagship all-India talent league for kids aged 6–15. 7 categories · 100+ judges · ₹2 Lakh prizes." />
+<meta name="twitter:image" content="https://www.wizkidscarnival.com/og-kpl.jpg" />
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"EventSeries",
+  "name":"KPL — Kids Premier League",
+  "description":"India's all-India talent league for children aged 6–15. 7 categories including art, dance, storytelling, public speaking and more.",
+  "organizer":{"@type":"Organization","name":"WizKidsCarnival","url":"https://www.wizkidscarnival.com"},
+  "offers":{"@type":"Offer","price":"250","priceCurrency":"INR","availability":"https://schema.org/LimitedAvailability","url":"https://www.wizkidscarnival.com/kpl/"},
+  "audience":{"@type":"EducationalAudience","educationalRole":"student"},
+  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.wizkidscarnival.com"},
+    {"@type":"ListItem","position":2,"name":"KPL","item":"https://www.wizkidscarnival.com/kpl/"}
+  ]}
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf6ef;--bg-2:#f5ebe0;
+  --ink:#231a17;--ink-soft:#6b5d54;--ink-light:#9e8f86;
+  --coral:#e8503f;--coral-l:#ff6b5e;
+  --teal:#0f9b8e;--teal-d:#0a766b;
+  --gold:#c8962a;--gold-l:#e0aa3a;
+  --card:#fff;
+  --line:rgba(35,26,23,0.08);--line-2:rgba(35,26,23,0.14);
+  --shadow:0 6px 24px rgba(35,26,23,0.08);
+  --shadow-lg:0 16px 48px rgba(35,26,23,0.13);
+  --nav-h:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.32;z-index:0;pointer-events:none}
+.blob-1{width:480px;height:480px;background:radial-gradient(circle,#ffd6cf,transparent 70%);top:-140px;right:-120px}
+.blob-2{width:380px;height:380px;background:radial-gradient(circle,#fde8c0,transparent 70%);bottom:20%;left:-120px}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--nav-h);display:flex;align-items:center;padding:0 22px;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(253,246,239,0.92);backdrop-filter:blur(16px);border-color:var(--line);box-shadow:0 4px 20px rgba(35,26,23,0.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1160px;margin:0 auto}
+.nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px}
+.nav-logo .dot{width:11px;height:11px;border-radius:50%;background:var(--coral-l);box-shadow:0 0 0 4px rgba(255,107,94,0.15);flex-shrink:0}
+.nav-desk{display:none;align-items:center;gap:28px}
+.nav-desk a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-desk a:hover,.nav-desk a.active{color:var(--coral)}
+.nav-desk a.nav-cta{background:var(--ink);color:#fff;padding:10px 22px;border-radius:100px;font-weight:700;transition:background .2s}
+.nav-desk a.nav-cta:hover{background:var(--coral)}
+.nav-ham{background:none;border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.nav-ham span{width:18px;height:2px;background:var(--ink);display:block;border-radius:2px}
+.nav-overlay{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.nav-overlay.open{opacity:1;pointer-events:all}
+.nav-close{position:absolute;top:18px;right:20px;background:none;border:1px solid var(--line-2);border-radius:10px;padding:10px 16px;font-size:14px;color:var(--ink);cursor:pointer;font-family:inherit;font-weight:700}
+.nav-links{display:flex;flex-direction:column;align-items:center;gap:26px}
+.nav-links a{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-apply{margin-top:8px;background:var(--coral) !important;color:#fff !important;padding:14px 40px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif !important;font-size:16px !important;font-weight:800 !important}
+
+/* Hero */
+.page-hero{position:relative;z-index:1;padding:calc(var(--nav-h) + 60px) 22px 64px;text-align:center;background:linear-gradient(165deg,rgba(90,15,5,0.08) 0%,transparent 55%)}
+.hero-inner{max-width:720px;margin:0 auto}
+.breadcrumb{font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:7px}
+.breadcrumb a{color:var(--ink-soft);text-decoration:none}
+.breadcrumb a:hover{color:var(--coral)}
+.bc-sep{color:var(--ink-light);opacity:.5}
+.page-tag{font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--coral);opacity:.85;margin-bottom:12px}
+.page-hero h1{font-family:'Fraunces',serif;font-size:clamp(34px,7.5vw,60px);font-weight:600;line-height:1.05;letter-spacing:-1.5px;color:var(--ink);margin-bottom:16px}
+.page-hero h1 em{font-style:italic;color:var(--coral)}
+.page-hero .sub{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:520px;margin:0 auto 30px;font-weight:500}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.hchip{font-size:13px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:100px;padding:8px 16px;box-shadow:var(--shadow)}
+.hchip b{color:var(--coral)}
+.btn-hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--coral);color:#fff;font-size:16px;font-weight:800;padding:16px 36px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;box-shadow:0 8px 24px rgba(232,80,63,0.32);transition:transform .1s,background .2s}
+.btn-hero-cta:hover{background:var(--coral-l)}
+.btn-hero-cta:active{transform:scale(.97)}
+
+/* Sections */
+.section{position:relative;z-index:1;padding:68px 22px;max-width:1160px;margin:0 auto}
+.sec-lbl{text-align:center;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--coral);opacity:.8;margin-bottom:10px}
+.sec-ttl{text-align:center;font-family:'Fraunces',serif;font-size:clamp(26px,5vw,40px);font-weight:600;letter-spacing:-1px;color:var(--ink);line-height:1.1;margin-bottom:12px}
+.sec-sub{text-align:center;font-size:16px;color:var(--ink-soft);margin:0 auto 42px;line-height:1.65;max-width:520px;font-weight:500}
+.divider{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 0;position:relative;z-index:1}
+.divider .dl{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider .dl.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.divider .dg{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.6}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cat-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 18px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.cat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.cat-icon{font-size:32px;margin-bottom:10px;display:block;line-height:1}
+.cat-name{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px}
+.cat-desc{font-size:13px;color:var(--ink-soft);line-height:1.6;font-weight:500}
+
+/* Age bands */
+.age-row{display:flex;flex-direction:column;gap:14px}
+.age-band{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 22px;box-shadow:var(--shadow);display:flex;align-items:center;gap:16px}
+.age-num{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--coral);min-width:80px;line-height:1}
+.age-desc{font-size:14px;color:var(--ink-soft);font-weight:500;line-height:1.5}
+
+/* How it works */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;align-items:flex-start;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.step-n{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--coral);opacity:.35;flex-shrink:0;line-height:1;width:44px;text-align:center}
+.step-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.step-sub{font-size:14px;color:var(--ink-soft);line-height:1.7;font-weight:500}
+
+/* Pricing */
+.pricing-card{background:linear-gradient(160deg,rgba(90,15,5,0.06),rgba(200,150,42,0.04));border:1px solid var(--line-2);border-radius:24px;padding:34px 28px;text-align:center;position:relative;overflow:hidden}
+.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--coral),transparent)}
+.pr-lbl{font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--coral);opacity:.7;margin-bottom:12px}
+.pr-price{font-family:'Fraunces',serif;font-size:52px;font-weight:700;color:var(--ink);letter-spacing:-2px;line-height:1}
+.pr-sub{font-size:14px;color:var(--ink-soft);margin:6px 0 20px;font-weight:500}
+.pr-items{display:flex;flex-direction:column;gap:10px;text-align:left;margin-bottom:26px}
+.pr-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:500;color:var(--ink-soft)}
+.pr-bullet{color:var(--teal);font-size:10px;margin-top:2px;flex-shrink:0}
+
+/* Rewards */
+.rewards-list{display:flex;flex-direction:column;gap:14px}
+.reward{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow);display:flex;align-items:center;gap:16px;transition:transform .2s}
+.reward:hover{transform:translateX(4px)}
+.reward-icon{font-size:28px;flex-shrink:0}
+.reward-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.reward-sub{font-size:13px;color:var(--ink-soft);font-weight:500}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q .arr{font-size:12px;color:var(--ink-light);transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-q .arr{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;padding:0 20px;font-size:14px;color:var(--ink-soft);line-height:1.75;font-weight:500}
+.faq-item.open .faq-a{max-height:300px;padding:0 20px 18px}
+
+/* Register form */
+.reg-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px 26px;box-shadow:var(--shadow-lg);max-width:500px;margin:0 auto;position:relative}
+.reg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--coral),transparent);border-radius:24px 24px 0 0}
+.rc-ttl{font-family:'Fraunces',serif;font-size:26px;font-weight:600;letter-spacing:-.5px;text-align:center;margin-bottom:6px}
+.rc-sub{font-size:13px;color:var(--ink-soft);text-align:center;margin-bottom:24px;font-weight:500}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.field input,.field select{width:100%;background:var(--bg);border:1.5px solid var(--line-2);border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;font-weight:500;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
+.field input:focus,.field select:focus{border-color:var(--coral);background:#fff}
+.field input::placeholder{color:#c4b5ac}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23231a17' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--coral);color:#fff;font-size:16px;font-weight:800;padding:15px 24px;border-radius:14px;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(232,80,63,0.34);margin-top:6px;transition:transform .1s,background .2s;font-family:inherit}
+.btn-submit:hover{background:var(--coral-l)}
+.btn-submit:active{transform:scale(.98)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed}
+.form-msg{text-align:center;font-size:13px;margin-top:13px;line-height:1.5;display:none;font-weight:600;padding:10px 14px;border-radius:10px}
+.form-msg.show{display:block}
+.form-msg.ok{color:#0a766b;background:rgba(15,155,142,0.08)}
+.form-msg.err{color:var(--coral);background:rgba(232,80,63,0.07)}
+.rc-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:12px;opacity:.65}
+
+/* Footer */
+.footer{position:relative;z-index:1;background:var(--ink);padding:52px 24px 36px;text-align:center}
+.ftag{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:rgba(255,255,255,0.75);margin-bottom:22px}
+.flinks{font-size:13px;color:rgba(255,255,255,0.38);line-height:2.3;font-weight:600}
+.flinks a{color:rgba(255,255,255,0.38);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,0.7)}
+.fwkc{margin-top:18px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(253,246,239,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--line-2);padding:10px 16px 14px}
+.sticky-in{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:480px;margin:0 auto}
+.st-ev{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--ink)}
+.st-dt{font-size:12px;color:var(--ink-soft);margin-top:2px;font-weight:600}
+.st-btn{background:var(--coral);color:#fff;font-size:14px;font-weight:800;padding:12px 24px;border-radius:100px;border:none;font-family:inherit;cursor:pointer}
+.spacer{height:78px}
+
+@media(min-width:700px){
+  .cat-grid{grid-template-columns:repeat(4,1fr)}
+  .age-row{flex-direction:row}
+  .age-band{flex:1}
+  .rewards-list{flex-direction:row;flex-wrap:wrap}
+  .reward{flex:1;min-width:200px}
+  .nav-desk{display:flex}
+  .nav-ham{display:none}
+  .sticky{display:none}
+  .spacer{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+
+<!-- Nav overlay -->
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true">
+  <button class="nav-close" id="navClose">&#x2715; Close</button>
+  <nav class="nav-links">
+    <a href="../" class="ol">Home</a>
+    <a href="../kpl/" class="ol">KPL</a>
+    <a href="../lcl/" class="ol">LCL</a>
+    <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
+    <a href="../about/" class="ol">About</a>
+    <a href="#register" class="ol nav-apply">Register Free</a>
+  </nav>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo"><span class="dot" aria-hidden="true"></span>WizKidsCarnival</a>
+    <nav class="nav-desk" aria-label="Primary navigation">
+      <a href="../kpl/" class="active">KPL</a>
+      <a href="../lcl/">LCL</a>
+      <a href="https://showcases.wizkidscarnival.com/">Showcases</a>
+      <a href="../about/">About</a>
+      <a href="#">Blog</a>
+      <a href="#register" class="nav-cta">Register Free</a>
+    </nav>
+    <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<header class="page-hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="../">Home</a><span class="bc-sep">&#x203A;</span><span>KPL</span>
+    </div>
+    <div class="page-tag">Kids Premier League</div>
+    <h1>India's all-India talent league for <em>young stars.</em></h1>
+    <p class="sub">10,000+ participating students · 100+ expert judges · ₹2 Lakh prize pool. The most prestigious children's talent competition in India.</p>
+    <div class="hero-chips">
+      <span class="hchip">Ages <b>6–15</b></span>
+      <span class="hchip"><b>7</b> Categories</span>
+      <span class="hchip">₹<b>250</b>/contest</span>
+      <span class="hchip"><b>100+</b> Expert Judges</span>
+    </div>
+    <a href="#register" class="btn-hero-cta">Register for KPL &#x2192;</a>
+  </div>
+</header>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Categories -->
+<section class="section" aria-labelledby="cat-ttl">
+  <div class="sec-lbl">What Your Child Can Compete In</div>
+  <h2 class="sec-ttl" id="cat-ttl">7 Categories of Excellence</h2>
+  <p class="sec-sub">Every child has a talent — we've built a stage for all of them.</p>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F3A8;</span>
+      <div class="cat-name">Color Wizards</div>
+      <div class="cat-desc">Painting & art. Judged on originality, creativity, quality and theme adherence.</div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F4DC;</span>
+      <div class="cat-name">Shloka Scholars</div>
+      <div class="cat-desc">Sanskrit recitation. Evaluated on pronunciation, fluency, presentation and cultural connection.</div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F399;&#xFE0F;</span>
+      <div class="cat-name">Master Orator</div>
+      <div class="cat-desc">Public speaking. Judged on vocabulary, grammar, structure, confidence and theme.</div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F3AD;</span>
+      <div class="cat-name">Recite It!</div>
+      <div class="cat-desc">Poetry recitation. Assessed on accuracy, expression, dramatisation and articulation.</div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x270D;&#xFE0F;</span>
+      <div class="cat-name">Handwriting Champs</div>
+      <div class="cat-desc">Penmanship excellence. Judged on legibility, flow, neatness and writing pattern.</div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F4D6;</span>
+      <div class="cat-name">Tell Ur Tale</div>
+      <div class="cat-desc">Storytelling. Evaluated on plot, originality, structure, language and imagination.</div>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F483;</span>
+      <div class="cat-name">Dance Wizards</div>
+      <div class="cat-desc">Solo dance performance. Judged on choreography, execution, theme and presentation.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Age Groups -->
+<section class="section" aria-labelledby="age-ttl">
+  <div class="sec-lbl">Who Can Participate</div>
+  <h2 class="sec-ttl" id="age-ttl">Three Age Categories</h2>
+  <p class="sec-sub">Every round is age-appropriate — fair, focused and built for that stage of development.</p>
+  <div class="age-row">
+    <div class="age-band">
+      <div class="age-num">6–8</div>
+      <div class="age-desc"><strong>Junior Stars</strong><br>Early explorers building their first competitive confidence.</div>
+    </div>
+    <div class="age-band">
+      <div class="age-num">9–11</div>
+      <div class="age-desc"><strong>Rising Champions</strong><br>Developing their craft with focused, coached performances.</div>
+    </div>
+    <div class="age-band">
+      <div class="age-num">12–15</div>
+      <div class="age-desc"><strong>Senior Stars</strong><br>Competing at the highest level for national recognition.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- How It Works -->
+<section class="section" aria-labelledby="hiw-ttl">
+  <div class="sec-lbl">The Journey</div>
+  <h2 class="sec-ttl" id="hiw-ttl">How It Works</h2>
+  <p class="sec-sub">From registration to grand finale — a step-by-step journey to the national stage.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">01</div>
+      <div>
+        <div class="step-title">Register &amp; Choose Your Category</div>
+        <p class="step-sub">Register free and pick the category your child loves. Submit at ₹250 + GST per contest. WKC subscribers participate free.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <div>
+        <div class="step-title">Level 1 &amp; Level 2 — Online Rounds</div>
+        <p class="step-sub">Two qualifying rounds run July–November. Submit entries online — videos, writing or audio depending on category. Expert judges score and shortlist.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <div>
+        <div class="step-title">Semi-Finals — Physical Event</div>
+        <p class="step-sub">Top performers from Level 2 qualify for physical semi-finals. Free entry for all qualifiers. Held across major cities.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">04</div>
+      <div>
+        <div class="step-title">Grand Finale — Pune</div>
+        <p class="step-sub">The national final. January–February. The country's best young talent compete for the KPL title, ₹2 Lakh in prizes, and a magazine feature.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Pricing -->
+<section class="section" aria-labelledby="price-ttl">
+  <div class="sec-lbl">Investment</div>
+  <h2 class="sec-ttl" id="price-ttl">Simple, Fair Pricing</h2>
+  <p class="sec-sub">One low fee per contest — and free for WKC subscribers.</p>
+  <div class="pricing-card">
+    <div class="pr-lbl">Per Contest</div>
+    <div class="pr-price">&#x20B9;250 <span style="font-size:22px;color:var(--ink-soft);font-weight:500">+ GST</span></div>
+    <div class="pr-sub">Free for WKC subscribers &nbsp;&#x00B7;&nbsp; Semi-finals &amp; finals: free for qualifiers &nbsp;&#x00B7;&nbsp; Schools: contact for group rates</div>
+    <div class="pr-items">
+      <div class="pr-item"><span class="pr-bullet">&#x2726;</span>Expert judge evaluation with written feedback</div>
+      <div class="pr-item"><span class="pr-bullet">&#x2726;</span>Digital participation certificate for every child</div>
+      <div class="pr-item"><span class="pr-bullet">&#x2726;</span>Access to all qualifying rounds</div>
+      <div class="pr-item"><span class="pr-bullet">&#x2726;</span>Free semi-final &amp; final entry if qualified</div>
+    </div>
+    <a href="#register" class="btn-hero-cta" style="width:100%;max-width:300px">Register for KPL &#x2192;</a>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Rewards -->
+<section class="section" aria-labelledby="rw-ttl">
+  <div class="sec-lbl">What They Win</div>
+  <h2 class="sec-ttl" id="rw-ttl">Recognition at Every Level</h2>
+  <p class="sec-sub">Every child earns recognition — not just the winner.</p>
+  <div class="rewards-list">
+    <div class="reward">
+      <div class="reward-icon" aria-hidden="true">&#x1F4DC;</div>
+      <div><div class="reward-title">Digital Certificate</div><div class="reward-sub">For every child who participates</div></div>
+    </div>
+    <div class="reward">
+      <div class="reward-icon" aria-hidden="true">&#x1F3C5;</div>
+      <div><div class="reward-title">Physical Certificate + Medal</div><div class="reward-sub">For semi-finalists and finalists</div></div>
+    </div>
+    <div class="reward">
+      <div class="reward-icon" aria-hidden="true">&#x1F4F0;</div>
+      <div><div class="reward-title">Magazine Feature</div><div class="reward-sub">Published in the WKC Magazine</div></div>
+    </div>
+    <div class="reward">
+      <div class="reward-icon" aria-hidden="true">&#x1F381;</div>
+      <div><div class="reward-title">Prizes &amp; Gift Cards</div><div class="reward-sub">₹2 Lakh prize pool for finalists</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- FAQ -->
+<section class="section" aria-labelledby="faq-ttl">
+  <div class="sec-lbl">Questions &amp; Answers</div>
+  <h2 class="sec-ttl" id="faq-ttl">Frequently Asked Questions</h2>
+  <p class="sec-sub">Everything parents ask before registering.</p>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item">
+      <button class="faq-q">What is KPL?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">KPL (Kids Premier League) is India's largest all-India talent competition for children aged 6–15. It runs across 7 categories — art, Sanskrit, public speaking, poetry, handwriting, storytelling and dance — with online qualifying rounds and a physical grand finale.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is the registration free?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">Registration and interest submission is free. Each contest entry costs ₹250 + GST. WKC subscribers enter all contests for free. Semi-finals and finals are free for all qualifiers.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How are entries submitted?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">Entries are submitted online — video for performance categories (dance, speech, recitation), written/scanned for art and handwriting. Full instructions are provided after registration.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can my child enter multiple categories?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">Yes! Children can enter as many categories as they like. Each category is priced separately at ₹250 + GST per contest.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Are the judges qualified experts?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">Yes — all 100+ judges are domain experts: professional artists, educators, public speaking coaches, dancers and cultural experts. Each submission receives written individual feedback.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is KPL available outside India?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">Online rounds are open to children across all 10 countries where WKC operates. Physical semi-finals and finals are held in India.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Register Form -->
+<section class="section" id="register" aria-labelledby="reg-ttl">
+  <div class="reg-card">
+    <h2 class="rc-ttl" id="reg-ttl">Register for KPL</h2>
+    <p class="rc-sub">Free to register · Limited seats this season</p>
+    <form id="leadForm" autocomplete="on" novalidate>
+      <div class="field">
+        <label for="f-name">Parent's / Child's Name</label>
+        <input type="text" id="f-name" name="name" placeholder="Full name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-email">Email Address</label>
+        <input type="email" id="f-email" name="email" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="f-mobile">Mobile</label>
+          <input type="tel" id="f-mobile" name="mobile" placeholder="10-digit no." required autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-age">Child's Age</label>
+          <select id="f-age" name="age" required>
+            <option value="" disabled selected>Age</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-cat">Category Interest</label>
+        <select id="f-cat" name="category">
+          <option value="">Any / Not sure yet</option>
+          <option>Color Wizards</option>
+          <option>Shloka Scholars</option>
+          <option>Master Orator</option>
+          <option>Recite It!</option>
+          <option>Handwriting Champs</option>
+          <option>Tell Ur Tale</option>
+          <option>Dance Wizards</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">Register for KPL &#x2192;</button>
+      <div class="form-msg" id="formMsg" role="alert" aria-live="polite"></div>
+      <p class="rc-note">We'll never share your details. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="ftag">&#x201C;Where young stars shine.&#x201D;</p>
+  <nav class="flinks" aria-label="Footer navigation">
+    <a href="../">Home</a> &nbsp;&#x00B7;&nbsp; <a href="../kpl/">KPL</a> &nbsp;&#x00B7;&nbsp; <a href="../lcl/">LCL</a> &nbsp;&#x00B7;&nbsp; <a href="https://showcases.wizkidscarnival.com/">Showcases</a> &nbsp;&#x00B7;&nbsp; <a href="../about/">About</a><br>
+    <a href="#">Magazines</a> &nbsp;&#x00B7;&nbsp; <a href="#">Blog</a> &nbsp;&#x00B7;&nbsp; <a href="#">Results</a> &nbsp;&#x00B7;&nbsp; <a href="#">Contact</a><br>
+    <a href="#">Privacy</a> &nbsp;&#x00B7;&nbsp; <a href="#">Refunds</a> &nbsp;&#x00B7;&nbsp; <a href="#">Terms</a>
+  </nav>
+  <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
+</footer>
+
+<div class="sticky">
+  <div class="sticky-in">
+    <div><div class="st-ev">KPL Registration</div><div class="st-dt">₹250/contest · Ages 6–15</div></div>
+    <button class="st-btn" id="stickyBtn">Register &#x2192;</button>
+  </div>
+</div>
+<div class="spacer" aria-hidden="true"></div>
+
+<script>
+const SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+const ham=document.getElementById('navHam'),overlay=document.getElementById('navOverlay'),closeBtn=document.getElementById('navClose');
+ham.addEventListener('click',()=>{overlay.classList.add('open');ham.setAttribute('aria-expanded','true');});
+closeBtn.addEventListener('click',()=>{overlay.classList.remove('open');ham.setAttribute('aria-expanded','false');});
+document.querySelectorAll('.nav-overlay .ol').forEach(a=>a.addEventListener('click',()=>overlay.classList.remove('open')));
+
+const ageSel=document.getElementById('f-age');
+for(let a=6;a<=15;a++){const o=document.createElement('option');o.value=a;o.textContent=a;ageSel.appendChild(o);}
+
+document.getElementById('stickyBtn').addEventListener('click',()=>document.getElementById('register').scrollIntoView({behavior:'smooth',block:'start'}));
+
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+
+const form=document.getElementById('leadForm'),msg=document.getElementById('formMsg'),submitBtn=document.getElementById('submitBtn');
+form.addEventListener('submit',async(e)=>{
+  e.preventDefault();msg.className='form-msg';msg.textContent='';
+  const data={name:form.name.value.trim(),email:form.email.value.trim(),mobile:form.mobile.value.trim(),age:form.age.value,interest:'KPL',category:form.category?.value||'',timestamp:new Date().toISOString(),source:'kpl-page',page:'kpl'};
+  if(SHEET_ENDPOINT.startsWith("PASTE_")){msg.classList.add('show','err');msg.textContent="Form not connected yet.";return;}
+  submitBtn.disabled=true;submitBtn.textContent='Submitting…';
+  try{
+    await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
+    form.reset();msg.classList.add('show','ok');msg.textContent="🎉 Registered! We'll be in touch with next steps.";
+  }catch{msg.classList.add('show','err');msg.textContent="Something went wrong. Please try again.";}
+  finally{submitBtn.disabled=false;submitBtn.textContent='Register for KPL →';}
+});
+</script>
+</body>
+</html>

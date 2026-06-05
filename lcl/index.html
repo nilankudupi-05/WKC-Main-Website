@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>LCL — Little Champions League | WizKidsCarnival</title>
+<meta name="description" content="LCL — the Little Champions League by WizKidsCarnival. A gentle, confidence-first competition for kids aged 3–5. Every child is celebrated, every entry earns recognition." />
+<meta name="keywords" content="Little Champions League LCL, kids competition ages 3 to 5, toddler talent contest, preschool talent show India, WizKidsCarnival LCL, young children competition" />
+<link rel="canonical" href="https://www.wizkidscarnival.com/lcl/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.wizkidscarnival.com/lcl/" />
+<meta property="og:title" content="LCL — Little Champions League | WizKidsCarnival" />
+<meta property="og:description" content="A nurturing, confidence-first stage for kids aged 3–5. Gentle competitions where every child is celebrated." />
+<meta property="og:image" content="https://www.wizkidscarnival.com/og-lcl.jpg" />
+<meta property="og:site_name" content="WizKidsCarnival" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="LCL — Little Champions League | WizKidsCarnival" />
+<meta name="twitter:description" content="A nurturing, confidence-first stage for kids aged 3–5. Every child is celebrated." />
+<meta name="twitter:image" content="https://www.wizkidscarnival.com/og-lcl.jpg" />
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"EventSeries",
+  "name":"LCL — Little Champions League",
+  "description":"A nurturing, confidence-first competition for children aged 3–5. Participation-based with certificates for every child.",
+  "organizer":{"@type":"Organization","name":"WizKidsCarnival","url":"https://www.wizkidscarnival.com"},
+  "audience":{"@type":"EducationalAudience","educationalRole":"student"},
+  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.wizkidscarnival.com"},
+    {"@type":"ListItem","position":2,"name":"LCL","item":"https://www.wizkidscarnival.com/lcl/"}
+  ]}
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf6ef;--bg-2:#f5ebe0;
+  --ink:#231a17;--ink-soft:#6b5d54;--ink-light:#9e8f86;
+  --coral:#e8503f;--coral-l:#ff6b5e;
+  --teal:#0f9b8e;--teal-d:#0a766b;
+  --gold:#c8962a;--gold-l:#e0aa3a;
+  --card:#fff;
+  --line:rgba(35,26,23,0.08);--line-2:rgba(35,26,23,0.14);
+  --shadow:0 6px 24px rgba(35,26,23,0.08);
+  --shadow-lg:0 16px 48px rgba(35,26,23,0.13);
+  --nav-h:64px;
+  /* LCL accent — warm gold */
+  --accent:var(--gold);--accent-l:var(--gold-l);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.32;z-index:0;pointer-events:none}
+.blob-1{width:480px;height:480px;background:radial-gradient(circle,#fde8c0,transparent 70%);top:-140px;right:-120px}
+.blob-2{width:380px;height:380px;background:radial-gradient(circle,#ffd6cf,transparent 70%);bottom:20%;left:-120px}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--nav-h);display:flex;align-items:center;padding:0 22px;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(253,246,239,0.92);backdrop-filter:blur(16px);border-color:var(--line);box-shadow:0 4px 20px rgba(35,26,23,0.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1160px;margin:0 auto}
+.nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px}
+.nav-logo .dot{width:11px;height:11px;border-radius:50%;background:var(--gold-l);box-shadow:0 0 0 4px rgba(200,150,42,0.18);flex-shrink:0}
+.nav-desk{display:none;align-items:center;gap:28px}
+.nav-desk a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-desk a:hover,.nav-desk a.active{color:var(--gold)}
+.nav-desk a.nav-cta{background:var(--gold);color:#fff;padding:10px 22px;border-radius:100px;font-weight:700;transition:background .2s}
+.nav-desk a.nav-cta:hover{background:var(--gold-l)}
+.nav-ham{background:none;border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.nav-ham span{width:18px;height:2px;background:var(--ink);display:block;border-radius:2px}
+.nav-overlay{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.nav-overlay.open{opacity:1;pointer-events:all}
+.nav-close{position:absolute;top:18px;right:20px;background:none;border:1px solid var(--line-2);border-radius:10px;padding:10px 16px;font-size:14px;color:var(--ink);cursor:pointer;font-family:inherit;font-weight:700}
+.nav-links{display:flex;flex-direction:column;align-items:center;gap:26px}
+.nav-links a{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-apply{margin-top:8px;background:var(--gold) !important;color:#fff !important;padding:14px 40px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif !important;font-size:16px !important;font-weight:800 !important}
+
+/* Hero — warm gold tones */
+.page-hero{position:relative;z-index:1;padding:calc(var(--nav-h) + 60px) 22px 64px;text-align:center;background:linear-gradient(165deg,rgba(200,150,42,0.08) 0%,transparent 55%)}
+.hero-inner{max-width:720px;margin:0 auto}
+.breadcrumb{font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:7px}
+.breadcrumb a{color:var(--ink-soft);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+.bc-sep{color:var(--ink-light);opacity:.5}
+.page-tag{font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);opacity:.9;margin-bottom:12px}
+.page-hero h1{font-family:'Fraunces',serif;font-size:clamp(34px,7.5vw,60px);font-weight:600;line-height:1.05;letter-spacing:-1.5px;color:var(--ink);margin-bottom:16px}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.page-hero .sub{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:520px;margin:0 auto 30px;font-weight:500}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.hchip{font-size:13px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:100px;padding:8px 16px;box-shadow:var(--shadow)}
+.hchip b{color:var(--gold)}
+.btn-hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:#fff;font-size:16px;font-weight:800;padding:16px 36px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;box-shadow:0 8px 24px rgba(200,150,42,0.34);transition:transform .1s,background .2s}
+.btn-hero-cta:hover{background:var(--gold-l)}
+.btn-hero-cta:active{transform:scale(.97)}
+
+/* Sections */
+.section{position:relative;z-index:1;padding:68px 22px;max-width:1160px;margin:0 auto}
+.sec-lbl{text-align:center;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:10px}
+.sec-ttl{text-align:center;font-family:'Fraunces',serif;font-size:clamp(26px,5vw,40px);font-weight:600;letter-spacing:-1px;color:var(--ink);line-height:1.1;margin-bottom:12px}
+.sec-sub{text-align:center;font-size:16px;color:var(--ink-soft);margin:0 auto 42px;line-height:1.65;max-width:520px;font-weight:500}
+.divider{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 0;position:relative;z-index:1}
+.divider .dl{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider .dl.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.divider .dg{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.6}
+
+/* Why LCL pillars */
+.pillars{display:flex;flex-direction:column;gap:16px}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.pillar:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.pillar::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px;border-radius:22px 0 0 22px}
+.pillar:nth-child(1)::before{background:var(--gold)}
+.pillar:nth-child(2)::before{background:var(--coral)}
+.pillar:nth-child(3)::before{background:var(--teal)}
+.pillar-icon{font-size:34px;margin-bottom:12px;display:block;line-height:1}
+.pillar-title{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:8px}
+.pillar-desc{font-size:15px;color:var(--ink-soft);line-height:1.7;font-weight:500}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cat-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 18px;box-shadow:var(--shadow);transition:transform .2s}
+.cat-card:hover{transform:translateY(-3px)}
+.cat-icon{font-size:32px;margin-bottom:10px;display:block;line-height:1}
+.cat-name{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.cat-desc{font-size:13px;color:var(--ink-soft);line-height:1.6;font-weight:500}
+.cat-badge{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;color:var(--gold);background:rgba(200,150,42,0.1);padding:4px 11px;border-radius:100px}
+
+/* Steps */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;align-items:flex-start;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.step-n{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--gold);opacity:.35;flex-shrink:0;line-height:1;width:44px;text-align:center}
+.step-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.step-sub{font-size:14px;color:var(--ink-soft);line-height:1.7;font-weight:500}
+
+/* Promise banner */
+.promise{background:linear-gradient(135deg,rgba(200,150,42,0.08),rgba(232,80,63,0.05));border:1px solid rgba(200,150,42,0.22);border-radius:24px;padding:36px 28px;text-align:center;position:relative;overflow:hidden}
+.promise::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.promise-title{font-family:'Fraunces',serif;font-size:clamp(22px,5vw,34px);font-weight:600;color:var(--ink);letter-spacing:-.5px;margin-bottom:10px;line-height:1.15}
+.promise-title em{font-style:italic;color:var(--gold)}
+.promise-sub{font-size:15px;color:var(--ink-soft);line-height:1.65;max-width:480px;margin:0 auto;font-weight:500}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q .arr{font-size:12px;color:var(--ink-light);transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-q .arr{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;padding:0 20px;font-size:14px;color:var(--ink-soft);line-height:1.75;font-weight:500}
+.faq-item.open .faq-a{max-height:300px;padding:0 20px 18px}
+
+/* Register form */
+.reg-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px 26px;box-shadow:var(--shadow-lg);max-width:500px;margin:0 auto;position:relative}
+.reg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border-radius:24px 24px 0 0}
+.rc-ttl{font-family:'Fraunces',serif;font-size:26px;font-weight:600;letter-spacing:-.5px;text-align:center;margin-bottom:6px}
+.rc-sub{font-size:13px;color:var(--ink-soft);text-align:center;margin-bottom:24px;font-weight:500}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.field input,.field select{width:100%;background:var(--bg);border:1.5px solid var(--line-2);border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;font-weight:500;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
+.field input:focus,.field select:focus{border-color:var(--gold);background:#fff}
+.field input::placeholder{color:#c4b5ac}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23231a17' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--gold);color:#fff;font-size:16px;font-weight:800;padding:15px 24px;border-radius:14px;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(200,150,42,0.34);margin-top:6px;transition:transform .1s,background .2s;font-family:inherit}
+.btn-submit:hover{background:var(--gold-l)}
+.btn-submit:active{transform:scale(.98)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed}
+.form-msg{text-align:center;font-size:13px;margin-top:13px;line-height:1.5;display:none;font-weight:600;padding:10px 14px;border-radius:10px}
+.form-msg.show{display:block}
+.form-msg.ok{color:#0a766b;background:rgba(15,155,142,0.08)}
+.form-msg.err{color:var(--coral);background:rgba(232,80,63,0.07)}
+.rc-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:12px;opacity:.65}
+
+/* Footer */
+.footer{position:relative;z-index:1;background:var(--ink);padding:52px 24px 36px;text-align:center}
+.ftag{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:rgba(255,255,255,0.75);margin-bottom:22px}
+.flinks{font-size:13px;color:rgba(255,255,255,0.38);line-height:2.3;font-weight:600}
+.flinks a{color:rgba(255,255,255,0.38);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,0.7)}
+.fwkc{margin-top:18px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(253,246,239,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--line-2);padding:10px 16px 14px}
+.sticky-in{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:480px;margin:0 auto}
+.st-ev{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--ink)}
+.st-dt{font-size:12px;color:var(--ink-soft);margin-top:2px;font-weight:600}
+.st-btn{background:var(--gold);color:#fff;font-size:14px;font-weight:800;padding:12px 24px;border-radius:100px;border:none;font-family:inherit;cursor:pointer}
+.spacer{height:78px}
+@media(min-width:700px){
+  .pillars{flex-direction:row}
+  .pillar{flex:1}
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+  .nav-desk{display:flex}
+  .nav-ham{display:none}
+  .sticky{display:none}
+  .spacer{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true">
+  <button class="nav-close" id="navClose">&#x2715; Close</button>
+  <nav class="nav-links">
+    <a href="../" class="ol">Home</a>
+    <a href="../kpl/" class="ol">KPL</a>
+    <a href="../lcl/" class="ol">LCL</a>
+    <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
+    <a href="../about/" class="ol">About</a>
+    <a href="#register" class="ol nav-apply">Register Free</a>
+  </nav>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo"><span class="dot" aria-hidden="true"></span>WizKidsCarnival</a>
+    <nav class="nav-desk" aria-label="Primary navigation">
+      <a href="../kpl/">KPL</a>
+      <a href="../lcl/" class="active">LCL</a>
+      <a href="https://showcases.wizkidscarnival.com/">Showcases</a>
+      <a href="../about/">About</a>
+      <a href="#">Blog</a>
+      <a href="#register" class="nav-cta">Register Free</a>
+    </nav>
+    <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<header class="page-hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="../">Home</a><span class="bc-sep">&#x203A;</span><span>LCL</span>
+    </div>
+    <div class="page-tag">Little Champions League</div>
+    <h1>The first step for <em>little stars.</em></h1>
+    <p class="sub">A nurturing, confidence-first league for India's youngest creators, aged 3–5. No pressure. No losers. Every child walks away celebrated.</p>
+    <div class="hero-chips">
+      <span class="hchip">Ages <b>3–5</b></span>
+      <span class="hchip"><b>Confidence</b>-First</span>
+      <span class="hchip">Every child <b>certified</b></span>
+      <span class="hchip"><b>Expert</b>-guided</span>
+    </div>
+    <a href="#register" class="btn-hero-cta">Register for LCL &#x2192;</a>
+  </div>
+</header>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Why LCL -->
+<section class="section" aria-labelledby="why-ttl">
+  <div class="sec-lbl">Why LCL</div>
+  <h2 class="sec-ttl" id="why-ttl">Built for the youngest creators</h2>
+  <p class="sec-sub">Ages 3–5 are the most formative years. LCL gives every young child a safe, joyful first experience of being celebrated for what they love.</p>
+  <div class="pillars">
+    <div class="pillar">
+      <span class="pillar-icon" aria-hidden="true">&#x1F331;</span>
+      <div class="pillar-title">Age-Appropriate Everything</div>
+      <p class="pillar-desc">Activities, judging criteria and expectations are designed specifically for children aged 3–5 — no adult standards applied to young minds.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon" aria-hidden="true">&#x1F468;&#x200D;&#x1F3EB;</span>
+      <div class="pillar-title">Expert-Guided</div>
+      <p class="pillar-desc">Every submission is reviewed by WKC's trained faculty — and every child receives warm, encouraging written feedback, not just a score.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon" aria-hidden="true">&#x1F3C6;</span>
+      <div class="pillar-title">Every Child Is Celebrated</div>
+      <p class="pillar-desc">There are no losers in LCL. Participation certificates go to every child. Because at age 3–5, trying is the achievement.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Categories -->
+<section class="section" aria-labelledby="cat-ttl">
+  <div class="sec-lbl">What Your Child Can Do</div>
+  <h2 class="sec-ttl" id="cat-ttl">Little Stages for Big Talents</h2>
+  <p class="sec-sub">Every activity is chosen to be joyful, achievable and meaningful for young children.</p>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F3A8;</span>
+      <div class="cat-name">Little Artists</div>
+      <div class="cat-desc">Draw, colour or paint anything they love. Judged gently on expression and effort, not technique.</div>
+      <span class="cat-badge">Ages 3–5</span>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F399;&#xFE0F;</span>
+      <div class="cat-name">Little Speakers</div>
+      <div class="cat-desc">A short poem, a nursery rhyme or a few sentences about their favourite thing. Confidence before content.</div>
+      <span class="cat-badge">Ages 3–5</span>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F483;</span>
+      <div class="cat-name">Little Movers</div>
+      <div class="cat-desc">Dance to their favourite song — any style, any moves. Pure joy captured on video.</div>
+      <span class="cat-badge">Ages 3–5</span>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F4D6;</span>
+      <div class="cat-name">Little Storytellers</div>
+      <div class="cat-desc">Tell a short story — real or imaginary — in their own words. Imagination is the only requirement.</div>
+      <span class="cat-badge">Ages 3–5</span>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon" aria-hidden="true">&#x1F3B5;</span>
+      <div class="cat-name">Little Singers</div>
+      <div class="cat-desc">Sing a favourite song — any language, any genre. Judged on spirit, not perfection.</div>
+      <span class="cat-badge">Ages 3–5</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- How It Works -->
+<section class="section" aria-labelledby="hiw-ttl">
+  <div class="sec-lbl">The Journey</div>
+  <h2 class="sec-ttl" id="hiw-ttl">How LCL Works</h2>
+  <p class="sec-sub">Three simple steps — from home to celebrated champion.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">01</div>
+      <div>
+        <div class="step-title">Register Free &amp; Pick a Category</div>
+        <p class="step-sub">Choose the activity your child loves most. Registration is free and takes two minutes.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <div>
+        <div class="step-title">Submit at Home</div>
+        <p class="step-sub">Record a short video or photograph your child's work at home — no venue, no pressure. Submit through the WKC portal.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <div>
+        <div class="step-title">Every Child Gets Celebrated</div>
+        <p class="step-sub">Our faculty reviews every entry with care and warmth. Every child receives a personalised certificate and written encouragement — not a ranking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Promise -->
+<section class="section" aria-labelledby="promise-ttl">
+  <div class="promise">
+    <h2 class="promise-title" id="promise-ttl">The LCL Promise:<br><em>No child leaves without a reason to smile.</em></h2>
+    <p class="promise-sub">We don't hand out consolation prizes. We recognise every young child's courage to try — because that is the real achievement at age 3–5.</p>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- FAQ -->
+<section class="section" aria-labelledby="faq-ttl">
+  <div class="sec-lbl">Questions &amp; Answers</div>
+  <h2 class="sec-ttl" id="faq-ttl">Frequently Asked Questions</h2>
+  <p class="sec-sub">What parents ask about LCL.</p>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item">
+      <button class="faq-q">Is LCL competitive?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">No. LCL is participation-first. There are no rankings or elimination rounds. Every child who submits receives a certificate and personalised feedback. The goal is to celebrate effort and build early confidence.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What age is LCL for?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">LCL is designed for children aged 3–5. For children aged 6 and above, we recommend KPL (Kids Premier League) which is structured competitively across 7 categories.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Does my child need to prepare a lot?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">Not at all. LCL is designed so that the submission can be recorded at home in minutes. No special costumes, sets or preparation required. If your child draws a picture or dances to their favourite song — that's the entry.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How is a 3-year-old judged fairly?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">All LCL entries are reviewed by WKC's early childhood educators using age-appropriate rubrics focused on expression, effort and engagement — not technical skill. Our judges are trained to look for joy and confidence, not perfection.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What does my child receive?<span class="arr">&#x25BE;</span></button>
+      <div class="faq-a">Every child receives a digital participation certificate with their name, category and a personalised note from the judge. Top entries may receive physical certificates, medals and potential magazine features.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Register -->
+<section class="section" id="register" aria-labelledby="reg-ttl">
+  <div class="reg-card">
+    <h2 class="rc-ttl" id="reg-ttl">Register for LCL</h2>
+    <p class="rc-sub">Free to register · Every child celebrated</p>
+    <form id="leadForm" autocomplete="on" novalidate>
+      <div class="field">
+        <label for="f-name">Parent's Name</label>
+        <input type="text" id="f-name" name="name" placeholder="Full name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-email">Email Address</label>
+        <input type="email" id="f-email" name="email" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="f-mobile">Mobile</label>
+          <input type="tel" id="f-mobile" name="mobile" placeholder="10-digit no." required autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-age">Child's Age</label>
+          <select id="f-age" name="age" required>
+            <option value="" disabled selected>Age</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-cat">Category Interest</label>
+        <select id="f-cat" name="category">
+          <option value="">Any / Not sure yet</option>
+          <option>Little Artists</option>
+          <option>Little Speakers</option>
+          <option>Little Movers</option>
+          <option>Little Storytellers</option>
+          <option>Little Singers</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">Register for LCL &#x2192;</button>
+      <div class="form-msg" id="formMsg" role="alert" aria-live="polite"></div>
+      <p class="rc-note">We'll never share your details. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="ftag">&#x201C;Where young stars shine.&#x201D;</p>
+  <nav class="flinks" aria-label="Footer navigation">
+    <a href="../">Home</a> &nbsp;&#x00B7;&nbsp; <a href="../kpl/">KPL</a> &nbsp;&#x00B7;&nbsp; <a href="../lcl/">LCL</a> &nbsp;&#x00B7;&nbsp; <a href="https://showcases.wizkidscarnival.com/">Showcases</a> &nbsp;&#x00B7;&nbsp; <a href="../about/">About</a><br>
+    <a href="#">Magazines</a> &nbsp;&#x00B7;&nbsp; <a href="#">Blog</a> &nbsp;&#x00B7;&nbsp; <a href="#">Results</a> &nbsp;&#x00B7;&nbsp; <a href="#">Contact</a><br>
+    <a href="#">Privacy</a> &nbsp;&#x00B7;&nbsp; <a href="#">Refunds</a> &nbsp;&#x00B7;&nbsp; <a href="#">Terms</a>
+  </nav>
+  <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
+</footer>
+
+<div class="sticky">
+  <div class="sticky-in">
+    <div><div class="st-ev">LCL Registration</div><div class="st-dt">Ages 3–5 · Every child celebrated</div></div>
+    <button class="st-btn" id="stickyBtn">Register &#x2192;</button>
+  </div>
+</div>
+<div class="spacer" aria-hidden="true"></div>
+
+<script>
+const SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+const ham=document.getElementById('navHam'),overlay=document.getElementById('navOverlay'),closeBtn=document.getElementById('navClose');
+ham.addEventListener('click',()=>{overlay.classList.add('open');ham.setAttribute('aria-expanded','true');});
+closeBtn.addEventListener('click',()=>{overlay.classList.remove('open');ham.setAttribute('aria-expanded','false');});
+document.querySelectorAll('.nav-overlay .ol').forEach(a=>a.addEventListener('click',()=>overlay.classList.remove('open')));
+document.getElementById('stickyBtn').addEventListener('click',()=>document.getElementById('register').scrollIntoView({behavior:'smooth',block:'start'}));
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{const item=btn.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');});
+});
+const form=document.getElementById('leadForm'),msg=document.getElementById('formMsg'),submitBtn=document.getElementById('submitBtn');
+form.addEventListener('submit',async(e)=>{
+  e.preventDefault();msg.className='form-msg';msg.textContent='';
+  const data={name:form.name.value.trim(),email:form.email.value.trim(),mobile:form.mobile.value.trim(),age:form.age.value,interest:'LCL',category:form.category?.value||'',timestamp:new Date().toISOString(),source:'lcl-page',page:'lcl'};
+  if(SHEET_ENDPOINT.startsWith("PASTE_")){msg.classList.add('show','err');msg.textContent="Form not connected yet.";return;}
+  submitBtn.disabled=true;submitBtn.textContent='Submitting…';
+  try{
+    await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
+    form.reset();msg.classList.add('show','ok');msg.textContent="🎉 Registered! We'll be in touch with next steps for your little champion.";
+  }catch{msg.classList.add('show','err');msg.textContent="Something went wrong. Please try again.";}
+  finally{submitBtn.disabled=false;submitBtn.textContent='Register for LCL →';}
+});
+</script>
+</body>
+</html>

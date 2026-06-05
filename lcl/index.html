@@ -32,6 +32,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<!-- ═══ GA4 — replace G-XXXXXXXXXX with your Measurement ID ═══ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XXXXXXXXXX',{send_page_view:true});
+</script>
+<!-- ═══ Mixpanel — replace YOUR_MIXPANEL_TOKEN ═══ -->
+<script>
+(function(c,a){window.mixpanel=a;var b,d,e,f;a._i=[];a.init=function(b,c,d){function e(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof d?g=a[d]=[]:d="mixpanel";g.people=g.people||[];g.toString=function(a){var b="mixpanel";"mixpanel"!==d&&(b+="."+d);a||(b+=" (stub)");return b};g.people.toString=function(){return g.toString(1)+".people (stub)"};f="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");for(e=0;e<f.length;e++)e(g,f[e]);a._i.push([b,c,d])};a.__SV=1.1;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)})(document,window.mixpanel||[]);
+mixpanel.init("YOUR_MIXPANEL_TOKEN",{track_pageview:true,persistence:"cookie"});
+</script>
 <style>
 :root{
   --bg:#fdf6ef;--bg-2:#f5ebe0;
@@ -176,7 +189,13 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
 .flinks a{color:rgba(255,255,255,0.38);text-decoration:none;transition:color .2s}
 .flinks a:hover{color:rgba(255,255,255,0.7)}
 .fwkc{margin-top:18px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
-.sticky{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(253,246,239,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--line-2);padding:10px 16px 14px}
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(253,246,239,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--line-2);padding:10px 16px 14px;transition:transform .3s ease,opacity .3s ease}
+.sticky.form-visible{transform:translateY(110%);opacity:0;pointer-events:none}
+.fsoc{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px}
+.fsoc a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);transition:background .2s,color .2s;text-decoration:none}
+.fsoc a:hover{background:rgba(255,255,255,0.16);color:#fff}
+.fsoc a.ig:hover{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+.fsoc svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .sticky-in{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:480px;margin:0 auto}
 .st-ev{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--ink)}
 .st-dt{font-size:12px;color:var(--ink-soft);margin-top:2px;font-weight:600}
@@ -434,6 +453,23 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
 
 <footer class="footer">
   <p class="ftag">&#x201C;Where young stars shine.&#x201D;</p>
+  <nav class="fsoc" aria-label="Social media">
+    <a href="https://facebook.com/wizkidscarnival" aria-label="Facebook" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://instagram.com/wizkidscarnival" aria-label="Instagram" rel="noopener noreferrer" class="ig">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://youtube.com/@wizkidscarnival" aria-label="YouTube" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:rgba(35,26,23,0.9)"/></svg>
+    </a>
+    <a href="https://twitter.com/wizkidscarnival" aria-label="X / Twitter" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://linkedin.com/company/wizkidscarnival" aria-label="LinkedIn" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </nav>
   <nav class="flinks" aria-label="Footer navigation">
     <a href="../">Home</a> &nbsp;&#x00B7;&nbsp; <a href="../kpl/">KPL</a> &nbsp;&#x00B7;&nbsp; <a href="../lcl/">LCL</a> &nbsp;&#x00B7;&nbsp; <a href="https://showcases.wizkidscarnival.com/">Showcases</a> &nbsp;&#x00B7;&nbsp; <a href="../about/">About</a><br>
     <a href="#">Magazines</a> &nbsp;&#x00B7;&nbsp; <a href="#">Blog</a> &nbsp;&#x00B7;&nbsp; <a href="#">Results</a> &nbsp;&#x00B7;&nbsp; <a href="#">Contact</a><br>
@@ -442,7 +478,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
   <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
 </footer>
 
-<div class="sticky">
+<div class="sticky" id="stickyBar" role="complementary" aria-label="Register CTA">
   <div class="sticky-in">
     <div><div class="st-ev">LCL Registration</div><div class="st-dt">Ages 3–5 · Every child celebrated</div></div>
     <button class="st-btn" id="stickyBtn">Register &#x2192;</button>
@@ -452,26 +488,70 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
 
 <script>
 const SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+
+/* ── Analytics wrapper ── */
+const analytics = {
+  track(name, params={}) {
+    try { if (window.gtag) gtag('event', name, {...params}); } catch(e) {}
+    try { if (window.mixpanel && mixpanel.track) mixpanel.track(name, {...params, page:'lcl'}); } catch(e) {}
+  }
+};
+
+/* Nav scroll */
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
 const ham=document.getElementById('navHam'),overlay=document.getElementById('navOverlay'),closeBtn=document.getElementById('navClose');
 ham.addEventListener('click',()=>{overlay.classList.add('open');ham.setAttribute('aria-expanded','true');});
 closeBtn.addEventListener('click',()=>{overlay.classList.remove('open');ham.setAttribute('aria-expanded','false');});
 document.querySelectorAll('.nav-overlay .ol').forEach(a=>a.addEventListener('click',()=>overlay.classList.remove('open')));
-document.getElementById('stickyBtn').addEventListener('click',()=>document.getElementById('register').scrollIntoView({behavior:'smooth',block:'start'}));
-document.querySelectorAll('.faq-q').forEach(btn=>{
-  btn.addEventListener('click',()=>{const item=btn.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');});
+
+/* Sticky hide when form visible */
+const stickyBar=document.getElementById('stickyBar');
+if(stickyBar){
+  new IntersectionObserver(([e])=>stickyBar.classList.toggle('form-visible',e.isIntersecting),{threshold:0.1})
+    .observe(document.getElementById('register'));
+}
+document.getElementById('stickyBtn').addEventListener('click',()=>{
+  document.getElementById('register').scrollIntoView({behavior:'smooth',block:'start'});
+  analytics.track('sticky_cta_click',{program:'LCL'});
 });
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen){item.classList.add('open');analytics.track('faq_opened',{question:btn.textContent.trim().slice(0,60)});}
+  });
+});
+
+/* Scroll depth */
+const scrollMarks={25:false,50:false,75:false,90:false};
+window.addEventListener('scroll',()=>{
+  const pct=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);
+  [25,50,75,90].forEach(m=>{if(!scrollMarks[m]&&pct>=m){scrollMarks[m]=true;analytics.track('scroll_depth',{depth:m});}});
+},{passive:true});
+
+/* page_landed */
+analytics.track('page_landed',{page:'lcl',referrer:document.referrer||'direct'});
+
+/* Form */
 const form=document.getElementById('leadForm'),msg=document.getElementById('formMsg'),submitBtn=document.getElementById('submitBtn');
+let formTouched=false;
+form.addEventListener('focusin',()=>{if(!formTouched){formTouched=true;analytics.track('form_first_touch',{page:'lcl'});}});
 form.addEventListener('submit',async(e)=>{
   e.preventDefault();msg.className='form-msg';msg.textContent='';
   const data={name:form.name.value.trim(),email:form.email.value.trim(),mobile:form.mobile.value.trim(),age:form.age.value,interest:'LCL',category:form.category?.value||'',timestamp:new Date().toISOString(),source:'lcl-page',page:'lcl'};
+  analytics.track('form_submit_attempt',{interest:'LCL',age:data.age});
   if(SHEET_ENDPOINT.startsWith("PASTE_")){msg.classList.add('show','err');msg.textContent="Form not connected yet.";return;}
   submitBtn.disabled=true;submitBtn.textContent='Submitting…';
   try{
     await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
     form.reset();msg.classList.add('show','ok');msg.textContent="🎉 Registered! We'll be in touch with next steps for your little champion.";
-  }catch{msg.classList.add('show','err');msg.textContent="Something went wrong. Please try again.";}
+    analytics.track('generate_lead',{interest:'LCL',age:data.age});
+    if(window.gtag) gtag('event','generate_lead',{currency:'INR',value:0});
+  }catch{msg.classList.add('show','err');msg.textContent="Something went wrong. Please try again.";analytics.track('form_submit_error',{page:'lcl'});}
   finally{submitBtn.disabled=false;submitBtn.textContent='Register for LCL →';}
 });
 </script>

@@ -11,37 +11,36 @@
 <meta property="og:url" content="https://www.wizkidscarnival.com/" />
 <meta property="og:title" content="WizKidsCarnival — India's Biggest Stage for Young Talent" />
 <meta property="og:description" content="A global platform for kids aged 3–18 to perform, compete and grow. KPL · LCL · Showcases. 500K+ kids across India and 10 countries." />
-<meta property="og:image" content="https://www.wizkidscarnival.com/og-home.jpg" />
+<meta property="og:image" content="https://showcases.wizkidscarnival.com/_astro/SLIDE-1.CIc0t7Ll_EO6fU.webp" />
 <meta property="og:locale" content="en_IN" />
 <meta property="og:site_name" content="WizKidsCarnival" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="WizKidsCarnival — India's Biggest Stage for Young Talent" />
 <meta name="twitter:description" content="KPL · LCL · Showcases. A global platform for 500K+ kids aged 3–18." />
-<meta name="twitter:image" content="https://www.wizkidscarnival.com/og-home.jpg" />
+<meta name="twitter:image" content="https://showcases.wizkidscarnival.com/_astro/SLIDE-1.CIc0t7Ll_EO6fU.webp" />
 <script type="application/ld+json">{
   "@context":"https://schema.org",
   "@graph":[
-    {
-      "@type":"Organization",
-      "name":"WizKidsCarnival",
-      "url":"https://www.wizkidscarnival.com",
-      "logo":"https://www.wizkidscarnival.com/logo.svg",
-      "description":"India's premier stage for young talent aged 3–18. KPL, LCL and Showcases across 500+ cities and 10 countries.",
-      "sameAs":["https://facebook.com/wizkidscarnival","https://instagram.com/wizkidscarnival","https://youtube.com/@wizkidscarnival"],
-      "founder":[
-        {"@type":"Person","name":"Mansi"},
-        {"@type":"Person","name":"Abhishek"},
-        {"@type":"Person","name":"Vinayak"}
-      ]
-    },
-    {
-      "@type":"WebSite",
-      "name":"WizKidsCarnival",
-      "url":"https://www.wizkidscarnival.com",
-      "potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.wizkidscarnival.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}
-    }
+    {"@type":"Organization","name":"WizKidsCarnival","url":"https://www.wizkidscarnival.com","logo":"https://www.wizkidscarnival.com/logo.svg","description":"India's premier stage for young talent aged 3–18. KPL, LCL and Showcases across 500+ cities and 10 countries.","foundingDate":"2018","sameAs":["https://facebook.com/wizkidscarnival","https://instagram.com/wizkidscarnival","https://youtube.com/@wizkidscarnival"],"founder":[{"@type":"Person","name":"Mansi"},{"@type":"Person","name":"Abhishek"},{"@type":"Person","name":"Vinayak"}]},
+    {"@type":"WebSite","name":"WizKidsCarnival","url":"https://www.wizkidscarnival.com","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.wizkidscarnival.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}
   ]
 }</script>
+
+<!-- ═══ GA4 — replace G-XXXXXXXXXX with your Measurement ID ═══ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XXXXXXXXXX',{send_page_view:true});
+</script>
+
+<!-- ═══ Mixpanel — replace YOUR_MIXPANEL_TOKEN ═══ -->
+<script>
+(function(c,a){window.mixpanel=a;var b,d,e,f;a._i=[];a.init=function(b,c,d){function e(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof d?g=a[d]=[]:d="mixpanel";g.people=g.people||[];g.toString=function(a){var b="mixpanel";"mixpanel"!==d&&(b+="."+d);a||(b+=" (stub)");return b};g.people.toString=function(){return g.toString(1)+".people (stub)"};f="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");for(e=0;e<f.length;e++)e(g,f[e]);a._i.push([b,c,d])};a.__SV=1.1;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)})(document,window.mixpanel||[]);
+mixpanel.init("YOUR_MIXPANEL_TOKEN",{track_pageview:true,persistence:"cookie"});
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
@@ -57,7 +56,6 @@
   --shadow:0 6px 24px rgba(35,26,23,0.08);
   --shadow-lg:0 16px 48px rgba(35,26,23,0.13);
   --ticker-h:34px;--nav-h:64px;
-  --r:14px;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
@@ -69,12 +67,12 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
 .blob-2{width:420px;height:420px;background:radial-gradient(circle,#c5eeea,transparent 70%);top:45%;left:-160px}
 .blob-3{width:350px;height:350px;background:radial-gradient(circle,#fde8c0,transparent 70%);bottom:10%;right:-80px}
 
-/* Ticker */
+/* Ticker — seamless: content is doubled in JS; -50% = 1 full original width */
 .ticker{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--ink);height:var(--ticker-h);overflow:hidden;display:flex;align-items:center}
-.ttrack{display:flex;width:max-content;animation:roll 36s linear infinite}
-.ti{padding:0 22px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.75);white-space:nowrap}
+.ttrack{display:flex;width:max-content;animation:roll 44s linear infinite;will-change:transform;transform:translateZ(0)}
+.ti{padding:0 22px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.65);white-space:nowrap}
 .ti .dot{color:var(--coral-ll);margin:0 4px}
-@keyframes roll{to{transform:translateX(-50%)}}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* Nav */
 .nav{position:fixed;top:var(--ticker-h);left:0;right:0;z-index:50;height:var(--nav-h);display:flex;align-items:center;padding:0 22px;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
@@ -82,15 +80,13 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
 .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1160px;margin:0 auto}
 .nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px}
 .nav-logo .dot{width:11px;height:11px;border-radius:50%;background:var(--coral-l);box-shadow:0 0 0 4px rgba(255,107,94,0.15);flex-shrink:0}
-.nav-desk{display:none;align-items:center;gap:28px}
+.nav-desk{display:none;align-items:center;gap:26px}
 .nav-desk a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;transition:color .2s}
 .nav-desk a:hover{color:var(--coral)}
 .nav-desk a.nav-cta{background:var(--ink);color:#fff;padding:10px 22px;border-radius:100px;font-weight:700;transition:background .2s}
 .nav-desk a.nav-cta:hover{background:var(--coral)}
 .nav-ham{background:none;border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;cursor:pointer;display:flex;flex-direction:column;gap:4px}
 .nav-ham span{width:18px;height:2px;background:var(--ink);display:block;border-radius:2px}
-
-/* Nav overlay */
 .nav-overlay{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
 .nav-overlay.open{opacity:1;pointer-events:all}
 .nav-close{position:absolute;top:18px;right:20px;background:none;border:1px solid var(--line-2);border-radius:10px;padding:10px 16px;font-size:14px;color:var(--ink);cursor:pointer;font-family:inherit;font-weight:700}
@@ -99,46 +95,53 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
 .nav-links a:hover{color:var(--coral)}
 .nav-apply{margin-top:8px;background:var(--coral) !important;color:#fff !important;padding:14px 40px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif !important;font-size:16px !important;font-weight:800 !important}
 
-/* Hero */
-.hero{position:relative;z-index:1;padding:calc(var(--ticker-h) + var(--nav-h) + 48px) 22px 60px;background:linear-gradient(165deg,rgba(90,15,5,0.06) 0%,transparent 55%)}
-.hero-grid{display:flex;flex-direction:column;gap:40px;width:100%;max-width:1160px;margin:0 auto;align-items:center}
-.hero-copy{text-align:center;max-width:620px}
-.pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line-2);border-radius:100px;padding:7px 16px;font-size:12px;font-weight:700;color:var(--teal-d);margin-bottom:22px;box-shadow:var(--shadow)}
+/* ── Hero ── */
+.hero{position:relative;z-index:1;padding:calc(var(--ticker-h) + var(--nav-h) + 36px) 22px 52px;background:linear-gradient(165deg,rgba(90,15,5,0.06) 0%,transparent 55%)}
+.hero-grid{display:flex;flex-direction:column;gap:32px;width:100%;max-width:1160px;margin:0 auto;align-items:center}
+
+/* P0 #1 — on mobile: form first, copy second */
+.hero-copy{order:2;text-align:center;max-width:620px}
+.lead-card{order:1;width:100%;max-width:440px}
+
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line-2);border-radius:100px;padding:7px 16px;font-size:12px;font-weight:700;color:var(--teal-d);margin-bottom:16px;box-shadow:var(--shadow)}
 .pill .live{width:7px;height:7px;border-radius:50%;background:var(--coral-l);box-shadow:0 0 0 3px rgba(255,107,94,0.22);animation:blink 1.6s ease-in-out infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
-h1.h-headline{font-family:'Fraunces',serif;font-size:clamp(36px,8vw,64px);font-weight:600;line-height:1.04;letter-spacing:-1.5px;color:var(--ink);margin-bottom:18px}
+h1.h-headline{font-family:'Fraunces',serif;font-size:clamp(32px,7.5vw,64px);font-weight:600;line-height:1.04;letter-spacing:-1.5px;color:var(--ink);margin-bottom:12px}
 h1.h-headline em{font-style:italic;color:var(--coral)}
-.h-sub{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:480px;margin:0 auto 26px;font-weight:500}
-.h-trustline{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:center}
+
+/* P2 #7 — trim mobile copy: one line sub + compact trust chips */
+.h-sub-mobile{font-size:15px;line-height:1.5;color:var(--ink-soft);margin:0 auto 16px;font-weight:500}
+.h-sub-full{display:none;font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:480px;margin:0 auto 22px;font-weight:500}
+.h-trustline{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin-bottom:8px}
 .h-chip{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink-soft)}
-.h-chip b{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--ink)}
+.h-chip b{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--ink)}
 .h-chip .ic{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0}
 
-/* Lead form */
-.lead-card{width:100%;max-width:440px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px 26px;box-shadow:var(--shadow-lg);position:relative}
+/* Lead form card */
+.lead-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 24px 24px;box-shadow:var(--shadow-lg);position:relative}
 .lc-flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--coral);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:6px 18px;border-radius:100px;white-space:nowrap;box-shadow:0 6px 18px rgba(232,80,63,0.38)}
-.lc-ttl{font-family:'Fraunces',serif;font-size:24px;font-weight:600;letter-spacing:-.5px;text-align:center;margin-top:12px;margin-bottom:4px;line-height:1.15}
-.lc-seats{font-size:13px;color:var(--ink-soft);text-align:center;margin-bottom:22px;font-weight:500}
+.lc-ttl{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-.5px;text-align:center;margin-top:10px;margin-bottom:4px;line-height:1.15}
+.lc-seats{font-size:13px;color:var(--ink-soft);text-align:center;margin-bottom:18px;font-weight:500}
 .lc-seats b{color:var(--coral)}
-.field{margin-bottom:14px}
-.field label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:.2px}
-.field input,.field select{width:100%;background:var(--bg);border:1.5px solid var(--line-2);border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;font-weight:500;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:5px;letter-spacing:.2px}
+.field input,.field select{width:100%;background:var(--bg);border:1.5px solid var(--line-2);border-radius:12px;padding:12px 14px;font-size:15px;font-family:inherit;font-weight:500;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
 .field input:focus,.field select:focus{border-color:var(--coral);background:#fff}
 .field input::placeholder{color:#c4b5ac}
 .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23231a17' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
 .btn-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--coral);color:#fff;font-size:16px;font-weight:800;padding:15px 24px;border-radius:14px;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(232,80,63,0.34);margin-top:6px;transition:transform .1s,background .2s;font-family:inherit}
 .btn-submit:hover{background:var(--coral-l)}
 .btn-submit:active{transform:scale(.98)}
 .btn-submit:disabled{opacity:.6;cursor:not-allowed}
-.form-msg{text-align:center;font-size:13px;margin-top:13px;line-height:1.5;display:none;font-weight:600;padding:10px 14px;border-radius:10px}
+.form-msg{text-align:center;font-size:13px;margin-top:11px;line-height:1.5;display:none;font-weight:600;padding:10px 14px;border-radius:10px}
 .form-msg.show{display:block}
 .form-msg.ok{color:#0a766b;background:rgba(15,155,142,0.08)}
 .form-msg.err{color:var(--coral);background:rgba(232,80,63,0.07)}
-.lc-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:12px;opacity:.65}
+.lc-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:10px;opacity:.65}
 
 /* Section base */
-.section{position:relative;z-index:1;padding:72px 22px;max-width:1160px;margin:0 auto}
+.section{position:relative;z-index:1;padding:68px 22px;max-width:1160px;margin:0 auto}
 .sec-lbl{text-align:center;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--coral);opacity:.8;margin-bottom:10px}
 .sec-ttl{text-align:center;font-family:'Fraunces',serif;font-size:clamp(28px,5.5vw,44px);font-weight:600;letter-spacing:-1px;color:var(--ink);line-height:1.1;margin-bottom:12px}
 .sec-sub{text-align:center;font-size:16px;color:var(--ink-soft);margin:0 auto 42px;line-height:1.65;max-width:520px;font-weight:500}
@@ -147,38 +150,51 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
 .divider .dl.r{background:linear-gradient(90deg,var(--gold),transparent)}
 .divider .dg{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.6}
 
-/* Trusted By */
+/* P1 #4 — Trust logos */
 .trust-band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:1}
-.trust-lbl{font-family:'Cinzel',serif;text-align:center;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);opacity:.6;margin-bottom:20px}
-.trust-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}
-.trust-chip{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--ink);opacity:.5;padding:8px 20px;background:var(--card);border:1px solid var(--line);border-radius:100px}
+.trust-lbl{font-family:'Cinzel',serif;text-align:center;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);opacity:.6;margin-bottom:22px}
+.trust-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 24px}
+.logo-fig{margin:0;display:flex;align-items:center;justify-content:center}
+.logo-fig img{max-height:28px;width:auto;filter:grayscale(1);opacity:.45;transition:filter .25s,opacity .25s;display:block;color:var(--ink)}
+.logo-fig img:hover{filter:grayscale(0);opacity:.85}
+.logo-fig .logo-fb{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--ink);opacity:.42;letter-spacing:.5px}
+
+/* P6 — Photo band */
+.photo-band{position:relative;z-index:1;overflow:hidden;height:300px}
+.photo-band-img{width:100%;height:300px;object-fit:cover;object-position:center 25%;display:block}
+.photo-band-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(35,26,23,0.1) 0%,rgba(35,26,23,0.62) 100%);display:flex;align-items:flex-end;padding:28px 22px}
+.photo-quote{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(16px,3vw,24px);color:#fff;max-width:640px;line-height:1.4;opacity:.95}
 
 /* Stats */
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 18px;text-align:center;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 16px;text-align:center;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
 .stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .stat-num{font-family:'Fraunces',serif;font-size:clamp(30px,7vw,42px);font-weight:700;color:var(--coral);line-height:1;letter-spacing:-1px}
 .stat:nth-child(2n) .stat-num{color:var(--teal)}
 .stat:nth-child(3n) .stat-num{color:var(--gold)}
 .stat-lbl{font-size:13px;font-weight:600;color:var(--ink-soft);margin-top:9px}
 
+/* P2 #9 — Investor strip */
+.inv-strip{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin-top:22px;font-size:12px;color:var(--ink-soft);font-weight:600;letter-spacing:.3px;opacity:.55}
+.inv-strip .sep{opacity:.35}
+
 /* Programs */
 .prog-list{display:flex;flex-direction:column;gap:20px}
-.prog{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.prog{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
 .prog:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.prog-bar{height:4px;border-radius:100px;width:52px;margin-bottom:22px}
+.prog-bar{height:4px;border-radius:100px;width:52px;margin-bottom:20px}
 .prog:nth-child(1) .prog-bar{background:var(--coral)}
 .prog:nth-child(2) .prog-bar{background:var(--gold)}
 .prog:nth-child(3) .prog-bar{background:var(--teal)}
 .prog-head{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
-.prog-tag{font-family:'Fraunces',serif;font-size:30px;font-weight:700;letter-spacing:-1px;color:var(--ink);line-height:1}
+.prog-tag{font-family:'Fraunces',serif;font-size:28px;font-weight:700;letter-spacing:-1px;color:var(--ink);line-height:1}
 .prog-badge{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-left:auto}
 .prog:nth-child(1) .prog-badge{background:rgba(15,155,142,0.1);color:var(--teal-d)}
 .prog:nth-child(2) .prog-badge{background:rgba(200,150,42,0.14);color:#8a6010}
 .prog:nth-child(3) .prog-badge{background:rgba(232,80,63,0.1);color:var(--coral)}
-.prog-full{font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:2px;color:var(--ink-soft);margin-bottom:14px;text-transform:uppercase}
-.prog-desc{font-size:15px;line-height:1.65;color:var(--ink-soft);margin-bottom:18px;font-weight:500}
-.prog-feats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.prog-full{font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:2px;color:var(--ink-soft);margin-bottom:12px;text-transform:uppercase}
+.prog-desc{font-size:15px;line-height:1.65;color:var(--ink-soft);margin-bottom:16px;font-weight:500}
+.prog-feats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
 .prog-feats span{font-size:12px;font-weight:700;color:var(--ink);background:var(--bg-2);border-radius:100px;padding:6px 14px}
 .prog-cta{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--coral);cursor:pointer;background:none;border:none;font-family:inherit;padding:0;transition:gap .18s}
 .prog:nth-child(2) .prog-cta{color:var(--gold)}
@@ -186,6 +202,16 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
 .prog-cta:hover{gap:14px}
 .prog-ext{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--teal);text-decoration:none;transition:gap .18s}
 .prog-ext:hover{gap:14px}
+
+/* P2 #8 — Teen callout band */
+.teen-band{position:relative;z-index:1;background:var(--ink);padding:52px 22px;text-align:center;overflow:hidden}
+.teen-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(200,150,42,0.12),transparent 70%);pointer-events:none}
+.teen-eyebrow{font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:12px}
+.teen-ttl{font-family:'Fraunces',serif;font-size:clamp(24px,5.5vw,40px);font-weight:600;color:#fff;line-height:1.1;letter-spacing:-1px;max-width:640px;margin:0 auto 14px;position:relative}
+.teen-ttl em{font-style:italic;color:var(--gold-l)}
+.teen-body{font-size:15px;color:rgba(255,255,255,0.68);font-weight:500;max-width:480px;margin:0 auto 26px;line-height:1.65;position:relative}
+.teen-cta{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(200,150,42,0.4);padding-bottom:3px;transition:gap .18s,color .2s;position:relative}
+.teen-cta:hover{gap:14px;color:var(--gold)}
 
 /* Testimonials */
 .tlist{display:flex;flex-direction:column;gap:18px}
@@ -196,44 +222,51 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
 .tname{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--ink)}
 .trole{font-size:13px;color:var(--ink-soft);margin-top:3px;font-weight:500}
 
-/* Final CTA */
-.fcta-wrap{position:relative;z-index:1;padding:0 22px 80px}
-.fcta{max-width:1160px;margin:0 auto;border-radius:32px;background:linear-gradient(135deg,#5a0a02,#8b1a06 40%,var(--coral) 100%);padding:64px 30px;text-align:center;overflow:hidden;position:relative}
-.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,200,120,0.15),transparent 70%)}
+/* P0 #3 — Final CTA: coral→gold, no maroon */
+.fcta-wrap{position:relative;z-index:1;padding:0 22px 72px}
+.fcta{max-width:1160px;margin:0 auto;border-radius:32px;background:linear-gradient(135deg,var(--coral-l),var(--coral),var(--gold));padding:64px 30px;text-align:center;overflow:hidden;position:relative}
+.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,255,255,0.12),transparent 70%);pointer-events:none}
 .fcta h2{font-family:'Fraunces',serif;font-size:clamp(26px,6vw,46px);font-weight:600;color:#fff;line-height:1.1;letter-spacing:-1px;max-width:600px;margin:0 auto 12px;position:relative}
-.fcta h2 em{font-style:italic;color:var(--gold-l)}
-.fcta p{font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:32px;font-weight:600;position:relative}
-.btn-fcta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#fff;color:var(--coral);font-size:16px;font-weight:800;padding:16px 40px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;box-shadow:0 10px 32px rgba(0,0,0,0.22);transition:transform .1s;position:relative}
+.fcta h2 em{font-style:italic}
+.fcta p{font-size:16px;color:rgba(255,255,255,0.88);margin-bottom:30px;font-weight:600;position:relative}
+.btn-fcta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#fff;color:var(--coral);font-size:16px;font-weight:800;padding:16px 40px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;box-shadow:0 10px 32px rgba(0,0,0,0.18);transition:transform .1s;position:relative}
 .btn-fcta:active{transform:scale(.97)}
 
-/* Footer */
+/* P1 #5 — Footer with real SVG icons */
 .footer{position:relative;z-index:1;background:var(--ink);padding:52px 24px 36px;text-align:center}
 .ftag{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:rgba(255,255,255,0.75);margin-bottom:22px}
 .fsoc{display:flex;justify-content:center;gap:12px;margin-bottom:22px}
-.fsoc a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;color:rgba(255,255,255,0.5);transition:color .2s,border-color .2s}
-.fsoc a:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
-.flinks{font-size:13px;color:rgba(255,255,255,0.38);line-height:2.3;font-weight:600}
-.flinks a{color:rgba(255,255,255,0.38);text-decoration:none;transition:color .2s}
-.flinks a:hover{color:rgba(255,255,255,0.7)}
+.fsoc a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;text-decoration:none;color:rgba(255,255,255,0.45);transition:color .2s,border-color .2s,background .2s}
+.fsoc a:hover{color:#fff;border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.08)}
+.fsoc a svg{width:17px;height:17px;fill:currentColor;display:block}
+.fsoc a.ig svg{fill:none;stroke:currentColor;stroke-width:2}
+.flinks{font-size:13px;color:rgba(255,255,255,0.35);line-height:2.4;font-weight:600}
+.flinks a{color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,0.75)}
 .fwkc{margin-top:18px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
 
-/* Sticky */
-.sticky{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(253,246,239,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--line-2);padding:10px 16px 14px}
+/* P0 #2 — Sticky: animated hide when form in view */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(253,246,239,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--line-2);padding:10px 16px 14px;transition:transform .3s ease,opacity .3s ease}
+.sticky.form-visible{transform:translateY(110%);opacity:0;pointer-events:none}
 .sticky-in{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:480px;margin:0 auto}
 .st-ev{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--ink)}
 .st-dt{font-size:12px;color:var(--ink-soft);margin-top:2px;font-weight:600}
 .st-btn{background:var(--coral);color:#fff;font-size:14px;font-weight:800;padding:12px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;cursor:pointer;border:none;font-family:inherit;box-shadow:0 6px 18px rgba(232,80,63,0.3)}
 .spacer{height:78px}
 
-/* Responsive */
+/* ── Desktop ── */
 @media(min-width:880px){
   .nav-desk{display:flex}
   .nav-ham{display:none}
+  /* Restore natural DOM order on desktop */
+  .hero-copy{order:1;text-align:left;flex:1}
+  .lead-card{order:2;flex-shrink:0}
   .hero-grid{flex-direction:row;justify-content:space-between;align-items:center;gap:60px}
-  .hero-copy{text-align:left;flex:1}
-  .hero-copy .h-sub{margin-left:0}
+  .hero-copy .h-sub-mobile{display:none}
+  .hero-copy .h-sub-full{display:block;margin-left:0}
   .hero-copy .h-trustline{justify-content:flex-start}
-  .lead-card{flex-shrink:0}
+  .hero-copy .pill{margin-bottom:22px}
+  h1.h-headline{margin-bottom:16px}
   .stats-grid{grid-template-columns:repeat(3,1fr)}
   .prog-list{flex-direction:row;align-items:stretch}
   .prog{flex:1}
@@ -241,17 +274,18 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
   .tcard{flex:1}
   .sticky{display:none}
   .spacer{display:none}
+  .photo-band{height:400px}
+  .photo-band-img{height:400px}
 }
 </style>
 </head>
 <body>
 
-<!-- Blobs -->
 <div class="blob blob-1" aria-hidden="true"></div>
 <div class="blob blob-2" aria-hidden="true"></div>
 <div class="blob blob-3" aria-hidden="true"></div>
 
-<!-- Nav Overlay -->
+<!-- Nav overlay — Blog removed from top nav (P3 #12) -->
 <div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <button class="nav-close" id="navClose">&#x2715; Close</button>
   <nav class="nav-links">
@@ -259,8 +293,7 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
     <a href="lcl/" class="ol">LCL</a>
     <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
     <a href="about/" class="ol">About</a>
-    <a href="#" class="ol">Blog</a>
-    <a href="#" class="ol nav-apply">Login / Register</a>
+    <a href="#register" class="ol nav-apply">Register Free</a>
   </nav>
 </div>
 
@@ -275,32 +308,37 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
     <span class="ti">LCL · Little Champions League<span class="dot">&#x00B7;</span></span>
     <span class="ti">Showcases · Solo Stage<span class="dot">&#x2726;</span></span>
     <span class="ti">India's Biggest Stage for Young Talent<span class="dot">&#x00B7;</span></span>
+    <span class="ti">Since 2018 · 5+ Years Running<span class="dot">&#x2726;</span></span>
   </div>
 </div>
 
-<!-- Navbar -->
+<!-- Navbar — Blog removed (P3 #12) -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><span class="dot" aria-hidden="true"></span>WizKidsCarnival</a>
+    <a href="/" class="nav-logo" data-nav="logo"><span class="dot" aria-hidden="true"></span>WizKidsCarnival</a>
     <nav class="nav-desk" aria-label="Primary navigation">
-      <a href="kpl/">KPL</a>
-      <a href="lcl/">LCL</a>
-      <a href="https://showcases.wizkidscarnival.com/">Showcases</a>
-      <a href="about/">About</a>
-      <a href="#">Blog</a>
-      <a href="#register" class="nav-cta">Login / Register</a>
+      <a href="kpl/" data-nav="kpl">KPL</a>
+      <a href="lcl/" data-nav="lcl">LCL</a>
+      <a href="https://showcases.wizkidscarnival.com/" data-nav="showcases">Showcases</a>
+      <a href="about/" data-nav="about">About</a>
+      <a href="#register" class="nav-cta" data-nav="register">Login / Register</a>
     </nav>
     <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- Hero -->
+<!-- ── Hero ── -->
+<!-- Mobile: form (order:1) renders above copy (order:2) -->
 <section class="hero" id="top">
   <div class="hero-grid">
+
+    <!-- Copy — order:2 on mobile, order:1 on desktop -->
     <div class="hero-copy">
       <div class="pill" role="status"><span class="live" aria-hidden="true"></span> KPL Registration Open &nbsp;&#x00B7;&nbsp; Limited Seats</div>
       <h1 class="h-headline">Let your child shine on India's <em>biggest stage.</em></h1>
-      <p class="h-sub">A global platform for kids aged 3–18 to perform, compete and grow — trusted by leading brands and India's best schools.</p>
+      <!-- P2 #7: mobile shows 1 line; desktop shows full -->
+      <p class="h-sub-mobile">Trusted by 500K+ families across India &amp; 10 countries.</p>
+      <p class="h-sub-full">A global platform for kids aged 3–18 to perform, compete and grow — trusted by leading brands and India's best schools.</p>
       <div class="h-trustline" aria-label="Key stats">
         <span class="h-chip"><span class="ic" aria-hidden="true"></span><b>500K+</b>&nbsp;Kids</span>
         <span class="h-chip"><span class="ic" aria-hidden="true"></span><b>500+</b>&nbsp;Cities</span>
@@ -309,6 +347,7 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
       </div>
     </div>
 
+    <!-- Lead form — order:1 on mobile = above fold -->
     <div class="lead-card" id="register">
       <div class="lc-flag">&#x2605; FREE TO REGISTER</div>
       <div class="lc-ttl">Reserve Your Child's Spot</div>
@@ -338,9 +377,9 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
           <label for="f-interest">Interested In</label>
           <select id="f-interest" name="interest" required>
             <option value="" disabled selected>Select a program</option>
-            <option value="KPL">KPL — Kids Premier League</option>
-            <option value="LCL">LCL — Little Champions League</option>
-            <option value="Showcases">Showcases — Solo Stage</option>
+            <option value="KPL">KPL — Kids Premier League (ages 6–15)</option>
+            <option value="LCL">LCL — Little Champions League (ages 3–5)</option>
+            <option value="Showcases">Showcases — Solo Stage (ages 6–18)</option>
             <option value="Not sure">Not sure yet</option>
           </select>
         </div>
@@ -349,28 +388,69 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
         <p class="lc-note">We'll never share your details. No spam, ever.</p>
       </form>
     </div>
+
   </div>
 </section>
 
-<!-- Trusted By -->
+<!-- P1 #4 — Trusted by with logo images -->
 <div class="trust-band">
-  <div class="section" style="padding-top:42px;padding-bottom:42px">
+  <div class="section" style="padding-top:40px;padding-bottom:40px">
     <div class="trust-lbl">Trusted by leading brands &amp; schools</div>
     <div class="trust-row" aria-label="Partner brands">
-      <span class="trust-chip">Sony</span>
-      <span class="trust-chip">McDonald's</span>
-      <span class="trust-chip">Swiggy Instamart</span>
-      <span class="trust-chip">Lexicon Group</span>
-      <span class="trust-chip">HDFC School</span>
-      <span class="trust-chip">Scholastic</span>
-      <span class="trust-chip">Luma World</span>
+      <!-- Replace /logos/*.svg with real brand assets. onerror shows text fallback. -->
+      <figure class="logo-fig">
+        <img src="/logos/sony.svg" alt="Sony" loading="lazy" height="28"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-fb" style="display:none">Sony</span>
+      </figure>
+      <figure class="logo-fig">
+        <img src="/logos/mcdonalds.svg" alt="McDonald's" loading="lazy" height="28"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-fb" style="display:none">McDonald's</span>
+      </figure>
+      <figure class="logo-fig">
+        <img src="/logos/swiggy.svg" alt="Swiggy Instamart" loading="lazy" height="28"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-fb" style="display:none">Swiggy</span>
+      </figure>
+      <figure class="logo-fig">
+        <img src="/logos/lexicon.svg" alt="Lexicon Group" loading="lazy" height="28"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-fb" style="display:none">Lexicon Group</span>
+      </figure>
+      <figure class="logo-fig">
+        <img src="/logos/hdfc-school.svg" alt="HDFC School" loading="lazy" height="28"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-fb" style="display:none">HDFC School</span>
+      </figure>
+      <figure class="logo-fig">
+        <img src="/logos/scholastic.svg" alt="Scholastic" loading="lazy" height="28"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-fb" style="display:none">Scholastic</span>
+      </figure>
+      <figure class="logo-fig">
+        <img src="/logos/luma-world.svg" alt="Luma World" loading="lazy" height="28"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-fb" style="display:none">Luma World</span>
+      </figure>
     </div>
+  </div>
+</div>
+
+<!-- P1 #6 — Performance photo band -->
+<div class="photo-band" role="img" aria-label="Child performing solo on stage at WizKidsCarnival">
+  <img class="photo-band-img"
+       src="https://showcases.wizkidscarnival.com/_astro/boy-singing-flipped.Bjithhe__1siL7l.webp"
+       alt="Child performing solo on stage — WizKidsCarnival"
+       loading="lazy">
+  <div class="photo-band-overlay">
+    <blockquote class="photo-quote">&#x201C;The moment they step out — and realise the audience is theirs.&#x201D;</blockquote>
   </div>
 </div>
 
 <div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
 
-<!-- Stats -->
+<!-- Stats + P2 #9 investor strip -->
 <section class="section" id="about" aria-labelledby="stats-ttl">
   <div class="sec-lbl">WKC at a Glance</div>
   <h2 class="sec-ttl" id="stats-ttl">A movement, not just a contest</h2>
@@ -379,19 +459,29 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
     <div class="stat"><div class="stat-num">500K+</div><div class="stat-lbl">Kids Community</div></div>
     <div class="stat"><div class="stat-num">500+</div><div class="stat-lbl">Cities</div></div>
     <div class="stat"><div class="stat-num">10</div><div class="stat-lbl">Countries</div></div>
-    <div class="stat"><div class="stat-num">250+</div><div class="stat-lbl">Contests</div></div>
+    <div class="stat"><div class="stat-num">250+</div><div class="stat-lbl">Contests Run</div></div>
     <div class="stat"><div class="stat-num">150+</div><div class="stat-lbl">Expert Judges</div></div>
     <div class="stat"><div class="stat-num">80K+</div><div class="stat-lbl">Proud Parents</div></div>
+  </div>
+  <!-- Investor credibility strip -->
+  <div class="inv-strip" aria-label="Credibility indicators">
+    <span>In operation since 2018</span>
+    <span class="sep">·</span>
+    <span>36 States &amp; UTs reached</span>
+    <span class="sep">·</span>
+    <span>Backed by Fortune 500 brands</span>
+    <span class="sep">·</span>
+    <span>NEP 2020 aligned</span>
   </div>
 </section>
 
 <div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
 
-<!-- Programs -->
+<!-- Programs — age ranges reconciled (P3 #11) -->
 <section class="section" aria-labelledby="prog-ttl">
   <div class="sec-lbl">Our Programs</div>
   <h2 class="sec-ttl" id="prog-ttl">Three stages to shine</h2>
-  <p class="sec-sub">Whatever your child loves — there's a stage built for them.</p>
+  <p class="sec-sub">Whatever your child loves — there's a stage built for them. Ages 3–18 across all programs.</p>
   <div class="prog-list">
 
     <article class="prog" id="kpl-card">
@@ -401,7 +491,7 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
         <span class="prog-badge">Open Now</span>
       </div>
       <div class="prog-full">Kids Premier League</div>
-      <p class="prog-desc">India's flagship all-India talent league. Kids compete across rounds and categories for national recognition, prizes worth ₹2 Lakhs, and a place among the country's brightest young stars.</p>
+      <p class="prog-desc">India's flagship all-India talent league. Kids compete across rounds and categories for national recognition and prizes worth ₹2 Lakhs.</p>
       <div class="prog-feats">
         <span>All-India</span><span>Multi-Round</span><span>Ages 6–15</span><span>7 Categories</span>
       </div>
@@ -415,9 +505,9 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
         <span class="prog-badge">Filling Fast</span>
       </div>
       <div class="prog-full">Little Champions League</div>
-      <p class="prog-desc">A nurturing, confidence-first league built for the youngest creators aged 3–5. Gentle competitions, expert encouragement, and a certificate every child earns — not just winners.</p>
+      <p class="prog-desc">A nurturing, confidence-first league built for the youngest creators. Gentle competitions, expert encouragement, and a certificate every child earns.</p>
       <div class="prog-feats">
-        <span>Ages 3–5</span><span>Confidence-First</span><span>Participation Certs</span>
+        <span>Ages 3–5</span><span>Confidence-First</span><span>Every child certified</span>
       </div>
       <button class="prog-cta" data-interest="LCL">Register for LCL &#x2192;</button>
     </article>
@@ -429,15 +519,23 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
         <span class="prog-badge">Seasonal</span>
       </div>
       <div class="prog-full">Solo Stage Experience</div>
-      <p class="prog-desc">A premium, non-competitive stage experience for ages 6–18. Two weekends of expert prep, a solo performance in a grand auditorium, a trophy, certificate and reel to keep forever.</p>
+      <p class="prog-desc">A premium, non-competitive stage for ages 6–18. Two weekends of expert prep, a solo performance in a grand auditorium, plus a trophy and performance reel.</p>
       <div class="prog-feats">
         <span>Non-Competitive</span><span>Live Auditorium</span><span>Ages 6–18</span>
       </div>
-      <a href="https://showcases.wizkidscarnival.com/" class="prog-ext">Learn more &#x2192;</a>
+      <a href="https://showcases.wizkidscarnival.com/" class="prog-ext" data-track="showcases-link">Learn more &#x2192;</a>
     </article>
 
   </div>
 </section>
+
+<!-- P2 #8 — Teen-facing section -->
+<div class="teen-band" id="compete">
+  <div class="teen-eyebrow">For 15–18 year olds</div>
+  <h2 class="teen-ttl">This isn't a kids' show.<br><em>This is your national stage.</em></h2>
+  <p class="teen-body">Showcases is open up to age 18. Compete solo on a professional auditorium stage, earn a performance reel, and build a portfolio that actually means something.</p>
+  <a href="https://showcases.wizkidscarnival.com/" class="teen-cta" data-track="teen-cta">Enter as a competitor &#x2192;</a>
+</div>
 
 <div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
 
@@ -447,32 +545,28 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
   <h2 class="sec-ttl" id="test-ttl">Loved by families across India</h2>
   <p class="sec-sub">Don't take our word for it — hear from parents who've watched their children grow.</p>
   <div class="tlist">
-
     <article class="tcard">
       <div class="tquote" aria-hidden="true">&#x201C;</div>
       <div class="tstars" aria-label="5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
       <p class="ttext">A personal note specific to each child's drawing is very touching. It shows the seriousness and care of the judges. Congratulations to your entire team for standing apart!</p>
       <div class="tname">Geetanjali</div><div class="trole">Mother of Medini</div>
     </article>
-
     <article class="tcard">
       <div class="tquote" aria-hidden="true">&#x201C;</div>
       <div class="tstars" aria-label="5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-      <p class="ttext">Stories getting published, certificates, vouchers… you've given the best experience and a lifetime memory to all the kids. Your love for children is so evident. Kudos to the team.</p>
+      <p class="ttext">Stories getting published, certificates, vouchers… you've given the best experience and a lifetime memory to all the kids. Your love for children is so evident.</p>
       <div class="tname">Shimpy</div><div class="trole">Mother of Dhruvika</div>
     </article>
-
     <article class="tcard">
       <div class="tquote" aria-hidden="true">&#x201C;</div>
       <div class="tstars" aria-label="5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-      <p class="ttext">It's wonderful to see so many talented children, and you're helping them express it. I loved how you created individual themes for each child's webpage — it's truly beautiful.</p>
+      <p class="ttext">It's wonderful to see so many talented children, and you're helping them express it. I loved how you created individual themes for each child's webpage — truly beautiful.</p>
       <div class="tname">Shabana</div><div class="trole">Mother of Anis</div>
     </article>
-
   </div>
 </section>
 
-<!-- Final CTA -->
+<!-- P0 #3 — Final CTA: coral→gold gradient, no maroon -->
 <div class="fcta-wrap">
   <section class="fcta" aria-labelledby="fcta-ttl">
     <h2 id="fcta-ttl">Your child's moment to truly <em>shine</em> is waiting.</h2>
@@ -481,26 +575,46 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
   </section>
 </div>
 
-<!-- Footer -->
+<!-- P1 #5 — Footer with proper SVG social icons -->
 <footer class="footer">
   <p class="ftag">&#x201C;Where young stars shine.&#x201D;</p>
-  <div class="fsoc" aria-label="Social media">
-    <a href="https://facebook.com/wizkidscarnival" aria-label="Facebook" rel="noopener noreferrer">&#x1F426;</a>
-    <a href="https://instagram.com/wizkidscarnival" aria-label="Instagram" rel="noopener noreferrer">&#x1F4F7;</a>
-    <a href="https://youtube.com/@wizkidscarnival" aria-label="YouTube" rel="noopener noreferrer">&#x25B6;</a>
-    <a href="https://twitter.com/wizkidscarnival" aria-label="Twitter / X" rel="noopener noreferrer">&#x1D54F;</a>
-    <a href="https://linkedin.com/company/wizkidscarnival" aria-label="LinkedIn" rel="noopener noreferrer">in</a>
-  </div>
+  <nav class="fsoc" aria-label="Social media">
+    <a href="https://facebook.com/wizkidscarnival" aria-label="Facebook" rel="noopener noreferrer" data-track="social-facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://instagram.com/wizkidscarnival" aria-label="Instagram" rel="noopener noreferrer" class="ig" data-track="social-instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://youtube.com/@wizkidscarnival" aria-label="YouTube" rel="noopener noreferrer" data-track="social-youtube">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:rgba(35,26,23,0.9)"/></svg>
+    </a>
+    <a href="https://twitter.com/wizkidscarnival" aria-label="X / Twitter" rel="noopener noreferrer" data-track="social-twitter">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://linkedin.com/company/wizkidscarnival" aria-label="LinkedIn" rel="noopener noreferrer" data-track="social-linkedin">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </nav>
   <nav class="flinks" aria-label="Footer navigation">
-    <a href="kpl/">KPL</a> &nbsp;&#x00B7;&nbsp; <a href="lcl/">LCL</a> &nbsp;&#x00B7;&nbsp; <a href="https://showcases.wizkidscarnival.com/">Showcases</a> &nbsp;&#x00B7;&nbsp; <a href="about/">About</a> &nbsp;&#x00B7;&nbsp; <a href="#">Judges</a><br>
-    <a href="#">Magazines</a> &nbsp;&#x00B7;&nbsp; <a href="#">Ebooks</a> &nbsp;&#x00B7;&nbsp; <a href="#">Blog</a> &nbsp;&#x00B7;&nbsp; <a href="#">Results</a> &nbsp;&#x00B7;&nbsp; <a href="#">Contact</a><br>
-    <a href="#">Privacy</a> &nbsp;&#x00B7;&nbsp; <a href="#">Refunds</a> &nbsp;&#x00B7;&nbsp; <a href="#">Terms</a>
+    <a href="kpl/">KPL</a> &nbsp;&#x00B7;&nbsp;
+    <a href="lcl/">LCL</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://showcases.wizkidscarnival.com/">Showcases</a> &nbsp;&#x00B7;&nbsp;
+    <a href="about/">About</a> &nbsp;&#x00B7;&nbsp;
+    <a href="#">Judges</a><br>
+    <a href="#">Magazines</a> &nbsp;&#x00B7;&nbsp;
+    <a href="#">Ebooks</a> &nbsp;&#x00B7;&nbsp;
+    <a href="#">Blog</a> &nbsp;&#x00B7;&nbsp;
+    <a href="#">Results</a> &nbsp;&#x00B7;&nbsp;
+    <a href="#">Contact</a><br>
+    <a href="#">Privacy</a> &nbsp;&#x00B7;&nbsp;
+    <a href="#">Refunds</a> &nbsp;&#x00B7;&nbsp;
+    <a href="#">Terms</a>
   </nav>
   <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
 </footer>
 
-<!-- Sticky mobile CTA -->
-<div class="sticky" role="complementary" aria-label="Register CTA">
+<!-- P0 #2 — Sticky: hidden when form in viewport -->
+<div class="sticky" id="stickyBar" role="complementary" aria-label="Register CTA">
   <div class="sticky-in">
     <div>
       <div class="st-ev">Register Free</div>
@@ -513,70 +627,202 @@ h1.h-headline em{font-style:italic;color:var(--coral)}
 
 <script>
 /* ============================================================
-   CONFIG — paste your Google Apps Script Web App URL below
+   CONFIG
    ============================================================ */
 const SHEET_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
-/* ============================================================ */
+// GA4 Measurement ID: replace G-XXXXXXXXXX in <head>
+// Mixpanel Token: replace YOUR_MIXPANEL_TOKEN in <head>
 
-// Ticker duplicate
-const tt=document.getElementById('ttrack');tt.innerHTML+=tt.innerHTML;
+/* ============================================================
+   ANALYTICS — unified wrapper for GA4 + Mixpanel
+   ============================================================ */
+const analytics = {
+  ga4(name, params) {
+    try { if (window.gtag) gtag('event', name, { ...params }); } catch(e) {}
+  },
+  mp(name, props) {
+    try { if (window.mixpanel && mixpanel.track) mixpanel.track(name, { ...props }); } catch(e) {}
+  },
+  track(name, props = {}) {
+    const payload = { page: 'home', url: location.href, ...props };
+    this.ga4(name, payload);
+    this.mp(name, payload);
+  }
+};
 
-// Nav scroll
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
-
-// Mobile menu
-const ham=document.getElementById('navHam'),overlay=document.getElementById('navOverlay'),closeBtn=document.getElementById('navClose');
-function openMenu(){overlay.classList.add('open');ham.setAttribute('aria-expanded','true');}
-function closeMenu(){overlay.classList.remove('open');ham.setAttribute('aria-expanded','false');}
-ham.addEventListener('click',openMenu);
-closeBtn.addEventListener('click',closeMenu);
-document.querySelectorAll('.nav-overlay .ol').forEach(a=>a.addEventListener('click',closeMenu));
-
-// Smooth scroll anchors
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
-
-// Age dropdown 3–18
-const ageSel=document.getElementById('f-age');
-for(let a=3;a<=18;a++){const o=document.createElement('option');o.value=a;o.textContent=a;ageSel.appendChild(o);}
-
-// Scroll-to-form
-function scrollToForm(){document.getElementById('register').scrollIntoView({behavior:'smooth',block:'center'});}
-document.getElementById('ctaScroll').addEventListener('click',scrollToForm);
-document.getElementById('stickyBtn').addEventListener('click',scrollToForm);
-document.querySelectorAll('.prog-cta').forEach(btn=>{
-  btn.addEventListener('click',()=>{document.getElementById('f-interest').value=btn.dataset.interest;scrollToForm();});
+/* Page landed */
+analytics.track('page_landed', {
+  referrer: document.referrer || 'direct',
+  utm_source: new URLSearchParams(location.search).get('utm_source') || '',
+  utm_medium: new URLSearchParams(location.search).get('utm_medium') || '',
+  utm_campaign: new URLSearchParams(location.search).get('utm_campaign') || ''
 });
 
-// Form submit
-const form=document.getElementById('leadForm');
-const msg=document.getElementById('formMsg');
-const submitBtn=document.getElementById('submitBtn');
-form.addEventListener('submit',async(e)=>{
+/* ── Scroll depth ── */
+const scrollMarks = { 25: false, 50: false, 75: false, 90: false };
+window.addEventListener('scroll', () => {
+  const pct = Math.round((window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight)) * 100);
+  [25, 50, 75, 90].forEach(mark => {
+    if (!scrollMarks[mark] && pct >= mark) {
+      scrollMarks[mark] = true;
+      analytics.track('scroll_depth', { depth: mark });
+    }
+  });
+}, { passive: true });
+
+/* ── Section viewed (IntersectionObserver) ── */
+const sectionObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && e.target.dataset.section) {
+      analytics.track('section_viewed', { section: e.target.dataset.section });
+      sectionObs.unobserve(e.target); // fire once
+    }
+  });
+}, { threshold: 0.3 });
+[
+  ['about', 'stats'],
+  ['kpl-card', 'programs'],
+  ['compete', 'teen_callout'],
+  ['test-ttl', 'testimonials']
+].forEach(([id, section]) => {
+  const el = document.getElementById(id);
+  if (el) { el.dataset.section = section; sectionObs.observe(el); }
+});
+
+/* ── Ticker duplicate (seamless loop) ── */
+const tt = document.getElementById('ttrack');
+tt.innerHTML += tt.innerHTML;
+
+/* ── Nav scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ── Mobile menu ── */
+const ham = document.getElementById('navHam'),
+      overlay = document.getElementById('navOverlay'),
+      closeBtn = document.getElementById('navClose');
+function openMenu() { overlay.classList.add('open'); ham.setAttribute('aria-expanded', 'true'); }
+function closeMenu() { overlay.classList.remove('open'); ham.setAttribute('aria-expanded', 'false'); }
+ham.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+document.querySelectorAll('.nav-overlay .ol').forEach(a => a.addEventListener('click', closeMenu));
+
+/* ── Nav click tracking ── */
+document.querySelectorAll('[data-nav]').forEach(el => {
+  el.addEventListener('click', () => analytics.track('nav_click', { label: el.dataset.nav }));
+});
+
+/* ── Smooth scroll anchors ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+/* ── Age dropdown 3–18 ── */
+const ageSel = document.getElementById('f-age');
+for (let a = 3; a <= 18; a++) {
+  const o = document.createElement('option');
+  o.value = a; o.textContent = a;
+  ageSel.appendChild(o);
+}
+
+/* ── P0 #2: Sticky bar — hide when form is visible ── */
+const stickyBar = document.getElementById('stickyBar');
+const formObs = new IntersectionObserver(entries => {
+  const visible = entries[0].isIntersecting;
+  stickyBar.classList.toggle('form-visible', visible);
+}, { threshold: 0.1 });
+formObs.observe(document.getElementById('register'));
+
+/* ── Scroll-to-form ── */
+function scrollToForm(source) {
+  document.getElementById('register').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  analytics.track('scroll_to_form', { source });
+}
+document.getElementById('ctaScroll').addEventListener('click', () => scrollToForm('final_cta'));
+document.getElementById('stickyBtn').addEventListener('click', () => scrollToForm('sticky_cta'));
+document.querySelectorAll('.prog-cta').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('f-interest').value = btn.dataset.interest;
+    scrollToForm('program_card');
+    analytics.track('program_cta_click', { program: btn.dataset.interest });
+  });
+});
+
+/* ── Showcases external link ── */
+document.querySelectorAll('[data-track]').forEach(el => {
+  el.addEventListener('click', () => analytics.track('link_click', { target: el.dataset.track }));
+});
+
+/* ── Form: first touch ── */
+let formTouched = false;
+document.getElementById('leadForm').querySelectorAll('input,select').forEach(el => {
+  el.addEventListener('focus', () => {
+    if (!formTouched) {
+      formTouched = true;
+      analytics.track('form_first_touch');
+    }
+  }, { once: false });
+});
+
+/* ── Interest dropdown change ── */
+document.getElementById('f-interest').addEventListener('change', function() {
+  analytics.track('form_program_selected', { program: this.value });
+});
+
+/* ── Form submit ── */
+const form = document.getElementById('leadForm');
+const msg = document.getElementById('formMsg');
+const submitBtn = document.getElementById('submitBtn');
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  msg.className='form-msg';msg.textContent='';
-  const data={
-    name:form.name.value.trim(),email:form.email.value.trim(),
-    mobile:form.mobile.value.trim(),age:form.age.value,
-    interest:form.interest.value,
-    timestamp:new Date().toISOString(),source:'home-hero',page:'index'
+  msg.className = 'form-msg'; msg.textContent = '';
+
+  const data = {
+    name:     form.name.value.trim(),
+    email:    form.email.value.trim(),
+    mobile:   form.mobile.value.trim(),
+    age:      form.age.value,
+    interest: form.interest.value,
+    timestamp: new Date().toISOString(),
+    source: 'home-hero',
+    page: 'index'
   };
-  if(SHEET_ENDPOINT.startsWith("PASTE_")){
-    msg.classList.add('show','err');
-    msg.textContent="Form not connected yet. Set SHEET_ENDPOINT in the code.";
+
+  analytics.track('form_submit_attempt', { interest: data.interest, age: data.age });
+
+  if (SHEET_ENDPOINT.startsWith("PASTE_")) {
+    msg.classList.add('show', 'err');
+    msg.textContent = "Form not connected yet — set SHEET_ENDPOINT in the code.";
+    analytics.track('form_submit_error', { reason: 'endpoint_missing' });
     return;
   }
-  submitBtn.disabled=true;submitBtn.textContent='Submitting…';
-  try{
-    await fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
-    form.reset();
-    msg.classList.add('show','ok');
-    msg.textContent="🎉 Your spot is reserved — we'll be in touch very soon!";
-  }catch(err){
-    msg.classList.add('show','err');
-    msg.textContent="Something went wrong. Please try again or message us on WhatsApp.";
-  }finally{
-    submitBtn.disabled=false;submitBtn.textContent='Register Free →';
+
+  submitBtn.disabled = true; submitBtn.textContent = 'Submitting…';
+
+  try {
+    await fetch(SHEET_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data)
+    });
+    form.reset(); formTouched = false;
+    msg.classList.add('show', 'ok');
+    msg.textContent = "🎉 Your spot is reserved — we'll be in touch very soon!";
+    analytics.track('form_submit_success', { interest: data.interest, age: data.age });
+    // GA4 specific lead event
+    analytics.ga4('generate_lead', { currency: 'INR', value: 0, interest: data.interest });
+  } catch (err) {
+    msg.classList.add('show', 'err');
+    msg.textContent = "Something went wrong. Please try again or message us on WhatsApp.";
+    analytics.track('form_submit_error', { reason: 'network', error: err.message });
+  } finally {
+    submitBtn.disabled = false; submitBtn.textContent = 'Register Free →';
   }
 });
 </script>

@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<!-- Unlinked from site nav. Dropping it from sitemap.xml does not
+     deindex it (robots.txt is Allow: /), so it needs noindex. -->
+<meta name="robots" content="noindex,follow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About WizKidsCarnival - Our Mission &amp; Founders</title>
 <meta name="description" content="WizKidsCarnival was built to Hero every child. Learn about our mission, our founders, and how we've built India's biggest stage for young talent across 500+ cities and 10 countries." />
 <meta name="keywords" content="WizKidsCarnival about, WKC founders, WizKidsCarnival mission, kids platform India founders, Mansi Abhishek Vinayak WKC" />
@@ -36,19 +39,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-<!-- ═══ GA4 - replace G-XXXXXXXXXX with your Measurement ID ═══ -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer=window.dataLayer||[];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js',new Date());
-  gtag('config','G-XXXXXXXXXX',{send_page_view:true});
-</script>
-<!-- ═══ Mixpanel - replace YOUR_MIXPANEL_TOKEN ═══ -->
-<script>
-(function(c,a){window.mixpanel=a;var b,d,e,f;a._i=[];a.init=function(b,c,d){function e(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof d?g=a[d]=[]:d="mixpanel";g.people=g.people||[];g.toString=function(a){var b="mixpanel";"mixpanel"!==d&&(b+="."+d);a||(b+=" (stub)");return b};g.people.toString=function(){return g.toString(1)+".people (stub)"};f="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");for(e=0;e<f.length;e++)e(g,f[e]);a._i.push([b,c,d])};a.__SV=1.1;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)})(document,window.mixpanel||[]);
-mixpanel.init("YOUR_MIXPANEL_TOKEN",{track_pageview:true,persistence:"cookie"});
-</script>
 <style>
 :root{
   --bg:#fdf6ef;--bg-2:#f5ebe0;
@@ -188,7 +178,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
     <a href="../lcl/" class="ol">LCL</a>
     <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
     <a href="../about/" class="ol">About</a>
-    <a href="../#register" class="ol nav-apply">Register Now</a>
+    <a href="https://app.wizkidscarnival.com/authentication" class="ol nav-apply">Signup / Login</a>
   </nav>
 </div>
 
@@ -201,7 +191,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
       <a href="https://showcases.wizkidscarnival.com/">Showcases</a>
       <a href="../about/" class="active">About</a>
       <a href="#">Blog</a>
-      <a href="../#register" class="nav-cta">Register Now</a>
+      <a href="https://app.wizkidscarnival.com/authentication" class="nav-cta">Signup / Login</a>
     </nav>
     <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -329,9 +319,6 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
     <a href="https://youtube.com/@wizkidscarnival" aria-label="YouTube" rel="noopener noreferrer">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:rgba(35,26,23,0.9)"/></svg>
     </a>
-    <a href="https://twitter.com/wizkidscarnival" aria-label="X / Twitter" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    </a>
     <a href="https://linkedin.com/company/wizkidscarnival" aria-label="LinkedIn" rel="noopener noreferrer">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
     </a>
@@ -339,7 +326,7 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
   <nav class="flinks" aria-label="Footer navigation">
     <a href="../">Home</a> &nbsp;&#x00B7;&nbsp; <a href="../kpl/">KPL</a> &nbsp;&#x00B7;&nbsp; <a href="../lcl/">LCL</a> &nbsp;&#x00B7;&nbsp; <a href="https://showcases.wizkidscarnival.com/">Showcases</a> &nbsp;&#x00B7;&nbsp; <a href="../about/">About</a><br>
     <a href="#">Magazines</a> &nbsp;&#x00B7;&nbsp; <a href="#">Blog</a> &nbsp;&#x00B7;&nbsp; <a href="#">Results</a> &nbsp;&#x00B7;&nbsp; <a href="#">Contact</a><br>
-    <a href="#">Privacy</a> &nbsp;&#x00B7;&nbsp; <a href="#">Refunds</a> &nbsp;&#x00B7;&nbsp; <a href="#">Terms</a>
+    <a href="https://wizkidscarnival.com/privacy-policy/">Privacy</a> &nbsp;&#x00B7;&nbsp; <a href="https://wizkidscarnival.com/refund-and-cancellations/">Refunds</a> &nbsp;&#x00B7;&nbsp; <a href="https://wizkidscarnival.com/terms-and-conditions/">Terms</a>
   </nav>
   <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
 </footer>

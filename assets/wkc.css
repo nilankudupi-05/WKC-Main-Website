@@ -1,0 +1,403 @@
+/* ============================================================
+   WizKidsCarnival — shared stylesheet
+   Loaded by index.html, kpl/index.html, lcl/index.html.
+   Page-specific rules stay in a small inline <style> per page.
+
+   Cache: referenced as wkc.css?v=YYYY-MM-DD. Bump the query in the
+   SAME commit as any change here — GitHub Pages caches assets hard,
+   and a stale CSS paired with new HTML is the failure mode.
+   ============================================================ */
+
+:root{
+  --bg:#fdf6ef;--bg-2:#f5ebe0;
+  --ink:#231a17;--ink-soft:#6b5d54;--ink-light:#9e8f86;
+  --coral:#e8503f;--coral-l:#ff6b5e;
+  --teal:#0f9b8e;--teal-d:#0a766b;
+  --gold:#c8962a;--gold-l:#e0aa3a;
+  --card:#ffffff;
+  --line:rgba(35,26,23,0.08);--line-2:rgba(35,26,23,0.14);
+  --shadow:0 6px 24px rgba(35,26,23,0.08);
+  --shadow-lg:0 16px 48px rgba(35,26,23,0.13);
+  --ticker-h:34px;--nav-h:64px;
+
+  /* ── Carnival accent layer — VALID ON DARK BANDS ONLY ──
+     Used by the hero booths and the closing CTA/footer. Do not use
+     these on the cream body; the --on-carnival-* text colours are
+     contrast-checked against --carnival, not against --bg. */
+  --carnival:#3a0a10;          /* deep maroon                        */
+  --carnival-l:#5a0e14;        /* gradient partner                   */
+  --carnival-d:#2a0709;        /* footer maroon                      */
+  --carnival-red:#b01b2e;      /* tent stripe + eyebrow              */
+  --carnival-gold:#e4b34c;     /* NOT --gold — see note below        */
+  --carnival-gold-l:#ffe1a6;   /* highlight                          */
+  --on-carnival:#fbefd6;       /* body text on maroon      8.8:1     */
+  --on-carnival-soft:#e7c9cd;  /* secondary on maroon      7.1:1     */
+  --on-carnival-dim:#c98b93;   /* tertiary on maroon       6.2:1     */
+
+  /* Two golds is DELIBERATE, not an oversight. --carnival-gold on
+     maroon measures 8.8:1; --gold (#c8962a) measures 6.4:1. Both pass
+     AA — the brighter gold is a vibrancy choice for the carnival
+     bands. Where the two would meet (the hero→divider seam) the
+     divider uses --carnival-gold so they don't read as a mistake. */
+
+  --booth-min-h:150px;
+
+  /* Per-program accent. Overridden by [data-program] below so the
+     LCL page re-skins with one attribute instead of forking 22 rules.
+     --accent-wash / --accent-shadow are pre-mixed rgba() of the same
+     hue: var() can't be interpolated inside rgba(), so they travel
+     with the accent rather than being derived from it. */
+  --accent:var(--coral);
+  --accent-l:var(--coral-l);
+  --accent-wash:rgba(232,80,63,0.10);
+  --accent-shadow:0 8px 24px rgba(232,80,63,0.32);
+}
+
+[data-program="kpl"]{
+  --accent:var(--coral);--accent-l:var(--coral-l);
+  --accent-wash:rgba(232,80,63,0.10);
+  --accent-shadow:0 8px 24px rgba(232,80,63,0.32);
+}
+[data-program="lcl"]{
+  --accent:var(--gold);--accent-l:var(--gold-l);
+  --accent-wash:rgba(200,150,42,0.10);
+  --accent-shadow:0 8px 24px rgba(200,150,42,0.34);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+}
+
+/* Blobs */
+.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.35;z-index:0;pointer-events:none}
+.blob-2{width:420px;height:420px;background:radial-gradient(circle,#c5eeea,transparent 70%);top:45%;left:-160px}
+.blob-3{width:350px;height:350px;background:radial-gradient(circle,#fde8c0,transparent 70%);bottom:10%;right:-80px}
+
+/* Ticker — seamless: content is doubled in JS; -50% = 1 full original width */
+.ticker{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--ink);height:var(--ticker-h);overflow:hidden;display:flex;align-items:center}
+.ttrack{display:flex;width:max-content;animation:roll 44s linear infinite;will-change:transform;transform:translateZ(0)}
+.ti{padding:0 22px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.65);white-space:nowrap}
+.ti .dot{color:#ff8a7e;margin:0 4px}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Nav */
+.nav{position:fixed;top:var(--ticker-h);left:0;right:0;z-index:50;height:var(--nav-h);display:flex;align-items:center;padding:0 22px;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(253,246,239,0.92);backdrop-filter:blur(16px);border-color:var(--line);box-shadow:0 4px 20px rgba(35,26,23,0.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1160px;margin:0 auto}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-logo img{height:36px;width:auto;display:block}
+.nav-desk{display:none;align-items:center;gap:26px}
+.nav-desk a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.nav-desk a:hover,.nav-desk a.active{color:var(--accent)}
+.nav-desk a.nav-cta{background:var(--ink);color:#fff;padding:10px 22px;border-radius:100px;font-weight:700;transition:background .2s}
+.nav-desk a.nav-cta:hover{background:var(--coral)}
+.nav-ham{background:none;border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.nav-ham span{width:18px;height:2px;background:var(--ink);display:block;border-radius:2px}
+.nav-overlay{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.nav-overlay.open{opacity:1;pointer-events:all}
+.nav-close{position:absolute;top:18px;right:20px;background:none;border:1px solid var(--line-2);border-radius:10px;padding:10px 16px;font-size:14px;color:var(--ink);cursor:pointer;font-family:inherit;font-weight:700}
+.nav-links{display:flex;flex-direction:column;align-items:center;gap:26px}
+.nav-links a{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-apply{margin-top:8px;background:var(--accent) !important;color:#fff !important;padding:14px 40px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif !important;font-size:16px !important;font-weight:800 !important}
+
+/* ══════════════════════════════════════════════════════════
+   BOOTH HERO (index) — three carnival tents on deep maroon.
+   The page opens dark so the carnival reads as a curtain-raise
+   rather than a dark band pasted mid-page; it closes dark again
+   at the final CTA so the two form a bookend.
+   ══════════════════════════════════════════════════════════ */
+
+/* Nav sits transparently over the maroon until scrolled, so its
+   default ink-on-cream colours have to invert while it's up there. */
+[data-hero="carnival"] .nav:not(.scrolled) .nav-desk a{color:var(--on-carnival-soft)}
+[data-hero="carnival"] .nav:not(.scrolled) .nav-desk a:hover{color:var(--carnival-gold)}
+[data-hero="carnival"] .nav:not(.scrolled) .nav-desk a.nav-cta{background:var(--carnival-gold);color:var(--carnival)}
+[data-hero="carnival"] .nav:not(.scrolled) .nav-desk a.nav-cta:hover{background:var(--carnival-gold-l)}
+[data-hero="carnival"] .nav:not(.scrolled) .nav-ham{border-color:rgba(228,179,76,.45)}
+[data-hero="carnival"] .nav:not(.scrolled) .nav-ham span{background:var(--carnival-gold)}
+
+.hero{
+  position:relative;z-index:1;
+  background:var(--carnival);
+  /* Both the ticker and the nav are position:fixed, so neither takes up
+     flow space — the hero starts at y=0 and must reserve BOTH heights
+     or the nav lands on top of the kicker. Height is otherwise driven
+     by content (see .booths below) rather than forced to fill the
+     viewport — with no dancer art to anchor it, a forced 100dvh just
+     produced dead space inside each tent. */
+  padding-top:calc(var(--ticker-h) + var(--nav-h));
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+
+.hero-kicker{text-align:center;padding:12px 24px 10px;color:var(--on-carnival)}
+.hero-kicker h1{font-family:'Fraunces',serif;font-size:clamp(23px,5.4vw,42px);font-weight:600;line-height:1.08;letter-spacing:-1px}
+.hero-kicker h1 em{font-style:italic;color:var(--carnival-gold)}
+.hero-kicker p{font-size:12.5px;line-height:1.45;color:var(--on-carnival-dim);max-width:320px;margin:6px auto 0;font-weight:500}
+
+/* ── The three booths ── */
+.booths{
+  display:grid;gap:0;
+  grid-template-areas:"show" "kpl" "lcl";
+  grid-template-rows:repeat(3,auto);
+}
+.booth{
+  position:relative;overflow:hidden;
+  min-height:var(--booth-min-h);
+  /* isolate lets .booth-art sit at z-index:-1 — above the booth's own
+     background but behind the copy — without .booth-body needing to be
+     positioned, which would otherwise trap the stretched-link overlay. */
+  isolation:isolate;
+  display:flex;flex-direction:column;justify-content:center;
+  color:var(--on-carnival);
+}
+.booth-show{grid-area:show;background:linear-gradient(180deg,var(--carnival-l),var(--carnival));--booth-accent:var(--carnival-gold)}
+.booth-kpl {grid-area:kpl; background:linear-gradient(180deg,#6d1119,var(--carnival-l));--booth-accent:var(--coral-l)}
+.booth-lcl {grid-area:lcl; background:linear-gradient(180deg,#7e1220,#5a0e14);--booth-accent:#3fc9ba}
+
+.booth-art{position:absolute;z-index:-1;pointer-events:none;user-select:none}
+/* The three ornaments ship in the source file's palette (purple cloud,
+   cyan flower, orange sparks) — built for its blue/orange booths. On
+   maroon they clash, so they're flattened to cream silhouettes and used
+   as soft texture rather than as literal objects. */
+.booth-art-a,.booth-art-b,.booth-art-c{filter:brightness(0) invert(1)}
+.booth-art-a{right:18px;top:46px;width:40px;opacity:.55;animation:wkcTwinkle 3s ease-in-out infinite}
+.booth-art-b{right:-14px;bottom:-10px;width:150px;opacity:.09;animation:wkcFloat 6s ease-in-out infinite}
+.booth-art-c{right:-10px;bottom:-6px;width:120px;opacity:.11;animation:wkcFloat 5s ease-in-out infinite}
+@keyframes wkcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes wkcTwinkle{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1.1)}}
+
+.booth-body{padding:26px 16px 26px 19px;max-width:76%;border-left:3px solid var(--booth-accent);margin-left:16px}
+.booth-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:8.5px;letter-spacing:1.8px;text-transform:uppercase;font-weight:800;color:var(--carnival);background:var(--booth-accent);padding:3px 8px;border-radius:20px}
+.booth-ttl{font-family:'Fraunces',serif;font-size:clamp(20px,5.2vw,30px);font-weight:600;line-height:1.02;letter-spacing:-.5px;margin-top:6px;color:#fff}
+.booth-acr{font-family:'Cinzel',serif;font-size:8.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--booth-accent);opacity:.9;margin-top:3px}
+.booth-desc{font-size:11.5px;color:var(--on-carnival-soft);margin-top:6px;line-height:1.4;font-weight:500}
+.booth-cta{display:inline-flex;align-items:center;gap:7px;margin-top:9px;font-size:12px;font-weight:800;color:var(--carnival);background:var(--on-carnival);padding:8px 14px;border-radius:22px;text-decoration:none;transition:gap .18s,background .2s}
+.booth-cta:hover{gap:12px;background:#fff}
+/* Stretched link — anchored to .booth, so the whole tent is clickable
+   while the accessible name stays just the CTA's own label. */
+.booth-cta::after{content:'';position:absolute;inset:0}
+.booth:hover .booth-cta{gap:12px;background:#fff}
+.booth-cta:focus-visible{outline:3px solid var(--carnival-gold);outline-offset:3px}
+
+/* Cream scallop — the page hangs down into the maroon. This is the
+   detail that makes the two designs read as one artifact. */
+.hero-scallop{
+  height:20px;margin-top:-1px;
+  background:radial-gradient(circle 20px at 50% 100%,var(--bg) 0 19.5px,transparent 20px) repeat-x;
+  background-size:40px 20px;
+}
+
+@media(min-width:640px){
+  .booths{
+    grid-template-areas:"show show" "kpl lcl";
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:minmax(240px,1.1fr) minmax(220px,1fr);
+  }
+  .booth-body{max-width:72%}
+}
+@media(min-width:1024px){
+  .booths{
+    /* Showcases takes 1.25fr: it carries the dancer and is the
+       flagship. Three equal columns would read as a 2010 feature row. */
+    grid-template-areas:"show kpl lcl";
+    grid-template-columns:1.25fr 1fr 1fr;
+    grid-template-rows:minmax(420px,1fr);
+  }
+  .booth-body{padding:28px 30px 34px 33px;max-width:86%;margin-left:24px}
+  .booth-desc{font-size:13.5px;margin-top:10px}
+  .booth-cta{font-size:13.5px;padding:11px 20px;margin-top:16px}
+  .hero-kicker{padding:26px 24px 20px}
+  .hero-kicker p{font-size:15px;max-width:420px}
+  /* Tall desktop tents: the art fills the TOP of the tent and the copy
+     anchors to the bottom, so the two never collide in a narrow column. */
+  .booth-art-a{top:64px;width:46px}
+  .booth-art-b{width:170px}
+  .booth-art-c{width:140px}
+  .hero-scallop{height:26px;background:radial-gradient(circle 26px at 50% 100%,var(--bg) 0 25.5px,transparent 26px) repeat-x;background-size:52px 26px}
+}
+
+/* ── Sub-page hero (kpl / lcl) ─────────────────────────── */
+.page-hero{position:relative;z-index:1;padding:calc(var(--ticker-h) + var(--nav-h) + 60px) 22px 64px;text-align:center;background:linear-gradient(165deg,rgba(90,15,5,0.08) 0%,transparent 55%)}
+.hero-inner{max-width:720px;margin:0 auto}
+.breadcrumb{font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap}
+.breadcrumb a{color:var(--ink-soft);text-decoration:none}
+.breadcrumb a:hover{color:var(--accent)}
+.bc-sep{color:var(--ink-light);opacity:.5}
+.page-tag{font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--accent);opacity:.85;margin-bottom:12px}
+.page-hero h1{font-family:'Fraunces',serif;font-size:clamp(34px,7.5vw,60px);font-weight:600;line-height:1.05;letter-spacing:-1.5px;color:var(--ink);margin-bottom:16px}
+.page-hero h1 em{font-style:italic;color:var(--accent)}
+.page-hero .sub{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:520px;margin:0 auto 30px;font-weight:500}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.hchip{font-size:13px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:100px;padding:8px 16px;box-shadow:var(--shadow)}
+.hchip b{color:var(--accent)}
+.btn-hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;font-size:16px;font-weight:800;padding:16px 36px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;box-shadow:var(--accent-shadow);transition:transform .1s,background .2s}
+.btn-hero-cta:hover{background:var(--accent-l)}
+.btn-hero-cta:active{transform:scale(.97)}
+
+/* ── Category cards (kpl / lcl) ────────────────────────── */
+.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cat-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 18px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.cat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.cat-icon{font-size:32px;margin-bottom:10px;display:block;line-height:1}
+.cat-name{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:6px}
+.cat-desc{font-size:13px;color:var(--ink-soft);line-height:1.6;font-weight:500}
+.cat-badge{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-wash);padding:4px 11px;border-radius:100px}
+.cat-cta{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:12.5px;font-weight:800;color:#fff;background:var(--accent);padding:8px 16px;border-radius:100px;text-decoration:none;transition:background .2s}
+.cat-cta:hover{background:var(--accent-l)}
+
+/* ── Age bands (kpl) ───────────────────────────────────── */
+.age-row{display:flex;flex-direction:column;gap:14px}
+.age-band{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow);display:flex;align-items:center;gap:16px}
+.age-num{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--accent);min-width:80px;line-height:1}
+.age-desc{font-size:14px;color:var(--ink-soft);font-weight:500;line-height:1.5}
+
+/* ── Numbered steps (kpl / lcl) ────────────────────────── */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;align-items:flex-start;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.step-n{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--accent);opacity:.35;flex-shrink:0;line-height:1;width:44px;text-align:center}
+.step-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.step-sub{font-size:14px;color:var(--ink-soft);line-height:1.7;font-weight:500}
+
+/* ── FAQ accordion (kpl / lcl) ─────────────────────────── */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q .arr{font-size:12px;color:var(--ink-light);transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-q .arr{transform:rotate(180deg)}
+/* grid-template-rows animates to the answer's true height — max-height
+   would clip any answer taller than the magic number it was set to. */
+.faq-a-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.faq-item.open .faq-a-wrap{grid-template-rows:1fr}
+.faq-a{overflow:hidden;padding:0 20px;font-size:14px;color:var(--ink-soft);line-height:1.75;font-weight:500}
+.faq-item.open .faq-a{padding:0 20px 18px}
+
+/* Section base */
+.section{position:relative;z-index:1;padding:68px 22px;max-width:1160px;margin:0 auto}
+/* Stats section gets a warm tint so it reads as a distinct content band */
+#about{background:linear-gradient(180deg,var(--bg-2),var(--bg));border-radius:0;max-width:100%;padding-left:0;padding-right:0;padding-bottom:44px}
+#about .sec-lbl,#about .sec-ttl,#about .sec-sub,#about .stats-grid,#about .inv-strip{max-width:760px;margin-left:auto;margin-right:auto;padding-left:22px;padding-right:22px}
+.sec-lbl{text-align:center;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--accent);opacity:.8;margin-bottom:10px}
+.sec-ttl{text-align:center;font-family:'Fraunces',serif;font-size:clamp(28px,5.5vw,44px);font-weight:600;letter-spacing:-1px;color:var(--ink);line-height:1.1;margin-bottom:12px}
+.sec-sub{text-align:center;font-size:16px;color:var(--ink-soft);margin:0 auto 42px;line-height:1.65;max-width:520px;font-weight:500}
+.divider{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 0;position:relative;z-index:1}
+.divider .dl{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider .dl.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.divider .dg{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.6}
+
+/* Trust: headline stats above the partner marquee */
+.trust-band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:1;padding:36px 0 32px}
+.trust-head{max-width:1160px;margin:0 auto 30px;padding:0 22px;text-align:center}
+.trust-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--coral);font-weight:700}
+.trust-eyebrow span{width:22px;height:1px;background:var(--gold)}
+.trust-stats{display:flex;gap:12px;margin-top:22px}
+.tstat{flex:1;background:linear-gradient(180deg,#fff6e4,#ffefce);border:1px solid #f0d9a6;border-radius:18px;padding:18px 8px}
+.tstat-num{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(22px,5.4vw,32px);color:var(--coral);line-height:1;letter-spacing:-1px}
+.tstat-num span{color:var(--gold)}
+.tstat-lbl{font-size:11px;color:var(--ink-soft);margin-top:5px;font-weight:600;letter-spacing:.3px}
+.trust-lbl{font-family:'Cinzel',serif;text-align:center;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);opacity:.6;margin-bottom:20px;padding:0 22px}
+.trust-ticker{overflow:hidden;width:100%;mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)}
+.trust-track{display:inline-flex;align-items:center;white-space:nowrap;animation:scroll-logos 34s linear infinite;will-change:transform;transform:translateZ(0)}
+.trust-track:hover{animation-play-state:paused}
+@keyframes scroll-logos{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.logo-fig{margin:0;display:inline-flex;align-items:center;justify-content:center;padding:0 52px;flex-shrink:0;border-right:1px solid var(--line)}
+.logo-fig:last-child{border-right:none}
+.logo-fig img{max-height:40px;max-width:130px;width:auto;filter:grayscale(1);opacity:.55;transition:filter .3s,opacity .3s;display:block;object-fit:contain}
+.logo-fig img:hover{filter:grayscale(0);opacity:1}
+.logo-fig .logo-fb{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--ink);opacity:.42;letter-spacing:.5px}
+
+/* Photo band — a strip of stage photographs rather than one image
+   stretched full-bleed. The source shots are 355x533; across a 1280px
+   viewport a 5-up strip renders each near its native width and stays
+   sharp, where a single stretched frame went visibly soft. */
+.photo-band{position:relative;z-index:1;overflow:hidden;background:var(--carnival-d)}
+.photo-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;height:360px}
+.photo-strip img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.photo-strip img:nth-child(n+3){display:none}
+.photo-band-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(42,7,9,0.15) 0%,rgba(42,7,9,0.55) 55%,rgba(42,7,9,0.88) 100%);display:flex;align-items:flex-end;padding:28px 22px}
+.photo-quote{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(17px,3vw,26px);color:var(--on-carnival);max-width:640px;line-height:1.4}
+
+/* Stats — horizontal strip, three equal columns from any width */
+.stats-grid{display:flex;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.stat{flex:1;padding:28px 12px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Fraunces',serif;font-size:clamp(26px,5.5vw,40px);font-weight:700;color:var(--coral);line-height:1;letter-spacing:-1px}
+.stat:nth-child(2) .stat-num{color:var(--teal)}
+.stat:nth-child(3) .stat-num{color:var(--gold)}
+.stat-lbl{font-size:12px;font-weight:600;color:var(--ink-soft);margin-top:8px}
+
+/* Investor strip — small chips instead of a loose dot-separated line,
+   so the row reads as structured facts rather than a stray caption. */
+.inv-strip{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.inv-strip span{background:#fff;border:1px solid var(--line-2);border-radius:100px;padding:6px 14px;font-size:11.5px;font-weight:700;color:var(--ink-soft);letter-spacing:.2px}
+
+/* Testimonials */
+.tlist{display:flex;flex-direction:column;gap:18px}
+.tcard{background:linear-gradient(160deg,#fffaf5,#fff8ee);border:1px solid rgba(200,150,42,0.15);border-radius:22px;padding:28px;box-shadow:var(--shadow);position:relative}
+.tquote{font-family:'Fraunces',serif;font-size:64px;line-height:.8;color:var(--gold);opacity:.18;position:absolute;top:16px;right:24px;font-style:italic}
+.tstars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:13px}
+.ttext{font-size:16px;line-height:1.65;color:var(--ink);margin-bottom:16px;font-weight:500}
+.tname{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--ink)}
+.trole{font-size:13px;color:var(--ink-soft);margin-top:3px;font-weight:500}
+
+/* Final CTA — the closing maroon band. Pairs with the booth hero so
+   the dark appears twice (rhythm) rather than once (accident). */
+.fcta-wrap{position:relative;z-index:1;padding:0 22px 72px}
+.fcta{max-width:1160px;margin:0 auto;border-radius:32px;background:linear-gradient(160deg,var(--carnival-l),var(--carnival));padding:64px 30px;text-align:center;overflow:hidden;position:relative}
+.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(228,179,76,0.16),transparent 70%);pointer-events:none}
+.fcta-stripe{position:absolute;top:0;left:0;right:0;height:12px;background:repeating-linear-gradient(90deg,var(--carnival-gold) 0 18px,var(--carnival-red) 18px 36px);opacity:.85}
+.fcta h2{font-family:'Fraunces',serif;font-size:clamp(26px,6vw,46px);font-weight:600;color:var(--on-carnival);line-height:1.1;letter-spacing:-1px;max-width:600px;margin:0 auto 12px;position:relative}
+.fcta h2 em{font-style:italic;color:var(--carnival-gold)}
+.fcta p{font-size:16px;color:var(--on-carnival-soft);margin-bottom:30px;font-weight:600;position:relative}
+.btn-fcta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--carnival-gold);color:var(--carnival);font-size:16px;font-weight:800;padding:16px 40px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;box-shadow:0 10px 32px rgba(0,0,0,0.28);transition:transform .1s,background .2s;position:relative}
+.btn-fcta:hover{background:var(--carnival-gold-l)}
+.btn-fcta:active{transform:scale(.97)}
+
+/* Footer — carries the maroon through to the bottom of the page. */
+.footer{position:relative;z-index:1;background:var(--carnival-d);padding:52px 24px 36px;text-align:center}
+.ftag{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:rgba(255,255,255,0.75);margin-bottom:22px}
+.fsoc{display:flex;justify-content:center;gap:12px;margin-bottom:22px}
+.fsoc a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;text-decoration:none;color:rgba(255,255,255,0.45);transition:color .2s,border-color .2s,background .2s}
+.fsoc a:hover{color:#fff;border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.08)}
+.fsoc a svg{width:17px;height:17px;fill:currentColor;display:block}
+.fsoc a.ig svg{fill:none;stroke:currentColor;stroke-width:2}
+.flinks{font-size:13px;color:rgba(255,255,255,0.35);line-height:2.4;font-weight:600}
+.flinks a{color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,0.75)}
+.fdisc{margin-top:22px;font-size:11px;line-height:1.6;color:rgba(255,255,255,0.28);max-width:520px;margin-left:auto;margin-right:auto;font-weight:500}
+.fwkc{margin-top:18px;font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+
+/* Sticky mobile CTA */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(253,246,239,0.95);backdrop-filter:blur(16px);border-top:1px solid var(--line-2);padding:10px 16px 14px;transition:transform .3s ease,opacity .3s ease}
+.sticky.form-visible{transform:translateY(110%);opacity:0;pointer-events:none}
+.sticky-in{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:480px;margin:0 auto}
+.st-ev{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--ink)}
+.st-dt{font-size:12px;color:var(--ink-soft);margin-top:2px;font-weight:600}
+.st-btn{background:var(--accent);color:#fff;font-size:14px;font-weight:800;padding:12px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;cursor:pointer;border:none;font-family:inherit;box-shadow:0 6px 18px rgba(232,80,63,0.3)}
+.spacer{height:78px}
+
+/* ── Tablet — sub-page content grids ── */
+@media(min-width:700px){
+  .cat-grid{grid-template-columns:repeat(4,1fr)}
+  .age-row{flex-direction:row}
+  .age-band{flex:1}
+}
+
+/* ── Desktop ── */
+@media(min-width:880px){
+  .nav-desk{display:flex}
+  .nav-ham{display:none}
+  .tlist{flex-direction:row;align-items:stretch}
+  .tcard{flex:1}
+  .sticky{display:none}
+  .spacer{display:none}
+  .photo-strip{grid-template-columns:repeat(5,1fr);height:440px}
+  .photo-strip img:nth-child(n+3){display:block}
+}

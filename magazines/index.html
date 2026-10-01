@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Magazines | WizKidsCarnival</title>
+<meta name="description" content="Explore every WizKidsCarnival contest magazine — original creations from our Wizkids, published monthly. Browse by month and read online." />
+<meta name="keywords" content="WizKidsCarnival magazines, kids contest magazine, KPL magazine, LCL magazine, children's creative magazine India" />
+<link rel="canonical" href="https://www.wizkidscarnival.com/magazines/" />
+<link rel="icon" type="image/png" href="../logos/wkc-icon.png">
+<link rel="apple-touch-icon" href="../logos/wkc-icon.png">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.wizkidscarnival.com/magazines/" />
+<meta property="og:title" content="Magazines | WizKidsCarnival" />
+<meta property="og:description" content="Explore every WizKidsCarnival contest magazine — original creations from our Wizkids, published monthly." />
+<meta property="og:site_name" content="WizKidsCarnival" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Magazines | WizKidsCarnival" />
+<meta name="twitter:description" content="Explore every WizKidsCarnival contest magazine." />
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"WizKidsCarnival Magazines",
+  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.wizkidscarnival.com"},
+    {"@type":"ListItem","position":2,"name":"Magazines","item":"https://www.wizkidscarnival.com/magazines/"}
+  ]}
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/wkc.css?v=2026-08-09c">
+<style>
+/* ── magazines-only ── */
+.blob-1{width:480px;height:480px;background:radial-gradient(circle,#fde8c0,transparent 70%);top:-140px;right:-120px}
+.blob-2{width:380px;height:380px;background:radial-gradient(circle,#c5eeea,transparent 70%);bottom:20%;left:-120px}
+
+.mag-filter{display:flex;justify-content:center;margin-bottom:34px}
+.month-select{appearance:none;background:var(--card) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path d="M1 1l5 5 5-5" stroke="%236b5d54" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat right 16px center;border:1px solid var(--line-2);border-radius:100px;padding:12px 40px 12px 20px;font-size:14px;font-weight:700;color:var(--ink);font-family:inherit;cursor:pointer;box-shadow:var(--shadow)}
+
+.mag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.mag-card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.mag-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.mag-cover{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--bg-2);display:block}
+.mag-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column}
+.mag-name{font-family:'Fraunces',serif;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:6px}
+.mag-meta{font-size:11.5px;color:var(--ink-soft);font-weight:600;margin-bottom:12px}
+.mag-read{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:800;color:#fff;background:var(--accent);padding:8px 14px;border-radius:100px;text-decoration:none;transition:background .2s}
+.mag-read:hover{background:var(--accent-l)}
+
+.res-empty,.res-loading{text-align:center;padding:40px 20px;color:var(--ink-soft);font-size:14px;font-weight:500;grid-column:1/-1}
+.res-load-more{display:block;margin:28px auto 0;background:var(--card);border:1px solid var(--line-2);color:var(--ink);font-size:14px;font-weight:700;padding:12px 26px;border-radius:100px;cursor:pointer;font-family:inherit;transition:background .2s}
+.res-load-more:hover{background:var(--bg-2)}
+.res-load-more[hidden]{display:none}
+
+@media(min-width:600px){ .mag-grid{grid-template-columns:repeat(3,1fr)} }
+@media(min-width:900px){ .mag-grid{grid-template-columns:repeat(4,1fr)} }
+</style>
+</head>
+<body>
+
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ttrack" id="ttrack">
+    <span class="ti">15,000+ Minutes of Original Creations<span class="dot">&#x2726;</span></span>
+    <span class="ti">New Issues Every Month<span class="dot">&#x00B7;</span></span>
+    <span class="ti">Watch, Listen &amp; Read<span class="dot">&#x2726;</span></span>
+  </div>
+</div>
+
+<!-- Nav overlay -->
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="nav-close" id="navClose">&#x2715; Close</button>
+  <nav class="nav-links">
+    <a href="../kpl/" class="ol">Kids Premier League</a>
+    <a href="../lcl/" class="ol">Little Champions League</a>
+    <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
+    <a href="../results/" class="ol">Results</a>
+    <a href="../magazines/" class="ol">Magazine</a>
+    <a href="https://app.wizkidscarnival.com/authentication?utm_source=main-site&utm_medium=nav-overlay&utm_campaign=magazines" class="ol nav-apply">Signup / Login</a>
+  </nav>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo" data-nav="logo"><img src="../logos/wkc-logo.png" alt="WizKidsCarnival" height="36"></a>
+    <nav class="nav-desk" aria-label="Primary navigation">
+      <a href="../kpl/" data-nav="kpl">Kids Premier League</a>
+      <a href="../lcl/" data-nav="lcl">Little Champions League</a>
+      <a href="https://showcases.wizkidscarnival.com/" data-nav="showcases">Showcases</a>
+      <a href="../results/" data-nav="results">Results</a>
+      <a href="../magazines/" class="active" data-nav="magazine">Magazine</a>
+      <a href="https://app.wizkidscarnival.com/authentication?utm_source=main-site&utm_medium=nav&utm_campaign=magazines" class="nav-cta" data-nav="register">Signup / Login</a>
+    </nav>
+    <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<header class="page-hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a><span class="bc-sep">&#x203A;</span><span>Magazines</span>
+    </nav>
+    <div class="page-tag">Explore Magazines</div>
+    <h1>Watch, listen and read <em>15,000+ minutes</em> of creations.</h1>
+    <p class="sub">Every magazine is built from real contest entries — stories, art and performances from our Wizkids, published monthly.</p>
+  </div>
+</header>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Magazines -->
+<section class="section" aria-labelledby="mag-ttl">
+  <div class="sec-lbl">Browse Issues</div>
+  <h2 class="sec-ttl" id="mag-ttl">Magazine Library</h2>
+  <p class="sec-sub">Pick a month to see that issue's magazines.</p>
+
+  <div class="mag-filter">
+    <select class="month-select" id="monthSelect" aria-label="Filter by month"></select>
+  </div>
+
+  <div class="mag-grid" id="magGrid"></div>
+  <div class="res-loading" id="magLoading">Loading magazines&#x2026;</div>
+  <div class="res-empty" id="magEmpty" hidden>No magazines published for this month yet.</div>
+  <button class="res-load-more" id="magLoadMore" hidden>Load more</button>
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<footer class="footer">
+  <p class="ftag">&#x201C;Where young stars shine.&#x201D;</p>
+  <nav class="fsoc" aria-label="Social media">
+    <a href="https://facebook.com/wizkidscarnival" aria-label="Facebook" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://instagram.com/wizkidscarnival" aria-label="Instagram" rel="noopener noreferrer" class="ig">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://youtube.com/@wizkidscarnival" aria-label="YouTube" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:rgba(35,26,23,0.9)"/></svg>
+    </a>
+    <a href="https://linkedin.com/company/wizkidscarnival" aria-label="LinkedIn" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </nav>
+  <nav class="flinks" aria-label="Footer navigation">
+    <a href="../">Home</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../kpl/">Kids Premier League</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../lcl/">Little Champions League</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://showcases.wizkidscarnival.com/">Showcases</a><br>
+    <a href="../results/">Results</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../magazines/">Magazine</a><br>
+    <a href="https://wizkidscarnival.com/privacy-policy/">Privacy</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://wizkidscarnival.com/refund-and-cancellations/">Refunds</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://wizkidscarnival.com/terms-and-conditions/">Terms</a>
+  </nav>
+  <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
+</footer>
+
+<div class="sticky" id="stickyBar" role="complementary" aria-label="Register CTA">
+  <div class="sticky-in">
+    <div><div class="st-ev">Register Free</div><div class="st-dt">Three stages &#x00B7; Ages 3–18</div></div>
+    <a class="st-btn" href="https://app.wizkidscarnival.com/talent-pass/membership?utm_source=main-site&utm_medium=sticky&utm_campaign=magazines" data-track="magazines-sticky-cta">Register &#x2192;</a>
+  </div>
+</div>
+<div class="spacer" aria-hidden="true"></div>
+
+<script>window.WKC = { page: 'magazines', program: null };</script>
+<script src="../assets/wkc.js?v=2026-10-01"></script>
+<script>
+(function () {
+  'use strict';
+
+  var API = 'https://api.wizkidscarnival.com';
+  var PAGE_SIZE = 12;
+  var READER_BASE = 'https://app.wizkidscarnival.com/magazines?view_magazine=';
+
+  var select    = document.getElementById('monthSelect');
+  var grid      = document.getElementById('magGrid');
+  var loading   = document.getElementById('magLoading');
+  var empty     = document.getElementById('magEmpty');
+  var loadMore  = document.getElementById('magLoadMore');
+
+  var currentUrl = null;
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  function fmtDate(iso) {
+    try { return new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }); }
+    catch (e) { return ''; }
+  }
+
+  // Populate month dropdown: current month back 12 months
+  var now = new Date();
+  var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  for (var i = 0; i < 12; i++) {
+    var d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    var opt = document.createElement('option');
+    opt.value = month + '-' + year;
+    opt.textContent = MONTH_NAMES[d.getMonth()] + ' ' + year;
+    select.appendChild(opt);
+  }
+
+  function renderCard(item) {
+    var card = document.createElement('a');
+    card.className = 'mag-card';
+    card.href = READER_BASE + encodeURIComponent(item.magazine_id);
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+    card.setAttribute('data-track', 'magazine-read-' + item.magazine_id);
+    var coverSrc = item.cover || '';
+    card.innerHTML =
+      (coverSrc ? '<img class="mag-cover" src="' + esc(coverSrc) + '" alt="" loading="lazy">' : '<div class="mag-cover"></div>') +
+      '<div class="mag-body">' +
+        '<div class="mag-name">' + esc(item.name) + '</div>' +
+        '<div class="mag-meta">' + esc((item.author && item.author.name) || 'WizKidsCarnival') + ' &middot; ' + esc(fmtDate(item.issue_date)) + '</div>' +
+        '<span class="mag-read">Read Magazine &#x2192;</span>' +
+      '</div>';
+    grid.appendChild(card);
+  }
+
+  function loadPage() {
+    if (!currentUrl) { loadMore.hidden = true; return; }
+    loading.hidden = false;
+    fetch(currentUrl).then(function (r) { return r.json(); }).then(function (json) {
+      loading.hidden = true;
+      var data = json.data || {};
+      var results = data.results || [];
+      if (grid.children.length === 0 && results.length === 0) {
+        empty.hidden = false;
+        loadMore.hidden = true;
+        return;
+      }
+      empty.hidden = true;
+      results.forEach(renderCard);
+      currentUrl = data.next || null;
+      loadMore.hidden = !currentUrl;
+    }).catch(function () {
+      loading.hidden = true;
+      if (grid.children.length === 0) empty.hidden = false;
+    });
+  }
+
+  function loadMonth(value) {
+    grid.innerHTML = '';
+    empty.hidden = true;
+    currentUrl = API + '/magazine/?issued_month=' + value + '&page_size=' + PAGE_SIZE;
+    loadPage();
+  }
+
+  select.addEventListener('change', function () { loadMonth(select.value); });
+  loadMore.addEventListener('click', loadPage);
+
+  loadMonth(select.value);
+})();
+</script>
+</body>
+</html>

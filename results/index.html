@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contest Results | WizKidsCarnival</title>
+<meta name="description" content="See every WizKidsCarnival contest's winners — Kids Premier League, Little Champions League and more. Browse results by contest and category." />
+<meta name="keywords" content="WizKidsCarnival results, KPL winners, LCL winners, kids contest results India, talent competition winners" />
+<link rel="canonical" href="https://www.wizkidscarnival.com/results/" />
+<link rel="icon" type="image/png" href="../logos/wkc-icon.png">
+<link rel="apple-touch-icon" href="../logos/wkc-icon.png">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.wizkidscarnival.com/results/" />
+<meta property="og:title" content="Contest Results | WizKidsCarnival" />
+<meta property="og:description" content="See every WizKidsCarnival contest's winners — Kids Premier League, Little Champions League and more." />
+<meta property="og:site_name" content="WizKidsCarnival" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contest Results | WizKidsCarnival" />
+<meta name="twitter:description" content="See every WizKidsCarnival contest's winners." />
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"WizKidsCarnival Contest Results",
+  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.wizkidscarnival.com"},
+    {"@type":"ListItem","position":2,"name":"Results","item":"https://www.wizkidscarnival.com/results/"}
+  ]}
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/wkc.css?v=2026-08-09c">
+<style>
+/* ── results-only ── */
+.blob-1{width:480px;height:480px;background:radial-gradient(circle,#c5eeea,transparent 70%);top:-140px;right:-120px}
+.blob-2{width:380px;height:380px;background:radial-gradient(circle,#fde8c0,transparent 70%);bottom:20%;left:-120px}
+
+.res-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.res-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow);text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:inherit;width:100%}
+.res-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.res-card-ttl{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.2px;margin-bottom:6px}
+.res-card-meta{font-size:12.5px;color:var(--ink-soft);font-weight:600}
+.res-card-arr{float:right;color:var(--accent);font-weight:800}
+
+.res-empty,.res-loading{text-align:center;padding:40px 20px;color:var(--ink-soft);font-size:14px;font-weight:500}
+.res-load-more{display:block;margin:28px auto 0;background:var(--card);border:1px solid var(--line-2);color:var(--ink);font-size:14px;font-weight:700;padding:12px 26px;border-radius:100px;cursor:pointer;font-family:inherit;transition:background .2s}
+.res-load-more:hover{background:var(--bg-2)}
+.res-load-more[hidden]{display:none}
+
+/* Detail view */
+.res-detail{display:none}
+.res-detail.open{display:block}
+.res-list-wrap.hidden{display:none}
+.res-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;margin-bottom:22px;background:none;border:none;cursor:pointer;font-family:inherit;padding:0}
+.res-back:hover{text-decoration:underline}
+.res-detail-ttl{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,34px);font-weight:600;color:var(--ink);letter-spacing:-.5px;margin-bottom:6px}
+.res-detail-date{font-size:13px;color:var(--ink-soft);font-weight:600;margin-bottom:30px}
+
+.contest-block{border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:16px;background:var(--card);box-shadow:var(--shadow)}
+.contest-ttl{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.age-group{padding:12px 0;border-top:1px solid var(--line)}
+.age-group:first-of-type{border-top:none;padding-top:0}
+.age-group-lbl{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.place-row{display:flex;align-items:baseline;gap:10px;padding:5px 0;font-size:14px}
+.place-medal{width:22px;flex-shrink:0;text-align:center}
+.place-names{color:var(--ink);font-weight:600}
+.place-cat{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink-light);margin-top:2px;flex-shrink:0}
+
+@media(min-width:700px){
+  .res-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ttrack" id="ttrack">
+    <span class="ti">Contest Results &#x00B7; Updated Live<span class="dot">&#x2726;</span></span>
+    <span class="ti">Kids Premier League<span class="dot">&#x00B7;</span></span>
+    <span class="ti">Little Champions League<span class="dot">&#x2726;</span></span>
+    <span class="ti">Every Winner, Every Round<span class="dot">&#x00B7;</span></span>
+  </div>
+</div>
+
+<!-- Nav overlay -->
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="nav-close" id="navClose">&#x2715; Close</button>
+  <nav class="nav-links">
+    <a href="../kpl/" class="ol">Kids Premier League</a>
+    <a href="../lcl/" class="ol">Little Champions League</a>
+    <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
+    <a href="../results/" class="ol">Results</a>
+    <a href="../magazines/" class="ol">Magazine</a>
+    <a href="https://app.wizkidscarnival.com/authentication?utm_source=main-site&utm_medium=nav-overlay&utm_campaign=results" class="ol nav-apply">Signup / Login</a>
+  </nav>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo" data-nav="logo"><img src="../logos/wkc-logo.png" alt="WizKidsCarnival" height="36"></a>
+    <nav class="nav-desk" aria-label="Primary navigation">
+      <a href="../kpl/" data-nav="kpl">Kids Premier League</a>
+      <a href="../lcl/" data-nav="lcl">Little Champions League</a>
+      <a href="https://showcases.wizkidscarnival.com/" data-nav="showcases">Showcases</a>
+      <a href="../results/" class="active" data-nav="results">Results</a>
+      <a href="../magazines/" data-nav="magazine">Magazine</a>
+      <a href="https://app.wizkidscarnival.com/authentication?utm_source=main-site&utm_medium=nav&utm_campaign=results" class="nav-cta" data-nav="register">Signup / Login</a>
+    </nav>
+    <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<header class="page-hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a><span class="bc-sep">&#x203A;</span><span>Results</span>
+    </nav>
+    <div class="page-tag">Winners Announced</div>
+    <h1>See every child who <em>took the stage.</em></h1>
+    <p class="sub">Browse winners across every WizKidsCarnival contest — Kids Premier League, Little Champions League and more. The judges' decision is final.</p>
+  </div>
+</header>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Results -->
+<section class="section" aria-labelledby="res-ttl">
+
+  <div class="res-list-wrap" id="resListWrap">
+    <div class="sec-lbl">Contest List</div>
+    <h2 class="sec-ttl" id="res-ttl">Browse by Contest</h2>
+    <p class="sec-sub">Select a contest to see the full winner breakdown by category and age group.</p>
+    <div class="res-grid" id="resGrid"></div>
+    <div class="res-loading" id="resLoading">Loading results&#x2026;</div>
+    <div class="res-empty" id="resEmpty" hidden>No results found yet. Check back soon!</div>
+    <button class="res-load-more" id="resLoadMore" hidden>Load more contests</button>
+  </div>
+
+  <div class="res-detail" id="resDetail">
+    <button class="res-back" id="resBack">&#x2190; All Results</button>
+    <h2 class="res-detail-ttl" id="resDetailTtl"></h2>
+    <div class="res-detail-date" id="resDetailDate"></div>
+    <div id="resDetailBody"></div>
+  </div>
+
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<footer class="footer">
+  <p class="ftag">&#x201C;Where young stars shine.&#x201D;</p>
+  <nav class="fsoc" aria-label="Social media">
+    <a href="https://facebook.com/wizkidscarnival" aria-label="Facebook" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://instagram.com/wizkidscarnival" aria-label="Instagram" rel="noopener noreferrer" class="ig">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://youtube.com/@wizkidscarnival" aria-label="YouTube" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:rgba(35,26,23,0.9)"/></svg>
+    </a>
+    <a href="https://linkedin.com/company/wizkidscarnival" aria-label="LinkedIn" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </nav>
+  <nav class="flinks" aria-label="Footer navigation">
+    <a href="../">Home</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../kpl/">Kids Premier League</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../lcl/">Little Champions League</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://showcases.wizkidscarnival.com/">Showcases</a><br>
+    <a href="../results/">Results</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../magazines/">Magazine</a><br>
+    <a href="https://wizkidscarnival.com/privacy-policy/">Privacy</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://wizkidscarnival.com/refund-and-cancellations/">Refunds</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://wizkidscarnival.com/terms-and-conditions/">Terms</a>
+  </nav>
+  <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
+</footer>
+
+<div class="sticky" id="stickyBar" role="complementary" aria-label="Register CTA">
+  <div class="sticky-in">
+    <div><div class="st-ev">Register Free</div><div class="st-dt">Three stages &#x00B7; Ages 3–18</div></div>
+    <a class="st-btn" href="https://app.wizkidscarnival.com/talent-pass/membership?utm_source=main-site&utm_medium=sticky&utm_campaign=results" data-track="results-sticky-cta">Register &#x2192;</a>
+  </div>
+</div>
+<div class="spacer" aria-hidden="true"></div>
+
+<script>window.WKC = { page: 'results', program: null };</script>
+<script src="../assets/wkc.js?v=2026-10-01"></script>
+<script>
+(function () {
+  'use strict';
+
+  var API = 'https://api.wizkidscarnival.com';
+  var PAGE_SIZE = 10;
+  var nextUrl = API + '/contest/result-list?page=1&page_size=' + PAGE_SIZE;
+  var cache = {}; // result_unique_id -> list item, for back-nav title reuse
+
+  var grid      = document.getElementById('resGrid');
+  var loading   = document.getElementById('resLoading');
+  var empty     = document.getElementById('resEmpty');
+  var loadMore  = document.getElementById('resLoadMore');
+  var listWrap  = document.getElementById('resListWrap');
+  var detail    = document.getElementById('resDetail');
+  var detailTtl = document.getElementById('resDetailTtl');
+  var detailDt  = document.getElementById('resDetailDate');
+  var detailBdy = document.getElementById('resDetailBody');
+  var backBtn   = document.getElementById('resBack');
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  function fmtDate(iso) {
+    try {
+      return new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+    } catch (e) { return ''; }
+  }
+
+  function renderCard(item) {
+    cache[item.result_unique_id] = item;
+    var card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'res-card';
+    card.innerHTML =
+      '<span class="res-card-arr">&#x2192;</span>' +
+      '<div class="res-card-ttl">' + esc(item.title) + '</div>' +
+      '<div class="res-card-meta">Published ' + esc(fmtDate(item.created_on)) + '</div>';
+    card.addEventListener('click', function () { openDetail(item.result_unique_id); });
+    grid.appendChild(card);
+  }
+
+  function loadList() {
+    if (!nextUrl) { loadMore.hidden = true; return; }
+    loading.hidden = false;
+    fetch(nextUrl).then(function (r) { return r.json(); }).then(function (json) {
+      loading.hidden = true;
+      var data = json.data || {};
+      var results = (data.results || []).filter(function (r) { return r.is_published !== false; });
+      if (grid.children.length === 0 && results.length === 0) {
+        empty.hidden = false;
+        loadMore.hidden = true;
+        return;
+      }
+      results.forEach(renderCard);
+      nextUrl = data.next || null;
+      loadMore.hidden = !nextUrl;
+    }).catch(function () {
+      loading.hidden = true;
+      if (grid.children.length === 0) empty.hidden = false;
+    });
+  }
+
+  loadMore.addEventListener('click', loadList);
+
+  function placeRow(medal, label, names) {
+    if (!names || !names.length) return '';
+    return '<div class="place-row"><span class="place-medal">' + medal + '</span>' +
+      '<span class="place-names">' + esc(names.join(', ')) + '</span></div>';
+  }
+
+  function renderDetail(domainId, data) {
+    detailTtl.textContent = data.title || domainId;
+    detailDt.textContent = data.published_on ? 'Published ' + fmtDate(data.published_on) : '';
+    var html = '';
+    (data.results || []).forEach(function (entry) {
+      var c = entry.contest || {};
+      html += '<div class="contest-block"><div class="contest-ttl">' + esc(c.title) + '</div>';
+      (entry.age_groups || []).forEach(function (ag) {
+        html += '<div class="age-group"><div class="age-group-lbl">' + esc(ag.age_group) + '</div>';
+        html += placeRow('&#x1F947;', '1st', ag.first_place);
+        html += placeRow('&#x1F948;', '2nd', ag.second_place);
+        html += placeRow('&#x1F949;', '3rd', ag.third_place);
+        html += placeRow('&#x2B50;', 'Honorable Mention', ag.honorable_mentions);
+        html += placeRow('&#x2728;', 'Special Mention', ag.special_mentions);
+        html += '</div>';
+      });
+      html += '</div>';
+    });
+    detailBdy.innerHTML = html || '<p class="res-empty">Winner details aren’t published for this contest yet.</p>';
+  }
+
+  function showDetail() {
+    listWrap.classList.add('hidden');
+    detail.classList.add('open');
+    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+  }
+  function showList() {
+    detail.classList.remove('open');
+    listWrap.classList.remove('hidden');
+  }
+
+  function openDetail(domainId, pushState) {
+    detailTtl.textContent = (cache[domainId] && cache[domainId].title) || 'Loading…';
+    detailDt.textContent = '';
+    detailBdy.innerHTML = '<div class="res-loading">Loading winners…</div>';
+    showDetail();
+    if (pushState !== false) history.pushState({ id: domainId }, '', '?id=' + encodeURIComponent(domainId));
+    fetch(API + '/contest/result?domain=' + encodeURIComponent(domainId))
+      .then(function (r) { return r.json(); })
+      .then(function (json) { renderDetail(domainId, (json.data || {})); })
+      .catch(function () {
+        detailBdy.innerHTML = '<p class="res-empty">Couldn’t load this contest’s results right now. Please try again shortly.</p>';
+      });
+  }
+
+  backBtn.addEventListener('click', function () {
+    showList();
+    history.pushState({}, '', location.pathname);
+  });
+
+  window.addEventListener('popstate', function () {
+    var id = new URLSearchParams(location.search).get('id');
+    if (id) openDetail(id, false); else showList();
+  });
+
+  // Init
+  loadList();
+  var initialId = new URLSearchParams(location.search).get('id');
+  if (initialId) openDetail(initialId, false);
+})();
+</script>
+</body>
+</html>

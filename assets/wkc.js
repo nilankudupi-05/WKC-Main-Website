@@ -23,8 +23,8 @@
     kpl:       'https://app.wizkidscarnival.com/kpl',
     lcl:       'https://app.wizkidscarnival.com/lcl',
     showcases: 'https://showcases.wizkidscarnival.com/',
-    results:   'https://app.wizkidscarnival.com/result-list',
-    magazine:  'https://app.wizkidscarnival.com/magazines'
+    results:   '/results/',
+    magazine:  '/magazines/'
   };
   window.WKC_LINKS = LINKS;
 

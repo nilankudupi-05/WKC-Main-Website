@@ -133,30 +133,6 @@
     });
   });
 
-  /* ── Sticky mobile CTA ────────────────────────────────
-     Hidden while the hero is on screen (the hero already carries a
-     CTA) and again once the footer arrives (so it can't cover the
-     footer links). Replaces the old observer that watched the lead
-     form, which no longer exists. */
-  var sticky = document.getElementById('stickyBar');
-  if (sticky && 'IntersectionObserver' in window) {
-    var hero = document.querySelector('.hero, .page-hero');
-    var foot = document.querySelector('.footer');
-    var over = { hero: false, foot: false };
-    var sync = function () {
-      sticky.classList.toggle('form-visible', over.hero || over.foot);
-    };
-    var watch = function (el, key) {
-      if (!el) return;
-      new IntersectionObserver(function (entries) {
-        over[key] = entries[0].isIntersecting;
-        sync();
-      }, { threshold: 0 }).observe(el);
-    };
-    watch(hero, 'hero');
-    watch(foot, 'foot');
-  }
-
   /* ── FAQ accordion (kpl / lcl) — single open at a time ── */
   document.querySelectorAll('.faq-q').forEach(function (q) {
     q.addEventListener('click', function () {

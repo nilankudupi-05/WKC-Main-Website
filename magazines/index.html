@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/wkc.css?v=2026-08-09c">
+<link rel="stylesheet" href="../assets/wkc.css?v=2026-10-01b">
 <style>
 /* ── magazines-only ── */
 .blob-1{width:480px;height:480px;background:radial-gradient(circle,#fde8c0,transparent 70%);top:-140px;right:-120px}
@@ -39,6 +39,7 @@
 .month-select{appearance:none;background:var(--card) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path d="M1 1l5 5 5-5" stroke="%236b5d54" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat right 16px center;border:1px solid var(--line-2);border-radius:100px;padding:12px 40px 12px 20px;font-size:14px;font-weight:700;color:var(--ink);font-family:inherit;cursor:pointer;box-shadow:var(--shadow)}
 
 .mag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.mag-card,.mag-card:hover,.mag-card:visited,.mag-card *{text-decoration:none}
 .mag-card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
 .mag-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .mag-cover{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--bg-2);display:block}
@@ -79,6 +80,7 @@
     <a href="../lcl/" class="ol">Little Champions League</a>
     <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
     <a href="../results/" class="ol">Results</a>
+    <a href="../qualifiers/" class="ol">Qualifiers</a>
     <a href="../magazines/" class="ol">Magazine</a>
     <a href="https://app.wizkidscarnival.com/authentication?utm_source=main-site&utm_medium=nav-overlay&utm_campaign=magazines" class="ol nav-apply">Signup / Login</a>
   </nav>
@@ -92,6 +94,7 @@
       <a href="../lcl/" data-nav="lcl">Little Champions League</a>
       <a href="https://showcases.wizkidscarnival.com/" data-nav="showcases">Showcases</a>
       <a href="../results/" data-nav="results">Results</a>
+      <a href="../qualifiers/" data-nav="qualifiers">Qualifiers</a>
       <a href="../magazines/" class="active" data-nav="magazine">Magazine</a>
       <a href="https://app.wizkidscarnival.com/authentication?utm_source=main-site&utm_medium=nav&utm_campaign=magazines" class="nav-cta" data-nav="register">Signup / Login</a>
     </nav>
@@ -153,6 +156,7 @@
     <a href="../lcl/">Little Champions League</a> &nbsp;&#x00B7;&nbsp;
     <a href="https://showcases.wizkidscarnival.com/">Showcases</a><br>
     <a href="../results/">Results</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../qualifiers/">Qualifiers</a> &nbsp;&#x00B7;&nbsp;
     <a href="../magazines/">Magazine</a><br>
     <a href="https://wizkidscarnival.com/privacy-policy/">Privacy</a> &nbsp;&#x00B7;&nbsp;
     <a href="https://wizkidscarnival.com/refund-and-cancellations/">Refunds</a> &nbsp;&#x00B7;&nbsp;
@@ -161,16 +165,9 @@
   <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
 </footer>
 
-<div class="sticky" id="stickyBar" role="complementary" aria-label="Register CTA">
-  <div class="sticky-in">
-    <div><div class="st-ev">Register Free</div><div class="st-dt">Three stages &#x00B7; Ages 3–18</div></div>
-    <a class="st-btn" href="https://app.wizkidscarnival.com/talent-pass/membership?utm_source=main-site&utm_medium=sticky&utm_campaign=magazines" data-track="magazines-sticky-cta">Register &#x2192;</a>
-  </div>
-</div>
-<div class="spacer" aria-hidden="true"></div>
 
 <script>window.WKC = { page: 'magazines', program: null };</script>
-<script src="../assets/wkc.js?v=2026-10-01"></script>
+<script src="../assets/wkc.js?v=2026-10-01b"></script>
 <script>
 (function () {
   'use strict';
@@ -201,14 +198,17 @@
   // Populate month dropdown: current month back 12 months
   var now = new Date();
   var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var monthValues = [];
   for (var i = 0; i < 12; i++) {
     var d = new Date(now.getFullYear(), now.getMonth() - i, 1);
     var month = d.getMonth() + 1;
     var year = d.getFullYear();
+    var value = month + '-' + year;
     var opt = document.createElement('option');
-    opt.value = month + '-' + year;
+    opt.value = value;
     opt.textContent = MONTH_NAMES[d.getMonth()] + ' ' + year;
     select.appendChild(opt);
+    monthValues.push(value);
   }
 
   function renderCard(item) {
@@ -261,7 +261,26 @@
   select.addEventListener('change', function () { loadMonth(select.value); });
   loadMore.addEventListener('click', loadPage);
 
-  loadMonth(select.value);
+  // On first load, default to the most recent month that actually has a
+  // published magazine — not just the current calendar month, which is
+  // usually empty since issues publish mid-to-late month. Walk back
+  // through the dropdown's months (newest first) with a cheap
+  // page_size=1 count check, and stop at the first one with content.
+  function findLatestAvailableMonth(i) {
+    if (i >= monthValues.length) { loadMonth(select.value); return; }
+    var val = monthValues[i];
+    fetch(API + '/magazine/?issued_month=' + val + '&page_size=1')
+      .then(function (r) { return r.json(); })
+      .then(function (json) {
+        var count = ((json.data) || {}).count || 0;
+        if (count > 0) { select.value = val; loadMonth(val); }
+        else { findLatestAvailableMonth(i + 1); }
+      })
+      .catch(function () { loadMonth(select.value); });
+  }
+
+  loading.hidden = false;
+  findLatestAvailableMonth(0);
 })();
 </script>
 </body>

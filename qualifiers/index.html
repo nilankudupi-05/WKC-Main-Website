@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qualifier List | WizKidsCarnival</title>
+<meta name="description" content="See who's qualified for the next round — browse the WizKidsCarnival qualifier list by contest and age group." />
+<link rel="canonical" href="https://www.wizkidscarnival.com/qualifiers/" />
+<link rel="icon" type="image/png" href="../logos/wkc-icon.png">
+<link rel="apple-touch-icon" href="../logos/wkc-icon.png">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.wizkidscarnival.com/qualifiers/" />
+<meta property="og:title" content="Qualifier List | WizKidsCarnival" />
+<meta property="og:description" content="See who's qualified for the next round — browse by contest and age group." />
+<meta property="og:site_name" content="WizKidsCarnival" />
+<meta name="robots" content="noindex,follow">
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"WizKidsCarnival Qualifier List",
+  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.wizkidscarnival.com"},
+    {"@type":"ListItem","position":2,"name":"Qualifiers","item":"https://www.wizkidscarnival.com/qualifiers/"}
+  ]}
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/wkc.css?v=2026-10-01b">
+<style>
+/* ── qualifiers-only ── */
+.blob-1{width:480px;height:480px;background:radial-gradient(circle,#c5eeea,transparent 70%);top:-140px;right:-120px}
+.blob-2{width:380px;height:380px;background:radial-gradient(circle,#ffd6cf,transparent 70%);bottom:20%;left:-120px}
+
+/* Card grid + detail view — same pattern as the Results page */
+.res-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.res-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow);text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:inherit;width:100%}
+.res-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.res-card-ttl{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.2px;margin-bottom:6px}
+.res-card-meta{font-size:12.5px;color:var(--ink-soft);font-weight:600}
+.res-card-arr{float:right;color:var(--accent);font-weight:800}
+
+.res-empty,.res-loading{text-align:center;padding:40px 20px;color:var(--ink-soft);font-size:14px;font-weight:500}
+
+.res-detail{display:none}
+.res-detail.open{display:block}
+.res-list-wrap.hidden{display:none}
+.res-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;margin-bottom:22px;background:none;border:none;cursor:pointer;font-family:inherit;padding:0}
+.res-back:hover{text-decoration:underline}
+.res-detail-ttl{font-family:'Fraunces',serif;font-size:clamp(24px,5vw,34px);font-weight:600;color:var(--ink);letter-spacing:-.5px;margin-bottom:6px}
+.res-detail-date{font-size:13px;color:var(--ink-soft);font-weight:600;margin-bottom:30px}
+
+.qual-age{border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:16px;background:var(--card);box-shadow:var(--shadow)}
+.qual-age-lbl{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.qual-rows{display:grid;grid-template-columns:1fr;column-gap:28px}
+.qual-row{display:flex;flex-direction:column;gap:2px;padding:8px 0;font-size:14px;border-bottom:1px solid var(--line)}
+.qual-row-name{font-weight:700;color:var(--ink)}
+.qual-row-meta{font-size:12.5px;color:var(--ink-soft);display:block}
+
+@media(min-width:700px){
+  .res-grid{grid-template-columns:repeat(2,1fr)}
+  .qual-rows{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:980px){
+  .qual-rows{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ttrack" id="ttrack">
+    <span class="ti">Qualifier List &#x00B7; Updated by Our Team<span class="dot">&#x2726;</span></span>
+    <span class="ti">Kids Premier League<span class="dot">&#x00B7;</span></span>
+    <span class="ti">Little Champions League<span class="dot">&#x2726;</span></span>
+  </div>
+</div>
+
+<!-- Nav overlay -->
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="nav-close" id="navClose">&#x2715; Close</button>
+  <nav class="nav-links">
+    <a href="../kpl/" class="ol">Kids Premier League</a>
+    <a href="../lcl/" class="ol">Little Champions League</a>
+    <a href="https://showcases.wizkidscarnival.com/" class="ol">Showcases</a>
+    <a href="../results/" class="ol">Results</a>
+    <a href="../qualifiers/" class="ol">Qualifiers</a>
+    <a href="../magazines/" class="ol">Magazine</a>
+    <a href="https://app.wizkidscarnival.com/authentication?utm_source=main-site&utm_medium=nav-overlay&utm_campaign=qualifiers" class="ol nav-apply">Signup / Login</a>
+  </nav>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo" data-nav="logo"><img src="../logos/wkc-logo.png" alt="WizKidsCarnival" height="36"></a>
+    <nav class="nav-desk" aria-label="Primary navigation">
+      <a href="../kpl/" data-nav="kpl">Kids Premier League</a>
+      <a href="../lcl/" data-nav="lcl">Little Champions League</a>
+      <a href="https://showcases.wizkidscarnival.com/" data-nav="showcases">Showcases</a>
+      <a href="../results/" data-nav="results">Results</a>
+      <a href="../qualifiers/" class="active" data-nav="qualifiers">Qualifiers</a>
+      <a href="../magazines/" data-nav="magazine">Magazine</a>
+      <a href="https://app.wizkidscarnival.com/authentication?utm_source=main-site&utm_medium=nav&utm_campaign=qualifiers" class="nav-cta" data-nav="register">Signup / Login</a>
+    </nav>
+    <button class="nav-ham" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<header class="page-hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a><span class="bc-sep">&#x203A;</span><span>Qualifiers</span>
+    </nav>
+    <div class="page-tag">Next Round</div>
+    <h1>Who's <em>qualified</em> so far.</h1>
+    <p class="sub">Browse the qualifier list by contest and age group. Looking for final winners instead? See the <a href="../results/">Results page</a>.</p>
+  </div>
+</header>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<!-- Qualifiers -->
+<section class="section" aria-labelledby="qual-ttl">
+
+  <div class="res-list-wrap" id="qualListWrap">
+    <div class="sec-lbl">Qualifier List</div>
+    <h2 class="sec-ttl" id="qual-ttl">Browse by Contest</h2>
+    <p class="sec-sub">Select a contest to see who's qualified, by age group.</p>
+    <div class="res-grid" id="qualGrid"></div>
+    <div class="res-loading" id="qualLoading">Loading qualifier list&#x2026;</div>
+    <div class="res-empty" id="qualEmpty" hidden>No qualifiers published yet. Check back soon!</div>
+  </div>
+
+  <div class="res-detail" id="qualDetail">
+    <button class="res-back" id="qualBack">&#x2190; All Contests</button>
+    <h2 class="res-detail-ttl" id="qualDetailTtl"></h2>
+    <div class="res-detail-date" id="qualDetailMeta"></div>
+    <div id="qualDetailBody"></div>
+  </div>
+
+</section>
+
+<div class="divider"><div class="dl"></div><div class="dg"></div><div class="dl r"></div></div>
+
+<footer class="footer">
+  <p class="ftag">&#x201C;Where young stars shine.&#x201D;</p>
+  <nav class="fsoc" aria-label="Social media">
+    <a href="https://facebook.com/wizkidscarnival" aria-label="Facebook" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://instagram.com/wizkidscarnival" aria-label="Instagram" rel="noopener noreferrer" class="ig">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://youtube.com/@wizkidscarnival" aria-label="YouTube" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:rgba(35,26,23,0.9)"/></svg>
+    </a>
+    <a href="https://linkedin.com/company/wizkidscarnival" aria-label="LinkedIn" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </nav>
+  <nav class="flinks" aria-label="Footer navigation">
+    <a href="../">Home</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../kpl/">Kids Premier League</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../lcl/">Little Champions League</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://showcases.wizkidscarnival.com/">Showcases</a><br>
+    <a href="../results/">Results</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../qualifiers/">Qualifiers</a> &nbsp;&#x00B7;&nbsp;
+    <a href="../magazines/">Magazine</a><br>
+    <a href="https://wizkidscarnival.com/privacy-policy/">Privacy</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://wizkidscarnival.com/refund-and-cancellations/">Refunds</a> &nbsp;&#x00B7;&nbsp;
+    <a href="https://wizkidscarnival.com/terms-and-conditions/">Terms</a>
+  </nav>
+  <div class="fwkc">&#x00A9; 2026 WizKidsCarnival. All rights reserved.</div>
+</footer>
+
+
+<script>window.WKC = { page: 'qualifiers', program: null };</script>
+<script src="../assets/wkc.js?v=2026-10-01b"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ── Data source ──────────────────────────────────────────
+     Qualifier Google Sheet (Sheet1 only — add new contests as new
+     rows, never new tabs, or this single export URL stops covering
+     them). Sharing must stay "Anyone with the link: Viewer" or this
+     export URL starts 404ing / redirecting to a login page.
+     Expected headers in row 1: Contest, Age Group, Participant Name,
+     School, City, Status. A row is shown unless Status is non-empty
+     and not "qualified" (case-insensitive) — so leaving Status blank
+     or "Qualified" publishes the row, anything else (e.g. "Hold")
+     hides it. */
+  var SHEET_ID = '1T2Teh31_jEPF_IutewXbtne6gq7M0QnvJErs2XbJlEw';
+  var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv&gid=0';
+
+  var listWrap  = document.getElementById('qualListWrap');
+  var grid      = document.getElementById('qualGrid');
+  var loading   = document.getElementById('qualLoading');
+  var empty     = document.getElementById('qualEmpty');
+  var detail    = document.getElementById('qualDetail');
+  var detailTtl = document.getElementById('qualDetailTtl');
+  var detailMt  = document.getElementById('qualDetailMeta');
+  var detailBdy = document.getElementById('qualDetailBody');
+  var backBtn   = document.getElementById('qualBack');
+
+  var rows = []; // parsed + filtered-to-visible rows
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  /* Minimal RFC-4180 CSV parser: handles quoted fields, escaped
+     "" quotes, commas and newlines inside quotes. Good enough for
+     a Sheets export without pulling in a library. */
+  function parseCSV(text) {
+    var rows = [], row = [], field = '', inQuotes = false;
+    for (var i = 0; i < text.length; i++) {
+      var c = text[i];
+      if (inQuotes) {
+        if (c === '"') {
+          if (text[i + 1] === '"') { field += '"'; i++; }
+          else { inQuotes = false; }
+        } else { field += c; }
+      } else {
+        if (c === '"') inQuotes = true;
+        else if (c === ',') { row.push(field); field = ''; }
+        else if (c === '\n' || c === '\r') {
+          if (c === '\r' && text[i + 1] === '\n') i++;
+          row.push(field); field = '';
+          if (row.length > 1 || row[0] !== '') rows.push(row);
+          row = [];
+        } else { field += c; }
+      }
+    }
+    if (field !== '' || row.length) { row.push(field); rows.push(row); }
+    return rows;
+  }
+
+  function toObjects(csvRows) {
+    if (!csvRows.length) return [];
+    var headers = csvRows[0].map(function (h) { return h.trim(); });
+    return csvRows.slice(1)
+      .filter(function (r) { return r.some(function (v) { return v.trim() !== ''; }); })
+      .map(function (r) {
+        var obj = {};
+        headers.forEach(function (h, i) { obj[h] = (r[i] || '').trim(); });
+        return obj;
+      });
+  }
+
+  function isVisible(status) {
+    if (!status) return true;
+    return status.trim().toLowerCase() === 'qualified';
+  }
+
+  // One card per distinct Contest value, in first-seen order.
+  function renderGrid() {
+    var counts = {};
+    var order = [];
+    rows.forEach(function (r) {
+      var c = r['Contest'] || 'Other';
+      if (!(c in counts)) { counts[c] = 0; order.push(c); }
+      counts[c]++;
+    });
+
+    if (!order.length) { empty.hidden = false; return; }
+    empty.hidden = true;
+
+    grid.innerHTML = '';
+    order.forEach(function (c) {
+      var card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'res-card';
+      card.innerHTML =
+        '<span class="res-card-arr">&#x2192;</span>' +
+        '<div class="res-card-ttl">' + esc(c) + '</div>' +
+        '<div class="res-card-meta">' + counts[c] + ' qualifier' + (counts[c] === 1 ? '' : 's') + '</div>';
+      card.addEventListener('click', function () { openDetail(c); });
+      grid.appendChild(card);
+    });
+  }
+
+  function renderDetail(contest) {
+    var contestRows = rows.filter(function (r) { return (r['Contest'] || 'Other') === contest; });
+    detailTtl.textContent = contest;
+    detailMt.textContent = contestRows.length + ' qualifier' + (contestRows.length === 1 ? '' : 's');
+
+    var byAgeGroup = {};
+    var ageOrder = [];
+    contestRows.forEach(function (r) {
+      var ag = r['Age Group'] || '';
+      if (!(ag in byAgeGroup)) { byAgeGroup[ag] = []; ageOrder.push(ag); }
+      byAgeGroup[ag].push(r);
+    });
+
+    var html = '';
+    ageOrder.forEach(function (ag) {
+      html += '<div class="qual-age">';
+      if (ag) html += '<div class="qual-age-lbl">' + esc(ag) + '</div>';
+      html += '<div class="qual-rows">';
+      byAgeGroup[ag].forEach(function (r) {
+        var meta = [r['School'], r['City']].filter(Boolean).join(', ');
+        html += '<div class="qual-row"><span class="qual-row-name">' + esc(r['Participant Name']) + '</span>' +
+          (meta ? '<span class="qual-row-meta">' + esc(meta) + '</span>' : '') + '</div>';
+      });
+      html += '</div></div>';
+    });
+    detailBdy.innerHTML = html || '<p class="res-empty">No qualifiers listed for this contest yet.</p>';
+  }
+
+  function showDetail() {
+    listWrap.classList.add('hidden');
+    detail.classList.add('open');
+    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+  }
+  function showList() {
+    detail.classList.remove('open');
+    listWrap.classList.remove('hidden');
+  }
+
+  function openDetail(contest, pushState) {
+    renderDetail(contest);
+    showDetail();
+    if (pushState !== false) history.pushState({ contest: contest }, '', '?contest=' + encodeURIComponent(contest));
+  }
+
+  backBtn.addEventListener('click', function () {
+    showList();
+    history.pushState({}, '', location.pathname);
+  });
+
+  window.addEventListener('popstate', function () {
+    var c = new URLSearchParams(location.search).get('contest');
+    if (c) openDetail(c, false); else showList();
+  });
+
+  if (!SHEET_CSV_URL || SHEET_CSV_URL.indexOf('PASTE_') === 0) {
+    loading.textContent = 'Qualifier list isn’t connected yet.';
+    return;
+  }
+
+  fetch(SHEET_CSV_URL)
+    .then(function (r) { return r.text(); })
+    .then(function (text) {
+      loading.hidden = true;
+      rows = toObjects(parseCSV(text)).filter(function (r) { return isVisible(r['Status']); });
+      renderGrid();
+      var initialContest = new URLSearchParams(location.search).get('contest');
+      if (initialContest) openDetail(initialContest, false);
+    })
+    .catch(function () {
+      loading.textContent = 'Couldn’t load the qualifier list right now. Please try again shortly.';
+    });
+})();
+</script>
+</body>
+</html>

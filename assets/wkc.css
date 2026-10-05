@@ -141,6 +141,40 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
 .hero-kicker h1 em{font-style:italic;color:var(--carnival-gold)}
 .hero-kicker p{font-size:12.5px;line-height:1.45;color:var(--on-carnival-dim);max-width:320px;margin:6px auto 0;font-weight:500}
 
+/* ── Featured competitions (hero, above the booths) ── */
+.featured{padding:6px 16px 20px;max-width:640px;margin:0 auto;width:100%}
+.featured-lbl{display:flex;align-items:center;gap:12px;font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--carnival-gold);margin-bottom:12px}
+.featured-lbl::after{content:'';flex:1;height:1px;background:rgba(228,179,76,.35)}
+.featured-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.feat-card{display:flex;flex-direction:column;background:var(--on-carnival);border-radius:16px;padding:6px;text-decoration:none;color:var(--carnival);box-shadow:0 10px 24px rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s}
+.feat-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.34)}
+.feat-img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 40%;border-radius:11px;display:block;height:auto}
+.feat-body{padding:9px 4px 4px;display:flex;flex-direction:column;flex:1}
+.feat-ages{font-size:9.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#9a6d72}
+/* Two-line slot so "Color Wizards" wrapping doesn't knock the rows out of line */
+.feat-name{font-family:'Fraunces',serif;font-size:16px;font-weight:700;line-height:1.08;letter-spacing:-.3px;margin-top:3px;min-height:2.16em}
+.feat-price{font-size:11.5px;font-weight:600;color:#6b4a4e;margin:4px 0 10px;line-height:1.3}
+.feat-price b{font-weight:800;color:var(--carnival)}
+.feat-cta{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:4px;padding:7px 6px;border-radius:100px;background:var(--carnival);color:var(--on-carnival);font-size:12px;font-weight:800;transition:background .2s}
+.feat-card:hover .feat-cta{background:var(--carnival-red)}
+.feat-quiz{background:var(--carnival-gold)}
+.feat-quiz .feat-ages{color:#6b4a1a}
+.feat-quiz .feat-price{color:var(--carnival)}
+.feat-quiz-art{display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(160deg,rgba(255,255,255,.45),rgba(255,255,255,.15))}
+.feat-quiz-art span{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--carnival);color:var(--carnival-gold);font-family:'Fraunces',serif;font-style:italic;font-size:26px;font-weight:700;box-shadow:0 0 0 5px rgba(58,10,16,.12)}
+.feat-quiz-art i{font-style:normal;color:var(--carnival);opacity:.55;font-size:11px}
+.feat-quiz-art i:last-child{font-size:8px;align-self:flex-start;margin-top:22%}
+/* Build It photo: the brick model sits low in the frame */
+.feat-card[data-track="featured-build-it"] .feat-img{object-position:center 70%}
+@media(min-width:1024px){
+  .featured{max-width:1000px;padding:0 24px 28px}
+  .feat-card{flex-direction:row;align-items:stretch;gap:14px;padding:10px}
+  .feat-img{width:116px;aspect-ratio:1/1;flex-shrink:0}
+  .feat-body{padding:2px 4px 2px 0}
+  .feat-name{min-height:0;font-size:19px}
+  .feat-cta{align-self:flex-start;padding:7px 16px}
+}
+
 /* ── The three booths ── */
 .booths{
   display:grid;gap:0;

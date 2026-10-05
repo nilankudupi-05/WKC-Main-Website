@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/wkc.css?v=2026-10-03">
+<link rel="stylesheet" href="assets/wkc.css?v=2026-10-05d">
 </head>
 <body>
 
@@ -93,6 +93,41 @@
   <div class="hero-kicker">
     <h1>Three stages.<br><em>One carnival.</em></h1>
     <p>Every child deserves a real stage. Pick the one that fits yours.</p>
+  </div>
+
+  <!-- Featured competitions. Hardcoded for now; candidates to move to a
+       Google Sheet later (Order, Name, Ages, Price from, Image, Page URL). -->
+  <div class="featured" data-section="featured">
+    <div class="featured-lbl">Featured this month</div>
+    <div class="featured-row">
+      <a class="feat-card" href="https://app.wizkidscarnival.com/talent-pass/build-it?utm_source=main-site&utm_medium=featured&utm_campaign=home" data-track="featured-build-it">
+        <img class="feat-img" src="assets/featured-build-it.jpg" alt="A child showing a brick build" width="480" height="640" loading="eager" decoding="async">
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Build It</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card" href="https://app.wizkidscarnival.com/talent-pass/color-wizards?utm_source=main-site&utm_medium=featured&utm_campaign=home" data-track="featured-color-wizards">
+        <img class="feat-img" src="assets/featured-color-wizards.jpg" alt="A child showing a painting" width="480" height="640" loading="eager" decoding="async">
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Color Wizards</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card feat-quiz" href="https://app.wizkidscarnival.com/talent-pass/membership?utm_source=main-site&utm_medium=featured&utm_campaign=home" data-track="featured-quiz">
+        <div class="feat-img feat-quiz-art" aria-hidden="true"><i>&#x2726;</i><span>?</span><i>&#x2726;</i></div>
+        <div class="feat-body">
+          <div class="feat-ages">4 questions</div>
+          <div class="feat-name">Not sure?</div>
+          <div class="feat-price">Take the 60-second quiz</div>
+          <span class="feat-cta">Start &#x2192;</span>
+        </div>
+      </a>
+    </div>
   </div>
 
   <div class="booths">

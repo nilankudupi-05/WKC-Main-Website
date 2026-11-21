@@ -133,6 +133,52 @@
     });
   });
 
+  /* ── All-competitions row: endless drift + arrows ─────
+     Cards are cloned once so the strip wraps seamlessly. It always
+     drifts (slowly); touching, hovering or using the arrows pauses it,
+     and it resumes 3s after the person lets go. */
+  var compRow = document.getElementById('compRow');
+  if (compRow) {
+    Array.prototype.forEach.call(compRow.children, function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.setAttribute('tabindex', '-1');
+      compRow.appendChild(clone);
+    });
+    var paused = false, resumeT, pos = 0;
+    var half = function () { return compRow.scrollWidth / 2; };
+    var stop = function () { paused = true; clearTimeout(resumeT); };
+    var go = function () { clearTimeout(resumeT); resumeT = setTimeout(function () { pos = compRow.scrollLeft; paused = false; }, 3000); };
+    ['touchstart', 'pointerdown', 'mouseenter', 'focusin'].forEach(function (e) { compRow.addEventListener(e, stop, { passive: true }); });
+    ['touchend', 'pointerup', 'mouseleave', 'focusout'].forEach(function (e) { compRow.addEventListener(e, go, { passive: true }); });
+
+    var step = function (dir) {
+      stop();
+      var card = compRow.querySelector('.comp-card');
+      var gap = parseFloat(getComputedStyle(compRow).columnGap) || 10;
+      var w = card ? card.getBoundingClientRect().width + gap : 200;
+      // Keep room to move in either direction by hopping between the
+      // two identical halves before scrolling.
+      if (dir < 0 && compRow.scrollLeft < w) compRow.scrollLeft += half();
+      if (dir > 0 && compRow.scrollLeft + w >= half()) compRow.scrollLeft -= half();
+      compRow.scrollBy({ left: dir * w, behavior: 'smooth' });
+      go();
+    };
+    var prev = document.getElementById('compPrev'), next = document.getElementById('compNext');
+    if (prev) prev.addEventListener('click', function () { step(-1); });
+    if (next) next.addEventListener('click', function () { step(1); });
+
+    (function tick() {
+      var h = half();
+      if (!paused && h > compRow.clientWidth) {
+        pos += 0.6;
+        if (pos >= h) pos -= h;
+        compRow.scrollLeft = pos;
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
+
   /* ── FAQ accordion (kpl / lcl) — single open at a time ── */
   document.querySelectorAll('.faq-q').forEach(function (q) {
     q.addEventListener('click', function () {

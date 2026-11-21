@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/wkc.css?v=2026-10-21">
+<link rel="stylesheet" href="assets/wkc.css?v=2026-11-21f">
 </head>
 <body>
 
@@ -104,13 +104,15 @@
     <p>Every child deserves a real stage. Pick the one that fits yours.</p>
   </div>
 
-  <!-- Featured competitions. Hardcoded for now; candidates to move to a
-       Google Sheet later (Order, Name, Ages, Price from, Image, Page URL). -->
-  <div class="featured" data-section="featured">
-    <div class="featured-lbl">Featured this month</div>
-    <div class="featured-row">
-      <a class="feat-card" href="https://app.wizkidscarnival.com/talent-pass/build-it?utm_source=main-site&utm_medium=featured&utm_campaign=home" data-track="featured-build-it">
-        <img class="feat-img" src="assets/featured-build-it.jpg" alt="A child showing a brick build" width="480" height="640" loading="eager" decoding="async">
+  <!-- All competitions: a slowly drifting row of every talent-pass page.
+       Hardcoded; add or reorder cards here. The JS in wkc.js loops it. -->
+  <div class="featured comp-row-wrap" data-section="all_competitions">
+    <div class="featured-lbl">Pick a competition</div>
+    <div class="comp-carousel">
+      <button type="button" class="comp-arrow comp-prev" id="compPrev" aria-label="Previous competitions">&#x2039;</button>
+      <div class="comp-row" id="compRow">
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/build-it?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_build_it" data-track="home_allcomp_build_it">
+        <img class="feat-img" src="assets/featured-build-it.jpg" alt="" width="360" height="360" loading="lazy" decoding="async">
         <div class="feat-body">
           <div class="feat-ages">Ages 6–15</div>
           <div class="feat-name">Build It</div>
@@ -118,8 +120,8 @@
           <span class="feat-cta">Register &#x2192;</span>
         </div>
       </a>
-      <a class="feat-card" href="https://app.wizkidscarnival.com/talent-pass/color-wizards?utm_source=main-site&utm_medium=featured&utm_campaign=home" data-track="featured-color-wizards">
-        <img class="feat-img" src="assets/featured-color-wizards.jpg" alt="A child showing a painting" width="480" height="640" loading="eager" decoding="async">
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/color-wizards?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_color_wizards" data-track="home_allcomp_color_wizards">
+        <img class="feat-img" src="assets/featured-color-wizards.jpg" alt="" width="360" height="360" loading="lazy" decoding="async">
         <div class="feat-body">
           <div class="feat-ages">Ages 6–15</div>
           <div class="feat-name">Color Wizards</div>
@@ -127,16 +129,148 @@
           <span class="feat-cta">Register &#x2192;</span>
         </div>
       </a>
-      <a class="feat-card feat-quiz" href="https://app.wizkidscarnival.com/talent-pass/membership?utm_source=main-site&utm_medium=featured&utm_campaign=home" data-track="featured-quiz">
-        <div class="feat-img feat-quiz-art" aria-hidden="true"><i>&#x2726;</i><span>?</span><i>&#x2726;</i></div>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/shloka?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_shloka" data-track="home_allcomp_shloka">
+        <img class="feat-img" src="assets/comp-shloka.jpg" alt="" width="360" height="360" loading="lazy" decoding="async">
         <div class="feat-body">
-          <div class="feat-ages">4 questions</div>
-          <div class="feat-name">Not sure?</div>
-          <div class="feat-price">Take the 60-second quiz</div>
-          <span class="feat-cta">Start &#x2192;</span>
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Shloka Scholars</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
         </div>
       </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/classical-dance?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_classical_dance" data-track="home_allcomp_classical_dance">
+        <img class="feat-img" src="assets/comp-classical-dance.jpg" alt="" width="360" height="360" loading="lazy" decoding="async">
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Dance Wizards Classical</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/yoga?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_yoga" data-track="home_allcomp_yoga">
+        <img class="feat-img" src="assets/comp-yoga.jpg" alt="" width="360" height="360" loading="lazy" decoding="async">
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Yoga Champs</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/little-champions-league?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_little_champions_league" data-track="home_allcomp_little_champions_league">
+        <img class="feat-img" src="assets/comp-little-champions-league.jpg" alt="" width="360" height="360" loading="lazy" decoding="async">
+        <div class="feat-body">
+          <div class="feat-ages">Ages 3–5</div>
+          <div class="feat-name">Little Champions League</div>
+          <div class="feat-price">From <b>₹749</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/recite-english?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_recite_english" data-track="home_allcomp_recite_english">
+        <div class="feat-img feat-tile" style="--t1:#ffd9cf;--t2:#f08a72" aria-hidden="true"><span class="tile-ico">&#x1F4D6;</span><span class="tile-tag">Speaking</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Recite It! English</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/recite-hindi?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_recite_hindi" data-track="home_allcomp_recite_hindi">
+        <div class="feat-img feat-tile" style="--t1:#ffd9cf;--t2:#f08a72" aria-hidden="true"><span class="tile-ico">&#x1F4DC;</span><span class="tile-tag">Speaking</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Recite It! Hindi</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/master-orator?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_master_orator" data-track="home_allcomp_master_orator">
+        <div class="feat-img feat-tile" style="--t1:#ffd9cf;--t2:#f08a72" aria-hidden="true"><span class="tile-ico">&#x1F399;&#xFE0F;</span><span class="tile-tag">Speaking</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Master Orator</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/handwriting-champs?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_handwriting_champs" data-track="home_allcomp_handwriting_champs">
+        <div class="feat-img feat-tile" style="--t1:#ffe8b8;--t2:#e4a83a" aria-hidden="true"><span class="tile-ico">&#x270D;&#xFE0F;</span><span class="tile-tag">Arts</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Handwriting Champs</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/dance-wizards?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_dance_wizards" data-track="home_allcomp_dance_wizards">
+        <div class="feat-img feat-tile" style="--t1:#ffd6e4;--t2:#d9638e" aria-hidden="true"><span class="tile-ico">&#x1F57A;</span><span class="tile-tag">Performing</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Dance Wizards</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/singing-stars?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_singing_stars" data-track="home_allcomp_singing_stars">
+        <div class="feat-img feat-tile" style="--t1:#ffd6e4;--t2:#d9638e" aria-hidden="true"><span class="tile-ico">&#x1F3A4;</span><span class="tile-tag">Performing</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Singing Stars</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/instrumental-genius?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_instrumental_genius" data-track="home_allcomp_instrumental_genius">
+        <div class="feat-img feat-tile" style="--t1:#ffd6e4;--t2:#d9638e" aria-hidden="true"><span class="tile-ico">&#x1F3B8;</span><span class="tile-tag">Performing</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Instru&shy;mental Genius</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/tell-ur-tale?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_tell_ur_tale" data-track="home_allcomp_tell_ur_tale">
+        <div class="feat-img feat-tile" style="--t1:#e3dcff;--t2:#8a72d9" aria-hidden="true"><span class="tile-ico">&#x1F4DA;</span><span class="tile-tag">Stories</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 6–15</div>
+          <div class="feat-name">Tell Ur Tale</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/build-it-junior?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_build_it_junior" data-track="home_allcomp_build_it_junior">
+        <div class="feat-img feat-tile" style="--t1:#cfeefb;--t2:#4aa8d8" aria-hidden="true"><span class="tile-ico">&#x1F9F1;</span><span class="tile-tag">Junior</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 3–5</div>
+          <div class="feat-name">Build It Junior</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/paint-maestro?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_paint_maestro" data-track="home_allcomp_paint_maestro">
+        <div class="feat-img feat-tile" style="--t1:#cfeefb;--t2:#4aa8d8" aria-hidden="true"><span class="tile-ico">&#x1F3A8;</span><span class="tile-tag">Junior</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 3–5</div>
+          <div class="feat-name">Paint Maestro</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      <a class="feat-card comp-card" href="https://app.wizkidscarnival.com/talent-pass/recite-english-junior?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_recite_english_junior" data-track="home_allcomp_recite_english_junior">
+        <div class="feat-img feat-tile" style="--t1:#cfeefb;--t2:#4aa8d8" aria-hidden="true"><span class="tile-ico">&#x1F31F;</span><span class="tile-tag">Junior</span></div>
+        <div class="feat-body">
+          <div class="feat-ages">Ages 3–5</div>
+          <div class="feat-name">Recite It! Junior</div>
+          <div class="feat-price">From <b>₹599</b></div>
+          <span class="feat-cta">Register &#x2192;</span>
+        </div>
+      </a>
+      </div>
+      <button type="button" class="comp-arrow comp-next" id="compNext" aria-label="Next competitions">&#x203A;</button>
     </div>
+    <a class="quiz-strip" href="https://app.wizkidscarnival.com/talent-pass/membership?utm_source=main-site&utm_medium=home_allcomp&utm_campaign=home&utm_content=home_allcomp_quiz" data-track="home_allcomp_quiz">
+      <span><b>Not sure which one?</b><small>4 questions &#x00B7; 60 seconds</small></span>
+      <span class="quiz-strip-cta">Take the quiz &#x2192;</span>
+    </a>
   </div>
 
   <div class="booths">
@@ -367,6 +501,6 @@
 
 
 <script>window.WKC = { page: 'home' };</script>
-<script src="assets/wkc.js?v=2026-10-01b"></script>
+<script src="assets/wkc.js?v=2026-11-21b"></script>
 </body>
 </html>

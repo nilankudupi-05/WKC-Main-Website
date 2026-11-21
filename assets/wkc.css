@@ -175,6 +175,46 @@ body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-
   .feat-cta{align-self:flex-start;padding:7px 16px}
 }
 
+/* ── All-competitions drifting row (reuses .feat-card) ── */
+.comp-row-wrap{max-width:none;padding-left:0;padding-right:0}
+.comp-row-wrap .featured-lbl{max-width:640px;margin-left:auto;margin-right:auto;padding:0 16px}
+.comp-row{display:flex;gap:10px;overflow-x:auto;padding:4px 16px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.comp-row::-webkit-scrollbar{display:none}
+.comp-row .feat-card{flex:0 0 31%;max-width:180px}
+.comp-row .feat-card{min-width:0}
+.comp-row .feat-name{font-size:15px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.comp-carousel{position:relative}
+.comp-arrow{position:absolute;top:calc(50% - 7px);transform:translateY(-50%);z-index:2;width:34px;height:34px;border-radius:50%;border:1px solid rgba(228,179,76,.55);background:rgba(58,10,16,.88);color:var(--carnival-gold);font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0 0 3px;font-family:inherit;box-shadow:0 6px 16px rgba(0,0,0,.35);transition:background .2s}
+.comp-arrow:hover{background:var(--carnival-red);color:#fff}
+/* Phones: arrows sit in the label line so they never cover a card */
+.comp-arrow{top:-36px;transform:none;width:30px;height:30px;font-size:20px;box-shadow:none}
+.comp-prev{right:54px}
+.comp-next{right:16px}
+.comp-row-wrap .featured-lbl{padding-right:100px}
+@media(min-width:1024px){
+  .comp-arrow{top:calc(50% - 7px);transform:translateY(-50%);width:42px;height:42px;font-size:26px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+  .comp-prev{left:18px;right:auto}
+  .comp-next{right:18px}
+  .comp-row-wrap .featured-lbl{padding-right:24px}
+}
+.feat-tile{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 28% 22%,rgba(255,255,255,.75) 0 18%,transparent 46%),linear-gradient(150deg,var(--t1,#f6e6d6) 10%,var(--t2,#d9a066) 100%)}
+.feat-tile::before,.feat-tile::after{content:'\2726';position:absolute;color:#fff;opacity:.75;line-height:1}
+.feat-tile::before{top:12%;right:14%;font-size:14px}
+.feat-tile::after{bottom:30%;left:12%;font-size:9px;opacity:.6}
+.tile-ico{display:flex;align-items:center;justify-content:center;width:52%;aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 8px 18px rgba(58,10,16,.18),inset 0 0 0 4px rgba(255,255,255,.6);font-size:clamp(22px,6.5vw,32px);line-height:1;margin-bottom:14%}
+.tile-tag{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);background:rgba(58,10,16,.78);color:#fff;font-size:8px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:3px 8px;border-radius:100px;white-space:nowrap}
+@media(min-width:1024px){.tile-ico{width:56%;font-size:34px}.tile-tag{font-size:7.5px}}
+.quiz-strip{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:608px;margin:4px auto 0;background:var(--carnival-gold);color:var(--carnival);border-radius:14px;padding:12px 14px;text-decoration:none;box-shadow:0 10px 24px rgba(0,0,0,.28);width:calc(100% - 32px)}
+.quiz-strip b{display:block;font-family:'Fraunces',serif;font-size:16px}
+.quiz-strip small{font-size:11.5px;font-weight:700}
+.quiz-strip-cta{background:var(--carnival);color:var(--on-carnival);border-radius:100px;padding:8px 14px;font-size:12.5px;font-weight:800;white-space:nowrap}
+.quiz-strip:hover .quiz-strip-cta{background:var(--carnival-red)}
+@media(min-width:1024px){
+  .comp-row .feat-card{flex:0 0 340px;max-width:none}
+  .comp-row-wrap .featured-lbl{max-width:1000px;padding:0 24px}
+  .quiz-strip{max-width:520px}
+}
+
 /* ── The three booths ── */
 .booths{
   display:grid;gap:0;
